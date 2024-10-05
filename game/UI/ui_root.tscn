@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyom15efvlgkk"]
+[gd_scene load_steps=3 format=3 uid="uid://dyom15efvlgkk"]
 
 [ext_resource type="Script" path="res://game/UI/ui_root.gd" id="1_folln"]
+
+[sub_resource type="GDScript" id="GDScript_6o0w2"]
 
 [node name="UIRoot" type="Control"]
 layout_mode = 3
@@ -11,11 +13,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_folln")
 
-[node name="Score" type="Label" parent="."]
+[node name="ScoreLabel" type="Label" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Score:0"
+script = SubResource("GDScript_6o0w2")
 
 [node name="EssenceMeter_1" type="ProgressBar" parent="."]
 layout_mode = 0
@@ -75,3 +78,13 @@ offset_bottom = 54.0
 scale = Vector2(0.148003, 0.207568)
 text = "Quit
 "
+
+[node name="HighScoreLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 65.0
+offset_right = 105.0
+offset_bottom = 23.0
+text = "High Score:0"
+
+[connection signal="pressed" from="FailStateMenu/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="FailStateMenu/QuitButton" to="." method="_on_quit_button_pressed"]
