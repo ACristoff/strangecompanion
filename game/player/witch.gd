@@ -41,6 +41,7 @@ var face_right = true
 func _ready():
 	$AnimationPlayer.play("dress")
 	shoot_timer.wait_time = current_mode.TIMER
+	GlobalPos.player = self
 	pass # Replace with function body.
 
 func change_mode(mode):
