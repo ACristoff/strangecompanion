@@ -10,4 +10,10 @@ func _ready():
 func _process(delta):
 	pass
 
+#Shooting from companion node
+
+#Movement
+
+#On Hit
+
 #test
