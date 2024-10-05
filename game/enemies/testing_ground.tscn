@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://qnxs28g78vbe"]
+[gd_scene load_steps=4 format=3 uid="uid://bkx23lnrpdc1m"]
 
 [ext_resource type="Script" path="res://game/enemies/GlobalPos.gd" id="1_gkm8f"]
-[ext_resource type="PackedScene" path="res://game/enemies/dummy.tscn" id="2_75j82"]
+[ext_resource type="PackedScene" uid="uid://1adv658mfo2d" path="res://game/enemies/dummy.tscn" id="2_75j82"]
 [ext_resource type="Script" path="res://game/enemies/dummy.gd" id="3_e1c6a"]
 
 [node name="Testing ground" type="Node2D"]
