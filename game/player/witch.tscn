@@ -10,10 +10,12 @@ height = 66.0
 [node name="Witch" type="CharacterBody2D"]
 script = ExtResource("1_pmexk")
 
-[node name="Companion" type="Node2D" parent="."]
+[node name="CompanionParent" type="Node2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Companion"]
-position = Vector2(-120, 0)
+[node name="CompanionActor" type="Node2D" parent="CompanionParent"]
+position = Vector2(120, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="CompanionParent/CompanionActor"]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_ggbqf")
 
