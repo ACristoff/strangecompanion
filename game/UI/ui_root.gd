@@ -87,8 +87,7 @@ func check_fail_condition():
 		show_fail_menu()
 
 # Add button signal functions
-func _on_StartButton_pressed():
-	start_game()
+
 
 func _on_QuitButton_pressed():
 	quit_game()

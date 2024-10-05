@@ -38,27 +38,6 @@ offset_top = 22.0
 offset_right = 28.0
 offset_bottom = 49.0
 
-[node name="MainMenu" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 1.0
-offset_top = -48.0
-offset_right = 41.0
-offset_bottom = -8.0
-
-[node name="StartButton" type="Button" parent="MainMenu"]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 30.0
-offset_right = 15.0
-offset_bottom = 38.0
-
-[node name="Quit" type="Button" parent="MainMenu"]
-layout_mode = 0
-offset_left = 22.0
-offset_top = 30.0
-offset_right = 30.0
-offset_bottom = 38.0
-
 [node name="FailStateMenu" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 63.0
