@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dldb8tng5evra"]
+[gd_scene load_steps=4 format=3 uid="uid://dldb8tng5evra"]
 
 [ext_resource type="PackedScene" uid="uid://bavdb2sbkfnlw" path="res://game/player/witch.tscn" id="1_y23vn"]
 [ext_resource type="PackedScene" uid="uid://dyom15efvlgkk" path="res://game/UI/ui_root.tscn" id="2_d750s"]
+[ext_resource type="Texture2D" uid="uid://cldn76m7jhvad" path="res://Assets/WO Background 1.png" id="3_i68vo"]
 
 [node name="Game" type="Node"]
 
@@ -16,3 +17,13 @@ offset_top = 8.0
 offset_right = 16.0
 offset_bottom = 8.0
 script = null
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(819, 819)
+repeat_times = 3
+
+[node name="WoBackground1" type="Sprite2D" parent="Parallax2D"]
+z_index = -10
+position = Vector2(608, 301)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_i68vo")
