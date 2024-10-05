@@ -2,9 +2,13 @@ extends CharacterBody2D
 
 @onready var companion = $Companion
 @onready var sprite = $Sprite2D
+@onready var shoot_timer = $ShootTimer
 
 @export var SPEED = 300
 @export var health = 100
+@export var lode_speed = 1.2
+
+var companion_radius = 100
 
 var SHOOT_MODE = {
 	"BIG": {
@@ -16,7 +20,7 @@ var SHOOT_MODE = {
 		"DAMAGE": 2
 	},
 	"HOMING": {
-		"TIMER": 0.3,
+		"TIMER": 0.4,
 		"DAMAGE": 4
 	}
 }
@@ -27,6 +31,7 @@ var face_right = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	shoot_timer.wait_time = current_mode.TIMER
 	pass # Replace with function body.
 
 func change_mode(mode):
@@ -34,17 +39,18 @@ func change_mode(mode):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	##LODE CODE##
+	companion.rotation_degrees += lode_speed
+
+	##PLAYER MOVEMENT##
 	var horizontalDirection = Input.get_axis("ui_left", "ui_right")
 	var verticalDirection = Input.get_axis("ui_up", "ui_down")
-	
 	if horizontalDirection:
 		sprite.flip_h = (horizontalDirection == -1)
 		face_right = (horizontalDirection == 1)
 		pass
-	
 	velocity.x = horizontalDirection * SPEED
 	velocity.y = verticalDirection * SPEED
-	
 	#This normalizes velocity when moving diagonally
 	velocity = velocity.normalized() * min(velocity.length(), SPEED)
 	move_and_slide()
@@ -53,3 +59,8 @@ func _process(delta):
 #TODO Shooting from companion node
 
 #TODO On Hit
+
+
+func on_shoot_timeout():
+	print("bang!")
+	pass # Replace with function body.

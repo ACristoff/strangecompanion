@@ -13,7 +13,7 @@ script = ExtResource("1_pmexk")
 [node name="Companion" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Companion"]
-position = Vector2(-92, 0)
+position = Vector2(-120, 0)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_ggbqf")
 
@@ -26,7 +26,10 @@ texture = ExtResource("1_ggbqf")
 shape = SubResource("CapsuleShape2D_w5w1g")
 
 [node name="ShootTimer" type="Timer" parent="."]
+autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
+
+[connection signal="timeout" from="ShootTimer" to="." method="on_shoot_timeout"]
