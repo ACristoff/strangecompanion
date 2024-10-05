@@ -23,8 +23,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var horizontalDirection = Input.get_axis("move_left", "move_right")
-	var verticalDirection = Input.get_axis("move_up", "move_down")
+	var horizontalDirection = Input.get_axis("ui_left", "ui_right")
+	var verticalDirection = Input.get_axis("ui_up", "ui_down")
 	
 	if horizontalDirection:
 		sprite.flip_h = (horizontalDirection == -1)
@@ -34,12 +34,11 @@ func _process(delta):
 	velocity.x = horizontalDirection * SPEED
 	velocity.y = verticalDirection * SPEED
 	
-	velocity = velocity.normalized()
+	#This normalizes velocity when moving diagonally
+	velocity = velocity.normalized() * min(velocity.length(), SPEED)
 	move_and_slide()
 	pass
 
-#Shooting from companion node
+#TODO Shooting from companion node
 
-#Movement
-
-#On Hit
+#TODO On Hit
