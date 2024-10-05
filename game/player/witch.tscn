@@ -1,15 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bavdb2sbkfnlw"]
+[gd_scene load_steps=14 format=3 uid="uid://bavdb2sbkfnlw"]
 
-[ext_resource type="Texture2D" uid="uid://bna7g7v7o62da" path="res://icon.svg" id="1_ggbqf"]
 [ext_resource type="Script" path="res://game/player/witch.gd" id="1_pmexk"]
 [ext_resource type="Script" path="res://game/player/companion_actor.gd" id="2_c7air"]
 [ext_resource type="Texture2D" uid="uid://cyudht0geepqr" path="res://Assets/lodey.png" id="2_ienoe"]
 [ext_resource type="Texture2D" uid="uid://x8d5v6ojibgs" path="res://Assets/lodeydress.png" id="4_qclgs"]
 [ext_resource type="Texture2D" uid="uid://cjnn48fsgeu05" path="res://Assets/cirnooutfit.png" id="5_435as"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w5w1g"]
-radius = 22.0
-height = 66.0
+[ext_resource type="Texture2D" uid="uid://cissgp6siwkox" path="res://Assets/Witchbase.png" id="6_fj657"]
 
 [sub_resource type="Animation" id="Animation_ks7sx"]
 length = 0.001
@@ -50,6 +46,49 @@ _data = {
 "dress": SubResource("Animation_0f3db")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w5w1g"]
+radius = 22.0
+height = 66.0
+
+[sub_resource type="Animation" id="Animation_sw54y"]
+resource_name = "walk"
+length = 0.7
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_c4m23"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hv0xa"]
+_data = {
+"RESET": SubResource("Animation_c4m23"),
+"walk": SubResource("Animation_sw54y")
+}
+
 [node name="Witch" type="CharacterBody2D"]
 script = ExtResource("1_pmexk")
 lode_speed = 0.3
@@ -58,7 +97,7 @@ lode_speed = 0.3
 script = ExtResource("2_c7air")
 
 [node name="CompanionActor" type="Node2D" parent="CompanionParent"]
-position = Vector2(120, 0)
+position = Vector2(250, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="CompanionParent/CompanionActor"]
 scale = Vector2(0.4, 0.4)
@@ -75,10 +114,21 @@ vframes = 2
 position = Vector2(2.5, 7.62939e-06)
 texture = ExtResource("5_435as")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CompanionParent/CompanionActor"]
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_yh1gh")
+}
+autoplay = "dress"
+speed_scale = 0.695
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 4
 position = Vector2(-1.90735e-06, 0)
-scale = Vector2(0.425781, 0.598121)
-texture = ExtResource("1_ggbqf")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("6_fj657")
+hframes = 3
+vframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_w5w1g")
@@ -92,8 +142,8 @@ position_smoothing_speed = 10.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_yh1gh")
+"": SubResource("AnimationLibrary_hv0xa")
 }
-speed_scale = 0.695
+autoplay = "walk"
 
 [connection signal="timeout" from="ShootTimer" to="." method="on_shoot_timeout"]

@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var lode = $CompanionParent/CompanionActor
 @onready var sprite = $Sprite2D
 @onready var shoot_timer = $ShootTimer
+@onready var anim_player = $AnimationPlayer
 var BULLET = preload("res://game/player/bullet.tscn")
 
 @export var SPEED = 300
@@ -39,8 +40,11 @@ var face_right = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$AnimationPlayer.play("dress")
+	#$CompanionParent/CompanionActor/AnimationPlayer.play("dress")
 	shoot_timer.wait_time = current_mode.TIMER
+	
+	##Global can reference it's own children with $
+	##Refer to line 3-6 of this file as an example
 	GlobalPos.player = self
 	pass # Replace with function body.
 
@@ -64,6 +68,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("select_3"):
 		change_mode(SHOOT_MODE.HOMING)
 		pass
+	
 	##PLAYER MOVEMENT##
 	var horizontalDirection = Input.get_axis("ui_left", "ui_right")
 	var verticalDirection = Input.get_axis("ui_up", "ui_down")
