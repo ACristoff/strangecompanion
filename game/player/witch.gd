@@ -58,8 +58,6 @@ func _process(delta):
 	move_and_slide()
 	pass
 
-#TODO Shooting from companion node
-
 #TODO On Hit
 
 
@@ -67,14 +65,9 @@ func on_shoot_timeout():
 	var lode_pos = lode.global_position
 	var my_pos = self.global_position
 	var angle = my_pos.angle_to_point(lode_pos)
-	#prints(rad_to_deg(angle), lode_pos, my_pos)
 	var new_bullet = BULLET.instantiate()
 	get_parent().add_child(new_bullet)
-	new_bullet.rotation_degrees = rad_to_deg(angle) + 90
-	#new_bullet.rotation = angle
-	#prints(new_bullet.rotation, angle)
+	new_bullet.rotation_degrees = rad_to_deg(angle)
 	new_bullet.global_position = lode.global_position
-	
 	#new_bullet.velocity = new_bullet.velocity.rotated(angle)
-	#print(new_bullet.velocity)
 	pass # Replace with function body.
