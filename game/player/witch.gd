@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var lode = $CompanionParent/CompanionActor
 @onready var sprite = $Sprite2D
 @onready var shoot_timer = $ShootTimer
+var BULLET = preload("res://game/player/bullet.tscn")
 
 @export var SPEED = 300
 @export var health = 100
@@ -64,9 +65,13 @@ func _process(delta):
 
 func on_shoot_timeout():
 	print("bang!")
-	var lode_pos = lode.global_position
-	var my_pos = self.global_position
+	var lode_pos = lode.position
+	var my_pos = self.position
 	var angle = lode_pos.angle_to_point(my_pos)
 	print(rad_to_deg(angle) , lode_pos, my_pos)
-	
+	#var bullet = bullet.instance
+	#get_parent().
+	var new_bullet = BULLET.instantiate()
+	lode.add_child(new_bullet)
+	new_bullet.position = lode_pos
 	pass # Replace with function body.
