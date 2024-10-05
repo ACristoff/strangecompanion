@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://cts2i6hwuhqif"]
+
+[ext_resource type="Script" path="res://game/UI/main_menu.gd" id="1_w130m"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_w130m")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 1.0
+offset_right = 113.0
+offset_bottom = 24.0
+text = "Witch Outfit"
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 29.0
+offset_right = 26.0
+offset_bottom = 37.0
+text = "Start"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 29.0
+offset_right = 111.0
+offset_bottom = 60.0
+text = "Quit"

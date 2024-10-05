@@ -1,0 +1,85 @@
+[gd_scene load_steps=2 format=3 uid="uid://banlqgc87mru2"]
+
+[ext_resource type="Script" path="res://game/UI/upgrade_shop.gd" id="1_1akhn"]
+
+[node name="Upgrade_Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1akhn")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 2.0
+offset_right = 222.0
+offset_bottom = 25.0
+text = "Upgrade Shop"
+
+[node name="Upgrades" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 34.0
+offset_right = 231.0
+offset_bottom = 135.0
+
+[node name="Upgrade_1" type="Button" parent="Upgrades"]
+layout_mode = 2
+text = "Lode Treat
+"
+
+[node name="Upgrade_2" type="Button" parent="Upgrades"]
+layout_mode = 2
+text = "Roid Shroom"
+
+[node name="Upgrade_3" type="Button" parent="Upgrades"]
+layout_mode = 2
+text = "Struggling Corn"
+
+[node name="Essence_Display" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="EssenceMeter_1" type="Label" parent="Essence_Display"]
+layout_mode = 0
+offset_left = 4.00002
+offset_top = 44.0
+offset_right = 130.0
+offset_bottom = 67.0
+scale = Vector2(0.268518, 0.639378)
+text = "Essence meter 1"
+
+[node name="EssenceMeter_2" type="Label" parent="Essence_Display"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 54.0
+offset_right = 131.0
+offset_bottom = 77.0
+scale = Vector2(0.239034, 0.610148)
+text = "Essence meter 2
+"
+
+[node name="EssenceMeter_3" type="Label" parent="Essence_Display"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 66.0
+offset_right = 128.0
+offset_bottom = 89.0
+scale = Vector2(0.295133, 0.484389)
+text = "Essence meter 3
+"
+
+[node name="Confirming_Upgrade" type="Button" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 104.0
+offset_right = 325.0
+offset_bottom = 135.0
+text = "confirm
+"
+
+[connection signal="pressed" from="Upgrades/Upgrade_1" to="." method="_on_upgrade_1_pressed"]
