@@ -72,6 +72,6 @@ func on_shoot_timeout():
 	#var bullet = bullet.instance
 	#get_parent().
 	var new_bullet = BULLET.instantiate()
-	lode.add_child(new_bullet)
-	new_bullet.position = lode_pos
+	self.add_child(new_bullet)
+	new_bullet.global_position = global_position
 	pass # Replace with function body.
