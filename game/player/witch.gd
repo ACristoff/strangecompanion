@@ -15,15 +15,21 @@ var companion_radius = 100
 var SHOOT_MODE = {
 	"BIG": {
 		"TIMER": 3,
-		"DAMAGE": 10
+		"DAMAGE": 10,
+		"AMOUNT": 1,
+		"SPEED": 100,
 	},
 	"SPREAD": {
-		"TIMER": 2,
-		"DAMAGE": 2
+		"TIMER": 1.2,
+		"DAMAGE": 2,
+		"AMOUNT": 3,
+		"SPEED": 320,
 	},
 	"HOMING": {
 		"TIMER": 0.4,
-		"DAMAGE": 4
+		"DAMAGE": 4,
+		"AMOUNT": 1,
+		"SPEED": 450,
 	}
 }
 
@@ -37,13 +43,25 @@ func _ready():
 	pass # Replace with function body.
 
 func change_mode(mode):
+	print(mode)
+	current_mode = mode
+	shoot_timer.wait_time = current_mode.TIMER
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	##LODE CODE##
 	lode_parent.rotation_degrees += lode_speed
-
+	
+	if Input.is_action_just_pressed("select_1"):
+		change_mode(SHOOT_MODE.BIG)
+		pass
+	if Input.is_action_just_pressed("select_2"):
+		change_mode(SHOOT_MODE.SPREAD)
+		pass
+	if Input.is_action_just_pressed("select_3"):
+		change_mode(SHOOT_MODE.HOMING)
+		pass
 	##PLAYER MOVEMENT##
 	var horizontalDirection = Input.get_axis("ui_left", "ui_right")
 	var verticalDirection = Input.get_axis("ui_up", "ui_down")
@@ -60,14 +78,39 @@ func _process(delta):
 
 #TODO On Hit
 
-
-func on_shoot_timeout():
+func fire_bullet():
 	var lode_pos = lode.global_position
 	var my_pos = self.global_position
 	var angle = my_pos.angle_to_point(lode_pos)
-	var new_bullet = BULLET.instantiate()
-	get_parent().add_child(new_bullet)
-	new_bullet.rotation_degrees = rad_to_deg(angle)
-	new_bullet.global_position = lode.global_position
-	#new_bullet.velocity = new_bullet.velocity.rotated(angle)
+	
+	if current_mode == SHOOT_MODE.SPREAD: 
+		for n in SHOOT_MODE.SPREAD.AMOUNT:
+			##TODO Refactor this formula to account for more bullets, 
+			##perhaps increase the spread per bullet to a maximum of 90 degrees?
+			var spread_angle = -15 + (15 * n)
+			var new_bullet = BULLET.instantiate()
+			get_parent().add_child(new_bullet)
+			new_bullet.rotation_degrees = rad_to_deg(angle) + spread_angle
+			new_bullet.global_position = lode.global_position
+			new_bullet.speed = current_mode.SPEED
+			pass
+	elif current_mode == SHOOT_MODE.BIG:
+		var new_bullet = BULLET.instantiate()
+		get_parent().add_child(new_bullet)
+		new_bullet.rotation_degrees = rad_to_deg(angle)
+		new_bullet.global_position = lode.global_position
+		new_bullet.scale = Vector2(3, 3)
+		new_bullet.speed = current_mode.SPEED
+		pass
+	elif current_mode == SHOOT_MODE.HOMING:
+		var new_bullet = BULLET.instantiate()
+		get_parent().add_child(new_bullet)
+		new_bullet.rotation_degrees = rad_to_deg(angle)
+		new_bullet.global_position = lode.global_position
+		new_bullet.speed = current_mode.SPEED
+		pass
+	pass
+
+func on_shoot_timeout():
+	fire_bullet()
 	pass # Replace with function body.
