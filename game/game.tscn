@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://dldb8tng5evra"]
+[gd_scene load_steps=3 format=3 uid="uid://dldb8tng5evra"]
+
+[ext_resource type="PackedScene" uid="uid://bavdb2sbkfnlw" path="res://game/player/witch.tscn" id="1_y23vn"]
+[ext_resource type="PackedScene" uid="uid://dyom15efvlgkk" path="res://game/UI/ui_root.tscn" id="2_d750s"]
 
 [node name="Game" type="Node"]
+
+[node name="Witch" parent="." instance=ExtResource("1_y23vn")]
+
+[node name="UIRoot" parent="." instance=ExtResource("2_d750s")]
