@@ -1,8 +1,8 @@
 extends Node
 
-var bar_1 = 0
-var bar_2 = 0
-var bar_3 = 0
+var bar_1 = 30
+var bar_2 = 60
+var bar_3 = 90
 var outfit = 0
 var score = 0
 

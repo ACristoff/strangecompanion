@@ -56,6 +56,7 @@ texture_over = ExtResource("2_djor3")
 texture_progress = ExtResource("3_ug4ao")
 
 [node name="Label" type="Label" parent="Node/EssenceMeter_2"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = -126.0
 offset_right = 92.0
@@ -74,6 +75,7 @@ texture_over = ExtResource("2_djor3")
 texture_progress = ExtResource("3_ug4ao")
 
 [node name="Label" type="Label" parent="Node/EssenseMeter_3"]
+layout_mode = 0
 offset_left = 2.0
 offset_top = -124.0
 offset_right = 90.0
