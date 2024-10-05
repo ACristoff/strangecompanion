@@ -1,8 +1,8 @@
 extends Sprite2D
 
-var speed = 100
+var speed = 50
 var velocity = Vector2()
-var health = 100
+var health = 150
 
 func _process(delta):
 	if GlobalPos.player != null:

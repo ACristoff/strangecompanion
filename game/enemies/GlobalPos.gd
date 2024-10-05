@@ -2,7 +2,7 @@ extends Node
 
 var player = null
 var enemy1 = preload("res://game/enemies/base_enemy.tscn")
-
+var enemy2 = preload("res://game/enemies/enemy_2.tscn")
 
 # returns the position of node so the enemy can chase it
 func instance_node(node, location, parent):
@@ -20,4 +20,10 @@ func _on_enemy_spawn_timer_timeout() -> void:
 	while enemy_pos.x < 1200 and enemy_pos.x > -75 or enemy_pos.y > -75 and enemy_pos.y < 750:
 		enemy_pos = Vector2(randi_range(-150, 1250), randi_range(-150, 800))
 	
-	instance_node(enemy1, enemy_pos, self)
+	var choice = randi_range(1,10)
+	if choice <= 5:
+		instance_node(enemy1, enemy_pos, self)
+		choice = randi_range(1,10)
+	else:
+		instance_node(enemy2, enemy_pos, self)
+		choice = randi_range(1,10)

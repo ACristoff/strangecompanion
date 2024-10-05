@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkx23lnrpdc1m"]
+[gd_scene load_steps=4 format=3 uid="uid://bkx23lnrpdc1m"]
 
 [ext_resource type="Script" path="res://game/enemies/GlobalPos.gd" id="1_gkm8f"]
 [ext_resource type="PackedScene" uid="uid://1adv658mfo2d" path="res://game/enemies/dummy.tscn" id="2_75j82"]
 [ext_resource type="Script" path="res://game/enemies/dummy.gd" id="3_e1c6a"]
-[ext_resource type="PackedScene" uid="uid://buq5v1pwn3jlc" path="res://game/enemies/base_enemy.tscn" id="4_63xc8"]
 
 [node name="Testing ground" type="Node2D"]
 script = ExtResource("1_gkm8f")
@@ -11,10 +10,6 @@ script = ExtResource("1_gkm8f")
 [node name="dummy" parent="." instance=ExtResource("2_75j82")]
 position = Vector2(566, 312)
 script = ExtResource("3_e1c6a")
-
-[node name="BaseEnemy" parent="." instance=ExtResource("4_63xc8")]
-visible = false
-position = Vector2(73, 82)
 
 [node name="Enemy_spawn_timer" type="Timer" parent="."]
 wait_time = 0.5
