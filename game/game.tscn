@@ -8,5 +8,11 @@
 [node name="Witch" parent="." instance=ExtResource("1_y23vn")]
 position = Vector2(591, 331)
 
-[node name="UIRoot" parent="." instance=ExtResource("2_d750s")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UIRoot" parent="CanvasLayer" instance=ExtResource("2_d750s")]
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 8.0
 script = null

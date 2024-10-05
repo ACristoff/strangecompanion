@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalPos="*res://game/enemies/GlobalPos.gd"
-JuicyDetails="*res://game/JuicyDetails.gd"
 
 [input]
 

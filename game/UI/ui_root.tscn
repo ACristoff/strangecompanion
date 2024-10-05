@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dyom15efvlgkk"]
+[gd_scene load_steps=5 format=3 uid="uid://dyom15efvlgkk"]
 
 [ext_resource type="Script" path="res://game/UI/ui_root.gd" id="1_folln"]
+[ext_resource type="Texture2D" uid="uid://8byaum6og1b0" path="res://Assets/backliqimproved.png" id="2_djor3"]
+[ext_resource type="Texture2D" uid="uid://bd30w4epowgx" path="res://Assets/liquidimproved.png" id="3_ug4ao"]
 
 [sub_resource type="GDScript" id="GDScript_6o0w2"]
 
@@ -13,8 +15,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_folln")
 
-[node name="UI" type="CanvasGroup" parent="."]
-
 [node name="ScoreLabel" type="Label" parent="."]
 layout_mode = 0
 offset_right = 40.0
@@ -22,26 +22,64 @@ offset_bottom = 23.0
 text = "Score:0"
 script = SubResource("GDScript_6o0w2")
 
-[node name="EssenceMeter_1" type="ProgressBar" parent="."]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 22.0
-offset_right = 7.0
-offset_bottom = 49.0
+[node name="Node" type="Node2D" parent="."]
+position = Vector2(12, 313)
+scale = Vector2(0.5, 0.5)
 
-[node name="EssenceMeter_2" type="ProgressBar" parent="."]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 23.0
-offset_right = 52.0
-offset_bottom = 50.0
+[node name="EssenceMeter_1" type="TextureProgressBar" parent="Node"]
+modulate = Color(0.68, 1, 0.957333, 1)
+offset_left = 14.0
+offset_top = 162.0
+offset_right = 111.0
+offset_bottom = 644.0
+fill_mode = 3
+texture_over = ExtResource("2_djor3")
+texture_progress = ExtResource("3_ug4ao")
 
-[node name="EssenseMeter_3" type="ProgressBar" parent="."]
+[node name="Label" type="Label" parent="Node/EssenceMeter_1"]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 22.0
-offset_right = 28.0
-offset_bottom = 49.0
+offset_left = 6.0
+offset_top = -130.0
+offset_right = 94.0
+offset_bottom = -51.0
+theme_override_font_sizes/font_size = 40
+text = "[ 1 ] "
+
+[node name="EssenceMeter_2" type="TextureProgressBar" parent="Node"]
+modulate = Color(1, 0.469167, 0.35, 1)
+offset_left = 124.0
+offset_top = 160.0
+offset_right = 221.0
+offset_bottom = 642.0
+fill_mode = 3
+texture_over = ExtResource("2_djor3")
+texture_progress = ExtResource("3_ug4ao")
+
+[node name="Label" type="Label" parent="Node/EssenceMeter_2"]
+offset_left = 4.0
+offset_top = -126.0
+offset_right = 92.0
+offset_bottom = -47.0
+theme_override_font_sizes/font_size = 40
+text = "[ 2 ] "
+
+[node name="EssenseMeter_3" type="TextureProgressBar" parent="Node"]
+modulate = Color(0.7305, 1, 0.51, 1)
+offset_left = 242.0
+offset_top = 160.0
+offset_right = 339.0
+offset_bottom = 642.0
+fill_mode = 3
+texture_over = ExtResource("2_djor3")
+texture_progress = ExtResource("3_ug4ao")
+
+[node name="Label" type="Label" parent="Node/EssenseMeter_3"]
+offset_left = 2.0
+offset_top = -124.0
+offset_right = 90.0
+offset_bottom = -45.0
+theme_override_font_sizes/font_size = 40
+text = "[ 3 ] "
 
 [node name="FailStateMenu" type="Panel" parent="."]
 layout_mode = 0
