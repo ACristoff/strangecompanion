@@ -6,6 +6,9 @@ var essence_meter_1: int = 0
 var essence_meter_2: int = 0
 var essence_meter_3: int = 0
 
+var high_score: int = 0
+const HIGH_SCORE_FILE: String = "user://high_score.txt"
+
 const MAX_ESSENCE_METER_1: int = 100
 const MAX_ESSENCE_METER_2: int = 100
 const MAX_ESSENCE_METER_3: int = 100
@@ -14,17 +17,22 @@ const MAX_ESSENCE_METER_3: int = 100
 func _ready():
 	update_score_label()
 	update_meters()
+	load_high_score()
 	$FailStateMenu.visible = false  # Hide fail menu initially
 	$UpgradeMenu.visible = false    # Hide upgrade menu initially
+
 
 # Function to add points to the score
 func add_score(points: int):
 	score += points
 	update_score_label()
+	check_high_score()
+
 
 # Update the score label
 func update_score_label():
 	$ScoreLabel.text = "Score: " + str(score)
+	$HighScoreLabel.text = "High Score: " + str(high_score)
 
 # Functions to update essence meters
 func add_to_essence_meter_1(amount: int):
@@ -86,13 +94,18 @@ func check_fail_condition():
 	if essence_meter_1 <= 0 and essence_meter_2 <= 0 and essence_meter_3 <= 0:
 		show_fail_menu()
 
-# Add button signal functions
+#save hight score to a file
+func save_high_score():
+	var file = File.new()
+	file.store_var(high_score)
+	file.close()
 
 
-func _on_QuitButton_pressed():
+
+func _on_quit_button_pressed() -> void:
 	quit_game()
 
-func _on_RestartButton_pressed():
+func _on_retry_button_pressed() -> void:
 	restart_game()
 
 func _on_UpgradeButton_pressed():
