@@ -9,8 +9,15 @@
 script = ExtResource("1_gkm8f")
 
 [node name="dummy" parent="." instance=ExtResource("2_75j82")]
-position = Vector2(1088, 582)
+position = Vector2(566, 312)
 script = ExtResource("3_e1c6a")
 
 [node name="BaseEnemy" parent="." instance=ExtResource("4_63xc8")]
+visible = false
 position = Vector2(73, 82)
+
+[node name="Enemy_spawn_timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Enemy_spawn_timer" to="." method="_on_enemy_spawn_timer_timeout"]
