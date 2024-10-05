@@ -1,16 +1,15 @@
-extends Area2D
+extends Node2D
 
-@export var speed = 40
-@onready var visible_notifier = $VisibleOnScreenNotifier2D
+@export var speed = 300
 
+#var direction = global_transform.basis_xform(Vector2.RIGHT)
+#var rotation_vector = Vector2.UP.rotated(rotation)
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("THEREFORE I AM")
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	global_position.x += speed*delta
-	#print(global_position)
+	position += transform.x * speed * delta
 	pass
