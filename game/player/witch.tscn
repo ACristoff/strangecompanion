@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bavdb2sbkfnlw"]
+
+[node name="Witch" type="CharacterBody2D"]
