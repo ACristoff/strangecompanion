@@ -9,3 +9,4 @@
 position = Vector2(591, 331)
 
 [node name="UIRoot" parent="." instance=ExtResource("2_d750s")]
+script = null

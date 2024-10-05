@@ -27,7 +27,7 @@ var SHOOT_MODE = {
 	}
 }
 
-var current_mode = SHOOT_MODE.HOMING
+var current_mode = SHOOT_MODE.BIG
 
 var face_right = true
 
@@ -64,14 +64,12 @@ func _process(delta):
 
 
 func on_shoot_timeout():
-	print("bang!")
 	var lode_pos = lode.position
 	var my_pos = self.position
 	var angle = lode_pos.angle_to_point(my_pos)
-	print(rad_to_deg(angle) , lode_pos, my_pos)
-	#var bullet = bullet.instance
-	#get_parent().
+	#print(rad_to_deg(angle) , lode_pos, my_pos)
 	var new_bullet = BULLET.instantiate()
-	self.add_child(new_bullet)
-	new_bullet.global_position = global_position
+	get_parent().add_child(new_bullet)
+	#new_bullet.rotation(rad_to_deg(angle))
+	new_bullet.global_position = lode.global_position
 	pass # Replace with function body.
