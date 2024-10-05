@@ -15,3 +15,84 @@ script = ExtResource("1_folln")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+text = "Score:0"
+
+[node name="EssenceMeter_1" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 22.0
+offset_right = 7.0
+offset_bottom = 49.0
+
+[node name="EssenceMeter_2" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 23.0
+offset_right = 52.0
+offset_bottom = 50.0
+
+[node name="EssenseMeter_3" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 22.0
+offset_right = 28.0
+offset_bottom = 49.0
+
+[node name="MainMenu" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -48.0
+offset_right = 41.0
+offset_bottom = -8.0
+
+[node name="StartButton" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 30.0
+offset_right = 15.0
+offset_bottom = 38.0
+
+[node name="Quit" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 30.0
+offset_right = 30.0
+offset_bottom = 38.0
+
+[node name="FailStateMenu" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 63.0
+offset_top = -48.0
+offset_right = 103.0
+offset_bottom = -8.0
+
+[node name="GameOverLabel" type="Label" parent="FailStateMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 2.084
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = 5.0
+offset_right = 1.64
+offset_bottom = 8.0
+scale = Vector2(0.489047, 0.581413)
+text = "Game Over"
+
+[node name="RetryButton" type="Button" parent="FailStateMenu"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 24.0
+offset_right = 55.0
+offset_bottom = 55.0
+scale = Vector2(0.112966, 0.177082)
+text = "Retry"
+
+[node name="QuitButton" type="Button" parent="FailStateMenu"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 23.0
+offset_right = 67.0
+offset_bottom = 54.0
+scale = Vector2(0.148003, 0.207568)
+text = "Quit
+"
