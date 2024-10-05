@@ -6,10 +6,19 @@ extends CharacterBody2D
 @export var SPEED = 300
 @export var health = 100
 
-enum SHOOT_MODE {
-	BIG, 
-	SPREAD, 
-	HOMING
+var SHOOT_MODE = {
+	"BIG": {
+		"TIMER": 3,
+		"DAMAGE": 10
+	},
+	"SPREAD": {
+		"TIMER": 2,
+		"DAMAGE": 2
+	},
+	"HOMING": {
+		"TIMER": 0.3,
+		"DAMAGE": 4
+	}
 }
 
 var current_mode = SHOOT_MODE.HOMING
@@ -20,6 +29,8 @@ var face_right = true
 func _ready():
 	pass # Replace with function body.
 
+func change_mode(mode):
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
