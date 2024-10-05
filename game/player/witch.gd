@@ -39,6 +39,7 @@ var face_right = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$AnimationPlayer.play("dress")
 	shoot_timer.wait_time = current_mode.TIMER
 	pass # Replace with function body.
 
