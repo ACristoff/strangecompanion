@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2wtp3s8k1qv5"]
+[gd_scene load_steps=3 format=3 uid="uid://d2wtp3s8k1qv5"]
 
 [ext_resource type="Texture2D" uid="uid://bna7g7v7o62da" path="res://icon.svg" id="2_ccqxp"]
-[ext_resource type="Script" path="res://game/enemies/Enemy.gd" id="3_c8rpo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fbkve"]
 size = Vector2(121, 121)
@@ -9,10 +8,12 @@ size = Vector2(121, 121)
 [node name="BaseEnemy" type="Sprite2D"]
 modulate = Color(1, 0, 0, 1)
 texture = ExtResource("2_ccqxp")
-script = ExtResource("3_c8rpo")
 
 [node name="HitBox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+visible = false
 position = Vector2(3.5, -1.5)
 shape = SubResource("RectangleShape2D_fbkve")
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

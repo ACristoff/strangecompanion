@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
-@onready var companion = $Companion
+@onready var lode_parent = $CompanionParent
+@onready var lode = $CompanionParent/CompanionActor
 @onready var sprite = $Sprite2D
 @onready var shoot_timer = $ShootTimer
+var BULLET = preload("res://game/player/bullet.tscn")
 
 @export var SPEED = 300
 @export var health = 100
@@ -40,7 +42,7 @@ func change_mode(mode):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	##LODE CODE##
-	companion.rotation_degrees += lode_speed
+	lode_parent.rotation_degrees += lode_speed
 
 	##PLAYER MOVEMENT##
 	var horizontalDirection = Input.get_axis("ui_left", "ui_right")
@@ -63,4 +65,13 @@ func _process(delta):
 
 func on_shoot_timeout():
 	print("bang!")
+	var lode_pos = lode.position
+	var my_pos = self.position
+	var angle = lode_pos.angle_to_point(my_pos)
+	print(rad_to_deg(angle) , lode_pos, my_pos)
+	#var bullet = bullet.instance
+	#get_parent().
+	var new_bullet = BULLET.instantiate()
+	self.add_child(new_bullet)
+	new_bullet.global_position = global_position
 	pass # Replace with function body.
