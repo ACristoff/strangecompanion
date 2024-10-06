@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bavdb2sbkfnlw"]
+[gd_scene load_steps=18 format=3 uid="uid://bavdb2sbkfnlw"]
 
 [ext_resource type="Script" path="res://game/player/witch.gd" id="1_pmexk"]
 [ext_resource type="Script" path="res://game/player/companion_actor.gd" id="2_c7air"]
@@ -45,6 +45,15 @@ _data = {
 "RESET": SubResource("Animation_ks7sx"),
 "dress": SubResource("Animation_0f3db")
 }
+
+[sub_resource type="Gradient" id="Gradient_k64x2"]
+offsets = PackedFloat32Array(0.0649351, 0.649351)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0tgvp"]
+gradient = SubResource("Gradient_k64x2")
+fill = 1
+fill_from = Vector2(0.477064, 0.504587)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w5w1g"]
 radius = 22.0
@@ -130,6 +139,13 @@ libraries = {
 }
 autoplay = "dress"
 speed_scale = 0.695
+
+[node name="PointLight2D" type="PointLight2D" parent="CompanionParent"]
+position = Vector2(250, 0)
+scale = Vector2(7.29688, 7.29688)
+color = Color(0.992443, 0.810409, 1, 1)
+energy = 0.7
+texture = SubResource("GradientTexture2D_0tgvp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 4

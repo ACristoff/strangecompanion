@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dldb8tng5evra"]
+[gd_scene load_steps=11 format=3 uid="uid://dldb8tng5evra"]
 
 [ext_resource type="Script" path="res://game/enemies/GlobalPos.gd" id="1_jp8pp"]
 [ext_resource type="PackedScene" uid="uid://bavdb2sbkfnlw" path="res://game/player/witch.tscn" id="1_y23vn"]
@@ -7,6 +7,16 @@
 [ext_resource type="Script" path="res://game/shopspawn.gd" id="3_rdoag"]
 [ext_resource type="PackedScene" uid="uid://dmn4v5btsqyjy" path="res://game/UI/bars.tscn" id="4_6vhnr"]
 [ext_resource type="PackedScene" path="res://game/UI/pause_menu.tscn" id="4_jigdn"]
+[ext_resource type="FontFile" uid="uid://b12uhspi0hqu0" path="res://Assets/Splatfont2.ttf" id="8_npqmh"]
+
+[sub_resource type="Gradient" id="Gradient_n3i0e"]
+offsets = PackedFloat32Array(0.0649351, 0.649351)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_f1i6t"]
+gradient = SubResource("Gradient_n3i0e")
+fill = 1
+fill_from = Vector2(0.477064, 0.504587)
 
 [node name="Game" type="Node" node_paths=PackedStringArray("playerpos")]
 script = ExtResource("1_jp8pp")
@@ -20,6 +30,13 @@ process_mode = 3
 position = Vector2(-591, -331)
 stream = ExtResource("3_l7stl")
 autoplay = true
+
+[node name="PointLight2D" type="PointLight2D" parent="Witch"]
+position = Vector2(-7.62939e-06, 7.62939e-06)
+scale = Vector2(7.29688, 7.29688)
+color = Color(1, 0.863833, 0.57, 1)
+energy = 0.7
+texture = SubResource("GradientTexture2D_f1i6t")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("3_rdoag")
@@ -42,4 +59,66 @@ texture = ExtResource("3_i68vo")
 [node name="Enemy_spawn_timer" type="Timer" parent="."]
 autostart = true
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.6314, 0.77, 0.77, 1)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+offset_left = 875.0
+offset_top = 17.0
+offset_right = 1135.0
+offset_bottom = 229.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.172549)
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer2"]
+offset_left = 1078.0
+offset_top = 24.0
+offset_right = 1125.0
+offset_bottom = 65.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.172549)
+
+[node name="Button" type="Button" parent="CanvasLayer2/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 6.0
+offset_right = 45.0
+offset_bottom = 38.0
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer2/ColorRect2"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = -71.0
+offset_top = -34.0
+offset_right = 117.0
+offset_bottom = 66.0
+theme_override_fonts/font = ExtResource("8_npqmh")
+theme_override_font_sizes/font_size = 50
+text = "x"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer2/ColorRect2"]
+layout_mode = 0
+offset_left = -189.0
+offset_top = 8.0
+offset_right = 53.0
+offset_bottom = 206.0
+theme_override_constants/line_spacing = -15
+theme_override_constants/shadow_offset_x = -55
+theme_override_constants/outline_size = -65
+theme_override_constants/shadow_outline_size = -110
+theme_override_fonts/font = ExtResource("8_npqmh")
+theme_override_font_sizes/font_size = 25
+text = "Press [1], [2], or [3]
+to gain new powers and
+fill up your vials"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="timeout" from="Enemy_spawn_timer" to="." method="_on_enemy_spawn_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer2/ColorRect2/Button" to="." method="_on_button_pressed"]

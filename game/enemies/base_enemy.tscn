@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2wtp3s8k1qv5"]
+[gd_scene load_steps=11 format=3 uid="uid://d2wtp3s8k1qv5"]
 
 [ext_resource type="Script" path="res://game/enemies/base_enemy.gd" id="1_ywmhy"]
 
@@ -85,6 +85,15 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_rd5cr"]
 radius = 74.0
 
+[sub_resource type="Gradient" id="Gradient_qhgf8"]
+offsets = PackedFloat32Array(0.0649351, 0.649351)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wbhs7"]
+gradient = SubResource("Gradient_qhgf8")
+fill = 1
+fill_from = Vector2(0.477064, 0.504587)
+
 [node name="BaseEnemy" type="Area2D" groups=["enemy"]]
 script = ExtResource("1_ywmhy")
 
@@ -108,3 +117,10 @@ speed_scale = 0.904
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("CircleShape2D_rd5cr")
 debug_color = Color(0.787632, 0.403431, 0.413455, 0.42)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-7.62939e-06, 7.62939e-06)
+scale = Vector2(7.29688, 7.29688)
+color = Color(1, 0.526667, 0.29, 1)
+energy = 0.7
+texture = SubResource("GradientTexture2D_wbhs7")

@@ -22,34 +22,36 @@ var big_shot_outfit = preload("res://Assets/Player/RedWitch.png")
 var homing_shot_outfit = preload("res://Assets/Player/YellowWitch.png")
 var default_shot_outfit = preload("res://Assets/Player/WhiteWitch.png")
 
-@export var SPEED = 300
+@export var SPEED = JuicyDetails.player_speed
 @export var health = 100
 @export var lode_speed = 1.5
+@export var shot_speed = JuicyDetails.player_shotspeed
+@export var player_damage = JuicyDetails.player_damage
 
 var companion_radius = 100
 
 var SHOOT_MODE = {
 	"DEFAULT": {
-		"TIMER": .6,
-		"DAMAGE": 2,
+		"TIMER": shot_speed - 1.4,
+		"DAMAGE": player_damage - 7,
 		"AMOUNT": 1,
 		"SPEED": 250,
 	},
 	"BIG": {
-		"TIMER": 3,
-		"DAMAGE": 10,
+		"TIMER": shot_speed + 1,
+		"DAMAGE": player_damage,
 		"AMOUNT": 1,
 		"SPEED": 100,
 	},
 	"SPREAD": {
-		"TIMER": 1.2,
-		"DAMAGE": 3,
+		"TIMER": shot_speed - .8,
+		"DAMAGE": player_damage - 7,
 		"AMOUNT": 3,
 		"SPEED": 320,
 	},
 	"HOMING": {
-		"TIMER": 0.4,
-		"DAMAGE": 2,
+		"TIMER": shot_speed - 1.6,
+		"DAMAGE": player_damage - 8,
 		"AMOUNT": 1,
 		"SPEED": 450,
 	}
@@ -186,7 +188,8 @@ func _on_area_2d_area_entered(area):
 		if invul_timer.time_left >0 && !invul_timer.is_stopped():
 			return
 		if current_mode == SHOOT_MODE.DEFAULT:
-			print("YOU DEER")
+			get_tree().change_scene_to_file("res://game/UI/deathscreen.tscn")
+			
 			##TODO trigger game end here
 			pass
 		else:
@@ -200,11 +203,11 @@ func _on_area_2d_area_entered(area):
 
 func _on_cooldown_timer_timeout():
 	print('cooldown finished')
-	cooldown_timer.wait_time = 7
+	cooldown_timer.wait_time = 5
 	#cooldown_timer.
 	pass # Replace with function body.
 
 
 func _on_invul_timer_timeout():
-	cooldown_timer.wait_time = 3
+	cooldown_timer.wait_time = 5
 	pass # Replace with function body.

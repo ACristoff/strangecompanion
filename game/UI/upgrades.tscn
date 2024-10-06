@@ -25,7 +25,6 @@ scale = Vector2(0.15, 0.15)
 [node name="lodetreat" type="TextureButton" parent="CanvasLayer/Node2D"]
 offset_right = 2048.0
 offset_bottom = 2048.0
-disabled = true
 texture_normal = ExtResource("1_0pv3d")
 
 [node name="Node2D2" type="Node2D" parent="CanvasLayer"]

@@ -49,3 +49,8 @@ func _on_enemy_spawn_timer_timeout() -> void:
 		
 
 	
+
+
+func _on_button_pressed() -> void:
+	$CanvasLayer2/ColorRect.visible = false
+	$CanvasLayer2/ColorRect2.visible = false

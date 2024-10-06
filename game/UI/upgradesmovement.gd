@@ -7,6 +7,9 @@ func _process(delta: float) -> void:
 	$CanvasLayer/Label.text = "Round " + str(round) + " Completed"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print("player shotpseed --> " + str(JuicyDetails.player_shotspeed))
+	print("player damage --> " + str(JuicyDetails.player_damage))
+	print("player speed --> " + str(JuicyDetails.player_speed))
 	var tween = create_tween()
 	tween.tween_property($CanvasLayer/Node2D, "global_position", $CanvasLayer/lodestart.global_position, 0)
 	tween.tween_property($CanvasLayer/Node2D2, "global_position", $CanvasLayer/roidstart.global_position, 0)
@@ -28,8 +31,9 @@ func _shopbegin():
 
 func _on_lodetreat_pressed() -> void:
 	available = false
-	JuicyDetails.player_shotspeed = JuicyDetails.player_shotspeed * .20 +JuicyDetails.player_shotspeed
+	JuicyDetails.player_shotspeed = -JuicyDetails.player_shotspeed * .20 + JuicyDetails.player_shotspeed
 	_purchased()
+	print("player shotpseed --> " + str(JuicyDetails.player_shotspeed))
 	pass # Replace with function body.
 	
 
@@ -37,6 +41,7 @@ func _on_lodetreat_pressed() -> void:
 func _on_roidshroom_pressed() -> void:
 	JuicyDetails.player_damage = JuicyDetails.player_damage * .20 + JuicyDetails.player_damage
 	available = false
+	print("player damage --> " + str(JuicyDetails.player_damage))
 	_purchased()
 
 

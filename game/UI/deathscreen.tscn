@@ -1,0 +1,136 @@
+[gd_scene load_steps=8 format=3 uid="uid://cc4si241h6k33"]
+
+[ext_resource type="Script" path="res://death.gd" id="1_1y0cd"]
+[ext_resource type="FontFile" uid="uid://b12uhspi0hqu0" path="res://Assets/Splatfont2.ttf" id="2_ti4pi"]
+[ext_resource type="Texture2D" uid="uid://dbugvm540lin2" path="res://Assets/Player/WitchDeath.png" id="3_8ttp7"]
+[ext_resource type="Texture2D" uid="uid://sa8bhqof2q55" path="res://Assets/buttons.png" id="4_5ear2"]
+
+[sub_resource type="Animation" id="Animation_e3c8q"]
+resource_name = "death1"
+length = 0.7
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WitchDeath:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_0dn2p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WitchDeath:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ceqt6"]
+_data = {
+"RESET": SubResource("Animation_0dn2p"),
+"death1": SubResource("Animation_e3c8q")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_1y0cd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -7.0
+offset_top = -12.0
+offset_right = 1163.0
+offset_bottom = 657.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 0, 0, 1)
+offset_left = 281.0
+offset_top = -24.0
+offset_right = 1116.0
+offset_bottom = 357.0
+theme_override_fonts/font = ExtResource("2_ti4pi")
+theme_override_font_sizes/font_size = 130
+text = "Game Over"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ceqt6")
+}
+
+[node name="Label" type="Label" parent="AnimationPlayer"]
+offset_left = 411.0
+offset_top = 195.0
+offset_right = 711.0
+offset_bottom = 326.0
+
+[node name="WitchDeath" type="Sprite2D" parent="."]
+position = Vector2(544.5, 378.5)
+scale = Vector2(0.459335, 0.459335)
+texture = ExtResource("3_8ttp7")
+hframes = 7
+
+[node name="Buttons2" type="Sprite2D" parent="."]
+modulate = Color(1, 0.683667, 0.27, 1)
+position = Vector2(886, 259)
+scale = Vector2(0.106, 0.106)
+texture = ExtResource("4_5ear2")
+vframes = 2
+frame = 1
+
+[node name="quitbutbetter" type="Button" parent="Buttons2"]
+modulate = Color(1, 1, 1, 0)
+z_index = 10
+offset_left = -1028.44
+offset_top = -534.789
+offset_right = 1048.56
+offset_bottom = 397.211
+
+[node name="Label" type="Label" parent="Buttons2"]
+offset_left = -613.208
+offset_top = -783.019
+offset_right = 785.792
+offset_bottom = 616.981
+theme_override_fonts/font = ExtResource("2_ti4pi")
+theme_override_font_sizes/font_size = 650
+text = "QUIT"
+
+[node name="Buttons3" type="Sprite2D" parent="."]
+modulate = Color(1, 0.683667, 0.27, 1)
+position = Vector2(251, 256)
+scale = Vector2(0.106, 0.106)
+texture = ExtResource("4_5ear2")
+vframes = 2
+frame = 1
+
+[node name="Quit" type="Button" parent="Buttons3"]
+modulate = Color(1, 1, 1, 0)
+z_index = 10
+offset_left = -1028.44
+offset_top = -534.789
+offset_right = 1048.56
+offset_bottom = 397.211
+
+[node name="Label" type="Label" parent="Buttons3"]
+offset_left = -820.755
+offset_top = -754.717
+offset_right = 798.245
+offset_bottom = 645.283
+theme_override_fonts/font = ExtResource("2_ti4pi")
+theme_override_font_sizes/font_size = 650
+text = "RETRY"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="Buttons2/quitbutbetter" to="." method="_on_quitbutbetter_pressed"]
+[connection signal="pressed" from="Buttons3/Quit" to="." method="_on_quit_pressed"]
