@@ -52,6 +52,7 @@ var face_right = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	lodey_outfit.visible = false
 	shoot_timer.wait_time = current_mode.TIMER
 	
 	##Global can reference it's own children with $
@@ -61,6 +62,7 @@ func _ready():
 
 func change_mode(mode):
 	current_mode = mode
+	lodey_outfit.visible = true
 	shoot_timer.wait_time = current_mode.TIMER
 	if current_mode == SHOOT_MODE.BIG:
 		lodey_outfit.texture = big_shot_lodey_outfit
@@ -150,6 +152,7 @@ func fire_bullet():
 
 func take_damage():
 	#change_mode("default")
+	lodey_outfit.visible = false
 	pass
 	
 
