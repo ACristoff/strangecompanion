@@ -4,12 +4,12 @@ var player = null
 var enemy1 = preload("res://game/enemies/base_enemy.tscn")
 var enemy2 = preload("res://game/enemies/enemy_2.tscn")
 
-# farthest it can spawn 
-var minPosX = -270
-var maxPosX = 1350
+@export var playerpos: CharacterBody2D
 
-var minPosY = -150
-var maxPosY = 1250
+# farthest it can spawn 
+var xDist = 700
+
+var yDist = 700
 
 # returns the position of node so the enemy can chase it
 func instance_node(node, location, parent):
@@ -21,11 +21,16 @@ func instance_node(node, location, parent):
 
 #spawn enemies randomly
 func _on_enemy_spawn_timer_timeout() -> void:
-	# i have no idea what the ranges should be
-	var enemy_pos = Vector2(randi_range(minPosX, maxPosX), randi_range(minPosY, maxPosY))
+# you know? this was organized and pretty but godot crashed about 7 times so now it's this
+	var playerX = playerpos.global_position.x
+	var playerY = playerpos.global_position.y
+	var playerVect = Vector2(playerX, playerY)
 	
-	while enemy_pos.x > 0 and enemy_pos.x < 1150:
-		enemy_pos = Vector2(randi_range(minPosX, maxPosX), enemy_pos.y)
+# generate initial enemy start
+	var enemy_pos = Vector2(randi_range(playerX - xDist, playerX + xDist), randi_range(playerY - yDist, playerY + yDist))
+	
+	while enemy_pos.distance_to(playerVect) < 500:
+		enemy_pos = Vector2(randi_range(playerX - xDist, playerX + xDist), randi_range(playerY - yDist, playerY + yDist))
 	
 	var choice = randi_range(1,10)
 	if choice <= 5:

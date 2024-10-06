@@ -1,15 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkx23lnrpdc1m"]
+[gd_scene load_steps=2 format=3 uid="uid://bkx23lnrpdc1m"]
 
 [ext_resource type="Script" path="res://game/enemies/GlobalPos.gd" id="1_gkm8f"]
-[ext_resource type="PackedScene" path="res://game/enemies/dummy.tscn" id="2_75j82"]
-[ext_resource type="Script" path="res://game/enemies/dummy.gd" id="3_e1c6a"]
 
-[node name="Testing ground" type="Node2D"]
+[node name="Testing ground" type="Node2D" node_paths=PackedStringArray("playerpos")]
 script = ExtResource("1_gkm8f")
-
-[node name="dummy" parent="." instance=ExtResource("2_75j82")]
-position = Vector2(566, 312)
-script = ExtResource("3_e1c6a")
+playerpos = NodePath("")
 
 [node name="Enemy_spawn_timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -17,6 +12,6 @@ autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(577, 328)
-zoom = Vector2(0.68, 0.68)
+zoom = Vector2(0.2, 0.2)
 
 [connection signal="timeout" from="Enemy_spawn_timer" to="." method="_on_enemy_spawn_timer_timeout"]
