@@ -4,9 +4,9 @@ extends Node2D
 var damage = 0
 var type = null
 
-var spread_sprite = preload("res://Assets/Player/SpreadShot_Bullet.PNG")
-var big_sprite = preload("res://Assets/Big_Bullet_SpriteSheet.PNG")
-var homing_sprite = preload("res://Assets/Player/Honing_Bullet_SpriteSheet.PNG")
+var spread_sprite = preload("res://Assets/Player/(FIXED)SpreadBullet_SpriteSheet.PNG")
+var big_sprite = preload("res://Assets/Player/(FIXED)BigBullet_Spritesheet.PNG")
+var homing_sprite = preload("res://Assets/Player/(FIXED)HoningBullet_SpriteSheet.PNG")
 
 @onready var sprite = $Sprite2D
 
