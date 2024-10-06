@@ -68,7 +68,6 @@ func _on_area_entered(area):
 
 func _on_detection_field_area_entered(area):
 	if target == null && $DetectionField.visible == true:
-		print('bing')
 		if area is ENEMY:
 			target = area
 	pass # Replace with function body.
