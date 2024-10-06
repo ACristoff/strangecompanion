@@ -1,9 +1,32 @@
 extends Area2D
 class_name ENEMY
 
+var biggie = preload("res://Assets/Enemy/Small_Pumpkin_SpriteSheet.PNG")
+
 var speed = 100
 var velocity = Vector2()
 var health = 10
+
+var enemy_types =  {
+	"biggie": {
+		"speed": 100,
+		"health": 25,
+		"scale": Vector2(1,1),
+		"sprite": null
+	},
+	"smalls": {
+		"speed": 200,
+		"health": 6,
+		"scale": Vector2(0.6,0.6),
+		"sprite": null
+	}
+}
+
+func construct_enemy(type):
+	health = enemy_types[type].health
+	speed = enemy_types[type].speed
+	$Sprite2D.scale = $Sprite2D.scale * enemy_types[type].scale
+	pass
 
 func _process(delta):
 	if GlobalPos.player != null:

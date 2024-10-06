@@ -25,6 +25,12 @@ var bullet_dictionary = {
 func change_type(new_type): 
 	type = new_type
 	sprite.texture = bullet_dictionary[type].sprite
+	#print(new_type)
+	if new_type == "homing":
+		
+		$DetectionField.visible = true
+		print($DetectionField.visible)
+		pass
 	pass
 
 # Called when the node enters the scene tree for the first time.
@@ -52,4 +58,8 @@ func _on_area_entered(area):
 		#prints(type)
 		if type != "big":
 			queue_free()
+	pass # Replace with function body.
+
+
+func _on_detection_field_area_entered(area):
 	pass # Replace with function body.

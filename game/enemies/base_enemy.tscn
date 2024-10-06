@@ -13,8 +13,8 @@ script = ExtResource("1_ywmhy")
 position = Vector2(3.5, -1.5)
 shape = SubResource("RectangleShape2D_fbkve")
 
-[node name="BaseEnemy" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)
 texture = ExtResource("2_ccqxp")
 
-[connection signal="area_entered" from="." to="BaseEnemy" method="_on_hit_box_area_entered"]
+[connection signal="area_entered" from="." to="Sprite2D" method="_on_hit_box_area_entered"]
