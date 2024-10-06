@@ -93,7 +93,7 @@ _data = {
 "walk": SubResource("Animation_sw54y")
 }
 
-[node name="Witch" type="CharacterBody2D"]
+[node name="Witch" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_pmexk")
 lode_speed = 0.3
 

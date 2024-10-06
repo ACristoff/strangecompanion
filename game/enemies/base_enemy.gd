@@ -15,18 +15,18 @@ var enemy_types =  {
 		"speed": 100,
 		"health": 20,
 		"scale": Vector2(1,1),
-		"sprite": null
+		"sprite": biggie
 	},
 	"smalls": {
 		"energy":5,
 		"speed": 200,
 		"health": 6,
-		"scale": Vector2(0.6,0.6)
+		"scale": Vector2(0.6,0.6),
+		"sprite": smalls
 	}
 }
 
 func construct_enemy(new_type):
-	#print(type)
 	type = new_type
 	health = enemy_types[new_type].health
 	speed = enemy_types[new_type].speed
@@ -43,3 +43,10 @@ func take_damage(damage):
 	if health <= 0 && type != null:
 		JuicyDetails._addenergy(enemy_types[type].energy)
 		queue_free()
+
+
+func _on_area_entered(area):
+	print(area)
+	if area is PLAYER:
+		print("shabang")
+	pass # Replace with function body.

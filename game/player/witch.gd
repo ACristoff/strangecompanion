@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name PLAYER
+
 @onready var lode_parent = $CompanionParent
 @onready var lode = $CompanionParent/CompanionActor
 @onready var sprite = $Sprite2D

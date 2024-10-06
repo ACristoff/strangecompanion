@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2wtp3s8k1qv5"]
+[gd_scene load_steps=4 format=3 uid="uid://buq5v1pwn3jlc"]
 
 [ext_resource type="Script" path="res://game/enemies/base_enemy.gd" id="1_ywmhy"]
 [ext_resource type="Texture2D" uid="uid://bna7g7v7o62da" path="res://icon.svg" id="2_ccqxp"]
@@ -9,14 +9,13 @@ size = Vector2(121, 121)
 [node name="BaseEnemy" type="Area2D" groups=["enemy"]]
 script = ExtResource("1_ywmhy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3.5, -1.5)
-shape = SubResource("RectangleShape2D_fbkve")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)
 texture = ExtResource("2_ccqxp")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fbkve")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
-[connection signal="area_entered" from="." to="Sprite2D" method="_on_hit_box_area_entered"]
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
