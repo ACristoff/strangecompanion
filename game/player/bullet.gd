@@ -39,7 +39,6 @@ func _process(delta):
 
 
 func _on_area_entered(area):
-	#prints(area, "takes", damage, "damage!")
-	#if area is Enemy
-		#area.take_damage(damage)
+	if area is ENEMY:
+		area.take_damage(damage)
 	pass # Replace with function body.
