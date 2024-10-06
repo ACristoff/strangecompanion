@@ -6,8 +6,8 @@ extends CharacterBody2D
 @onready var lodey_outfit = $CompanionParent/CompanionActor/Sprite2D/LodeyOutfit
 @onready var lodey_dress = $CompanionParent/CompanionActor/Sprite2D/LodeyDress
 @onready var shoot_timer = $ShootTimer
-
 @onready var anim_player = $AnimationPlayer
+
 var BULLET = preload("res://game/player/bullet.tscn")
 var big_shot_lodey_outfit = preload("res://Assets/Player/BigShot_Outfit.PNG")
 var homing_shot_lodey_outfit = preload("res://Assets/Player/WO Familiar Six Costume Blank Shortened.png")
@@ -46,7 +46,7 @@ var SHOOT_MODE = {
 	}
 }
 
-var current_mode = SHOOT_MODE.BIG
+var current_mode = SHOOT_MODE.NORMAL
 
 var face_right = true
 
