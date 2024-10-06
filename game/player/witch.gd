@@ -79,12 +79,21 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("select_1"):
 		change_mode(SHOOT_MODE.BIG)
+		JuicyDetails.bar_1_selected = true
+		JuicyDetails.bar_2_selected = false
+		JuicyDetails.bar_3_selected = false
 		pass
 	if Input.is_action_just_pressed("select_2"):
 		change_mode(SHOOT_MODE.SPREAD)
+		JuicyDetails.bar_1_selected = false
+		JuicyDetails.bar_2_selected = true
+		JuicyDetails.bar_3_selected = false
 		pass
 	if Input.is_action_just_pressed("select_3"):
 		change_mode(SHOOT_MODE.HOMING)
+		JuicyDetails.bar_1_selected = false
+		JuicyDetails.bar_2_selected = false
+		JuicyDetails.bar_3_selected = true
 		pass
 	
 	##PLAYER MOVEMENT##
