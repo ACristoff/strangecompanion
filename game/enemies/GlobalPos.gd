@@ -2,6 +2,7 @@ extends Node
 
 var player = null
 var enemy1 = preload("res://game/enemies/base_enemy.tscn")
+var WINDOW = preload("res://game/UI/upgrades.tscn")
 
 @export var playerpos: CharacterBody2D
 
@@ -16,6 +17,8 @@ func instance_node(node, location, parent):
 	parent.add_child(node_instance)
 	node_instance.global_position = location
 	return node_instance
+
+
 
 
 #spawn enemies randomly
@@ -43,3 +46,6 @@ func _on_enemy_spawn_timer_timeout() -> void:
 	else:
 		new_enemy.construct_enemy("smalls")
 		pass
+		
+
+	

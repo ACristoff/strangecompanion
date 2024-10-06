@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://b12uhspi0hqu0" path="res://Assets/Splatfont2.ttf" id="5_uf4rk"]
 
 [node name="upgrades" type="Control"]
+process_mode = 2
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

@@ -17,6 +17,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame
 
 func _shopbegin():
+	get_tree().paused = true
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_BOUNCE)
 	tween.tween_property($CanvasLayer/Node2D, "global_position", $CanvasLayer/lodeend.global_position, .5)
@@ -56,6 +57,7 @@ func _purchased():
 	tween.tween_callback(die)
 	
 func die():
+	get_tree().paused = true
 	queue_free()
 	
 	
