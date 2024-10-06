@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://game/player/companion_actor.gd" id="2_c7air"]
 [ext_resource type="Texture2D" uid="uid://cyudht0geepqr" path="res://Assets/Player/lodey.png" id="2_ienoe"]
 [ext_resource type="Texture2D" uid="uid://x8d5v6ojibgs" path="res://Assets/Player/lodeydress.png" id="4_qclgs"]
-[ext_resource type="Texture2D" uid="uid://cjnn48fsgeu05" path="res://Assets/Player/cirnooutfit.png" id="5_435as"]
-[ext_resource type="Texture2D" uid="uid://cdvhlwj8tjpdg" path="res://Assets/Player/BlueWitch.png" id="6_nftle"]
+[ext_resource type="Texture2D" uid="uid://dim8h4c2j6j2y" path="res://Assets/Player/WO Familiar Six Costume Blank Shortened.png" id="5_w35fb"]
+[ext_resource type="Texture2D" uid="uid://dgcdfge7m2kke" path="res://Assets/Player/WhiteWitch.png" id="6_kiqc3"]
 
 [sub_resource type="Animation" id="Animation_ks7sx"]
 length = 0.001
@@ -115,8 +115,9 @@ hframes = 3
 vframes = 2
 
 [node name="LodeyOutfit" type="Sprite2D" parent="CompanionParent/CompanionActor/Sprite2D"]
+visible = false
 position = Vector2(2.5, 7.62939e-06)
-texture = ExtResource("5_435as")
+texture = ExtResource("5_w35fb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CompanionParent/CompanionActor"]
 root_node = NodePath("../../..")
@@ -130,7 +131,7 @@ speed_scale = 0.695
 texture_filter = 4
 position = Vector2(-1.90735e-06, 0)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("6_nftle")
+texture = ExtResource("6_kiqc3")
 hframes = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
