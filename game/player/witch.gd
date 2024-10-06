@@ -20,6 +20,12 @@ var spread_shot_lodey_outfit = preload("res://Assets/Player/cirnooutfit.png")
 var companion_radius = 100
 
 var SHOOT_MODE = {
+	"NORMAL": {
+		"TIMER": 1,
+		"DAMAGE": 2,
+		"AMOUNT": 1,
+		"SPEED": 300,
+	},
 	"BIG": {
 		"TIMER": 3,
 		"DAMAGE": 10,
@@ -46,7 +52,6 @@ var face_right = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#$CompanionParent/CompanionActor/AnimationPlayer.play("dress")
 	shoot_timer.wait_time = current_mode.TIMER
 	
 	##Global can reference it's own children with $
@@ -112,7 +117,7 @@ func fire_bullet():
 			new_bullet.rotation_degrees = rad_to_deg(angle) + spread_angle
 			new_bullet.global_position = lode.global_position
 			new_bullet.speed = current_mode.SPEED
-			#new_bullet.type = "spread"
+			new_bullet.damage = current_mode.DAMAGE
 			new_bullet.change_type("spread")
 			pass
 	elif current_mode == SHOOT_MODE.BIG:
@@ -122,8 +127,7 @@ func fire_bullet():
 		new_bullet.global_position = lode.global_position
 		new_bullet.scale = Vector2(2, 2)
 		new_bullet.speed = current_mode.SPEED
-		#new_bullet.type = 2
-		#new_bullet.type = "big"
+		new_bullet.damage = current_mode.DAMAGE
 		new_bullet.change_type("big")
 		pass
 	elif current_mode == SHOOT_MODE.HOMING:
@@ -132,10 +136,15 @@ func fire_bullet():
 		new_bullet.rotation_degrees = rad_to_deg(angle)
 		new_bullet.global_position = lode.global_position
 		new_bullet.speed = current_mode.SPEED
-		#new_bullet.type = 3
+		new_bullet.damage = current_mode.DAMAGE
 		new_bullet.change_type("homing")
 		pass
 	pass
+
+func take_damage():
+	#change_mode("default")
+	pass
+	
 
 func on_shoot_timeout():
 	fire_bullet()

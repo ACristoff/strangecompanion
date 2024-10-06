@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var speed = 300
-var base_damage = 0
+var damage = 0
 var type = null
 
 var spread_sprite = preload("res://Assets/Player/SpreadShot_Bullet.PNG")
@@ -36,3 +36,10 @@ func _ready():
 func _process(delta):
 	position += transform.x * speed * delta
 	pass
+
+
+func _on_area_entered(area):
+	prints(area, "takes", damage, "damage!")
+	#if area is Enemy
+		#area.take_damage(damage)
+	pass # Replace with function body.
