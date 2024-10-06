@@ -2,7 +2,6 @@ extends Node
 
 var player = null
 var enemy1 = preload("res://game/enemies/base_enemy.tscn")
-var enemy2 = preload("res://game/enemies/enemy_2.tscn")
 
 @export var playerpos: CharacterBody2D
 
