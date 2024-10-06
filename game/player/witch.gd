@@ -22,6 +22,11 @@ var big_shot_outfit = preload("res://Assets/Player/RedWitch.png")
 var homing_shot_outfit = preload("res://Assets/Player/YellowWitch.png")
 var default_shot_outfit = preload("res://Assets/Player/WhiteWitch.png")
 
+var big_shot_idle = preload("res://Assets/Player/RedIdle.png")
+var spread_shot_idle = preload("res://Assets/Player/BlueIdle.png")
+var homing_idle = preload("res://Assets/Player/YellowIdle.png")
+var default_idle = preload("res://Assets/Player/WhiteIdle.png")
+
 @export var SPEED = JuicyDetails.player_speed
 @export var health = 100
 @export var lode_speed = 1.5
@@ -72,6 +77,7 @@ func _ready():
 	pass # Replace with function body.
 
 func change_mode(mode):
+	$Sprite2D.hframes = 8
 	if cooldown_timer.time_left > 0:
 		return
 	current_mode = mode
@@ -79,16 +85,28 @@ func change_mode(mode):
 	shoot_timer.wait_time = current_mode.TIMER
 	if current_mode == SHOOT_MODE.BIG:
 		lodey_outfit.texture = big_shot_lodey_outfit
-		sprite.texture = big_shot_outfit
+		if velocity.x == 0 and velocity.y == 0:
+			sprite.texture = big_shot_idle
+		else:
+			sprite.texture = big_shot_outfit
 	elif current_mode == SHOOT_MODE.SPREAD:
-		sprite.texture = spread_shot_outfit
+		if velocity.x == 0 and velocity.y == 0:
+			sprite.texture = spread_shot_idle
+		else:
+			sprite.texture = spread_shot_outfit
 		lodey_outfit.texture = spread_shot_lodey_outfit
 	elif current_mode == SHOOT_MODE.HOMING:
 		lodey_outfit.texture = homing_shot_lodey_outfit
-		sprite.texture = homing_shot_outfit
+		if velocity.x == 0 and velocity.y == 0:
+			sprite.texture = homing_idle
+		else:
+			sprite.texture = homing_shot_outfit
 	else:
 		lodey_outfit.visible = false
-		sprite.texture = default_shot_outfit 
+		if velocity.x == 0 and velocity.y == 0:
+			sprite.texture = default_idle
+		else:
+			sprite.texture = default_shot_outfit
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -126,6 +144,40 @@ func _process(delta):
 	velocity.y = verticalDirection * SPEED
 	#This normalizes velocity when moving diagonally
 	velocity = velocity.normalized() * min(velocity.length(), SPEED)
+	if velocity.x == 0 and velocity.y == 0:
+		$Sprite2D.hframes = 2
+		#$Sprite2D.vframes = 1
+		if $AnimationPlayer.current_animation != "standing":
+			if current_mode == SHOOT_MODE.BIG:
+				lodey_outfit.texture = big_shot_lodey_outfit
+				sprite.texture = big_shot_idle
+			elif current_mode == SHOOT_MODE.SPREAD:
+				sprite.texture = spread_shot_idle
+				lodey_outfit.texture = spread_shot_lodey_outfit
+			elif current_mode == SHOOT_MODE.HOMING:
+				lodey_outfit.texture = homing_shot_lodey_outfit
+				sprite.texture = homing_idle
+			else:
+				lodey_outfit.visible = false
+				sprite.texture = default_idle
+			$AnimationPlayer.play("standing")
+	else:
+		if current_mode == SHOOT_MODE.BIG:
+			lodey_outfit.texture = big_shot_lodey_outfit
+			sprite.texture = big_shot_outfit
+		elif current_mode == SHOOT_MODE.SPREAD:
+			sprite.texture = spread_shot_outfit
+			lodey_outfit.texture = spread_shot_lodey_outfit
+		elif current_mode == SHOOT_MODE.HOMING:
+			lodey_outfit.texture = homing_shot_lodey_outfit
+			sprite.texture = homing_shot_outfit
+		else:
+			lodey_outfit.visible = false
+			sprite.texture = default_shot_outfit 
+		print("walking")
+		$Sprite2D.hframes = 8
+		print($Sprite2D.hframes)
+		$AnimationPlayer.play("walk")
 	move_and_slide()
 	pass
 

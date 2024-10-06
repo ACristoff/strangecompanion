@@ -73,11 +73,16 @@ libraries = {
 }
 
 [node name="DetectionField" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionField"]
 position = Vector2(335, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_7lohw")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(335, 0)
+rotation = 1.5708
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_entered" from="DetectionField" to="." method="_on_detection_field_area_entered"]
