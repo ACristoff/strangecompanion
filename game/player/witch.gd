@@ -22,9 +22,9 @@ var companion_radius = 100
 var SHOOT_MODE = {
 	"NORMAL": {
 		"TIMER": 1,
-		"DAMAGE": 2,
+		"DAMAGE": 3,
 		"AMOUNT": 1,
-		"SPEED": 300,
+		"SPEED": 250,
 	},
 	"BIG": {
 		"TIMER": 3,
@@ -33,14 +33,24 @@ var SHOOT_MODE = {
 		"SPEED": 100,
 	},
 	"SPREAD": {
+<<<<<<< HEAD
+		"TIMER": 1.2,
+		"DAMAGE": 3,
+=======
 		"TIMER": 0.8,
 		"DAMAGE": 2,
+>>>>>>> aab81db332697a856db2c9c24dad30e97f5ba6ce
 		"AMOUNT": 3,
 		"SPEED": 320,
 	},
 	"HOMING": {
+<<<<<<< HEAD
+		"TIMER": 0.4,
+		"DAMAGE": 2,
+=======
 		"TIMER": 0.3,
 		"DAMAGE": 1,
+>>>>>>> aab81db332697a856db2c9c24dad30e97f5ba6ce
 		"AMOUNT": 1,
 		"SPEED": 450,
 	}
