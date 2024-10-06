@@ -9,9 +9,14 @@ extends CharacterBody2D
 @onready var anim_player = $AnimationPlayer
 
 var BULLET = preload("res://game/player/bullet.tscn")
+
 var big_shot_lodey_outfit = preload("res://Assets/Player/BigShot_Outfit.PNG")
 var homing_shot_lodey_outfit = preload("res://Assets/Player/WO Familiar Six Costume Blank Shortened.png")
 var spread_shot_lodey_outfit = preload("res://Assets/Player/cirnooutfit.png")
+
+var spread_shot_outfit = preload("res://Assets/Player/BlueWitch.png")
+var big_shot_outfit = preload("res://Assets/Player/RedWitch.png")
+var homing_shot_outfit = preload("res://Assets/Player/YellowWitch.png")
 
 @export var SPEED = 300
 @export var health = 100
@@ -66,10 +71,13 @@ func change_mode(mode):
 	shoot_timer.wait_time = current_mode.TIMER
 	if current_mode == SHOOT_MODE.BIG:
 		lodey_outfit.texture = big_shot_lodey_outfit
+		sprite.texture = big_shot_outfit
 	elif current_mode == SHOOT_MODE.SPREAD:
+		sprite.texture = spread_shot_outfit
 		lodey_outfit.texture = spread_shot_lodey_outfit
 	elif current_mode == SHOOT_MODE.HOMING:
 		lodey_outfit.texture = homing_shot_lodey_outfit
+		sprite.texture = homing_shot_outfit
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
