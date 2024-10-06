@@ -16,6 +16,7 @@ playerpos = NodePath("Witch")
 position = Vector2(591, 331)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Witch"]
+process_mode = 3
 position = Vector2(-591, -331)
 stream = ExtResource("3_l7stl")
 autoplay = true

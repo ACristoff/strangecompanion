@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 GlobalPos="*res://game/enemies/GlobalPos.gd"
 JuicyDetails="*res://game/JuicyDetails.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [input]
 
 select_1={

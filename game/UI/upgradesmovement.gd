@@ -57,7 +57,7 @@ func _purchased():
 	tween.tween_callback(die)
 	
 func die():
-	get_tree().paused = true
+	get_tree().paused = false
 	queue_free()
 	
 	
