@@ -22,8 +22,9 @@ offset_bottom = 8.0
 script = null
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_offset = Vector2(-613, -88)
 repeat_size = Vector2(819, 819)
-repeat_times = 3
+repeat_times = 5
 
 [node name="WoBackground1" type="Sprite2D" parent="Parallax2D"]
 z_index = -10

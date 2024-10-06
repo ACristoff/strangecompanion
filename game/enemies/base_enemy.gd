@@ -23,7 +23,6 @@ var enemy_types =  {
 }
 
 func construct_enemy(type):
-	print(type)
 	health = enemy_types[type].health
 	speed = enemy_types[type].speed
 	$Sprite2D.scale = $Sprite2D.scale * enemy_types[type].scale
