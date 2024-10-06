@@ -17,4 +17,6 @@ shape = SubResource("RectangleShape2D_fbkve")
 modulate = Color(1, 0, 0, 1)
 texture = ExtResource("2_ccqxp")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
 [connection signal="area_entered" from="." to="Sprite2D" method="_on_hit_box_area_entered"]
