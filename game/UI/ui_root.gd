@@ -11,9 +11,9 @@ extends Control
 #const MAX_ESSENCE_METER_1: int = 100
 #const MAX_ESSENCE_METER_2: int = 100
 #const MAX_ESSENCE_METER_3: int = 100
-pass
 
 func _ready():
+	print("WORKING!")
 	#update_score_label()
 	#update_meters()
 	#$FailStateMenu.visible = false  # Hide fail menu initially
@@ -21,6 +21,7 @@ func _ready():
 	pass
 	
 func _process(delta: float) -> void:
+	print(JuicyDetails.bar_1)
 	$Node/EssenceMeter_1.value = JuicyDetails.bar_1
 	$Node/EssenceMeter_2.value = JuicyDetails.bar_2
 	$Node/EssenseMeter_3.value = JuicyDetails.bar_3
