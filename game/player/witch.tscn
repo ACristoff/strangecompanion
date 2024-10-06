@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://cyudht0geepqr" path="res://Assets/Player/lodey.png" id="2_ienoe"]
 [ext_resource type="Texture2D" uid="uid://x8d5v6ojibgs" path="res://Assets/Player/lodeydress.png" id="4_qclgs"]
 [ext_resource type="Texture2D" uid="uid://cjnn48fsgeu05" path="res://Assets/Player/cirnooutfit.png" id="5_435as"]
-[ext_resource type="Texture2D" uid="uid://cissgp6siwkox" path="res://Assets/Player/Witchbase.png" id="6_fj657"]
-[ext_resource type="Texture2D" uid="uid://dtn16pb8md2r2" path="res://Assets/Player/BlueOutfit_Witch.png" id="7_q582u"]
-[ext_resource type="Texture2D" uid="uid://d0463f0c7rsq2" path="res://Assets/Player/BlueScarf_Witch.png" id="8_qb7ll"]
-[ext_resource type="Texture2D" uid="uid://bafiv0w0m03yh" path="res://Assets/Player/BlueHat_Witch.png" id="9_majqq"]
+[ext_resource type="Texture2D" path="res://Assets/Player/Witchbase.png" id="6_fj657"]
+[ext_resource type="Texture2D" path="res://Assets/Player/BlueOutfit_Witch.png" id="7_q582u"]
+[ext_resource type="Texture2D" path="res://Assets/Player/BlueScarf_Witch.png" id="8_qb7ll"]
+[ext_resource type="Texture2D" path="res://Assets/Player/BlueHat_Witch.png" id="9_majqq"]
 
 [sub_resource type="Animation" id="Animation_ks7sx"]
 length = 0.001
