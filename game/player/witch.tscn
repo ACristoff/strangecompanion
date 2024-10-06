@@ -1,14 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://bavdb2sbkfnlw"]
+[gd_scene load_steps=23 format=3 uid="uid://bavdb2sbkfnlw"]
 
 [ext_resource type="Script" path="res://game/player/witch.gd" id="1_pmexk"]
 [ext_resource type="Script" path="res://game/player/companion_actor.gd" id="2_c7air"]
 [ext_resource type="Texture2D" uid="uid://cyudht0geepqr" path="res://Assets/Player/lodey.png" id="2_ienoe"]
 [ext_resource type="Texture2D" uid="uid://x8d5v6ojibgs" path="res://Assets/Player/lodeydress.png" id="4_qclgs"]
 [ext_resource type="Texture2D" uid="uid://cjnn48fsgeu05" path="res://Assets/Player/cirnooutfit.png" id="5_435as"]
-[ext_resource type="Texture2D" path="res://Assets/Player/Witchbase.png" id="6_fj657"]
-[ext_resource type="Texture2D" path="res://Assets/Player/BlueOutfit_Witch.png" id="7_q582u"]
-[ext_resource type="Texture2D" path="res://Assets/Player/BlueScarf_Witch.png" id="8_qb7ll"]
-[ext_resource type="Texture2D" path="res://Assets/Player/BlueHat_Witch.png" id="9_majqq"]
+[ext_resource type="Texture2D" uid="uid://cdvhlwj8tjpdg" path="res://Assets/Player/BlueWitch.png" id="6_nftle"]
 
 [sub_resource type="Animation" id="Animation_ks7sx"]
 length = 0.001
@@ -246,9 +243,8 @@ speed_scale = 0.695
 texture_filter = 4
 position = Vector2(-1.90735e-06, 0)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("6_fj657")
-hframes = 3
-vframes = 3
+texture = ExtResource("6_nftle")
+hframes = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_w5w1g")
@@ -271,21 +267,18 @@ autoplay = "walk"
 [node name="BlueOutfitWitch" type="Sprite2D" parent="outfitcrystal"]
 position = Vector2(2.25, 1.445)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("7_q582u")
 hframes = 2
 vframes = 2
 
 [node name="BlueScarfWitch" type="Sprite2D" parent="outfitcrystal"]
 position = Vector2(-0.75, -0.555)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("8_qb7ll")
 hframes = 2
 vframes = 2
 
 [node name="BlueHatWitch" type="Sprite2D" parent="outfitcrystal"]
 position = Vector2(-7, -19)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("9_majqq")
 hframes = 2
 vframes = 2
 frame = 1
