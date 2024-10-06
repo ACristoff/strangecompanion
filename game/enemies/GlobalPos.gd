@@ -2,7 +2,6 @@ extends Node
 
 var player = null
 var enemy1 = preload("res://game/enemies/base_enemy.tscn")
-var UPGRADES = preload("res://game/UI/upgrades.tscn")
 
 @export var playerpos: CharacterBody2D
 
@@ -10,9 +9,6 @@ var UPGRADES = preload("res://game/UI/upgrades.tscn")
 var xDist = 700
 
 var yDist = 700
-
-func _ready() -> void:
-	JuicyDetails.openshop.connect(shop)
 
 # returns the position of node so the enemy can chase it
 func instance_node(node, location, parent):
@@ -47,7 +43,3 @@ func _on_enemy_spawn_timer_timeout() -> void:
 	else:
 		new_enemy.construct_enemy("smalls")
 		pass
-		
-func shop():
-	var window = UPGRADES.instantiate()
-	get_parent().add_child(window)

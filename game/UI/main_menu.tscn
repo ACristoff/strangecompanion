@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf86ywlfso404"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_otw28"]
+[ext_resource type="Texture2D" uid="uid://bo6owjw1w2i26" path="res://Assets/Oin1Ud.png" id="2_camid"]
+[ext_resource type="Texture2D" uid="uid://sa8bhqof2q55" path="res://Assets/buttons.png" id="3_xis8d"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_otw28")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 1155.0
+offset_bottom = 649.0
+texture = ExtResource("2_camid")
+
+[node name="Buttons" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(186, 554)
+scale = Vector2(0.145852, 0.145852)
+texture = ExtResource("3_xis8d")
+vframes = 2
+frame = 1
+
+[node name="Play" type="Button" parent="CanvasLayer/Buttons"]
+modulate = Color(1, 1, 1, 0)
+z_index = 10
+offset_left = -1049.0
+offset_top = -411.0
+offset_right = 1028.0
+offset_bottom = 521.0
+
+[connection signal="button_down" from="CanvasLayer/Buttons/Play" to="." method="_on_play_button_down"]
+[connection signal="pressed" from="CanvasLayer/Buttons/Play" to="." method="_on_play_pressed"]
