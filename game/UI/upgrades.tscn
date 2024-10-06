@@ -24,6 +24,7 @@ scale = Vector2(0.15, 0.15)
 [node name="lodetreat" type="TextureButton" parent="CanvasLayer/Node2D"]
 offset_right = 2048.0
 offset_bottom = 2048.0
+disabled = true
 texture_normal = ExtResource("1_0pv3d")
 
 [node name="Node2D2" type="Node2D" parent="CanvasLayer"]
@@ -48,6 +49,42 @@ offset_right = 5918.0
 offset_bottom = 2078.0
 texture_normal = ExtResource("3_slt1e")
 
+[node name="Label2" type="Label" parent="CanvasLayer/Node2D3/strugglingcorn"]
+modulate = Color(0.27451, 0.133333, 0.0705882, 1)
+z_index = 11
+layout_mode = 0
+offset_left = 776.667
+offset_top = 1436.67
+offset_right = 1056.67
+offset_bottom = 1836.67
+theme_override_fonts/font = ExtResource("5_uf4rk")
+theme_override_font_sizes/font_size = 200
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Node2D3/strugglingcorn"]
+modulate = Color(1, 0.909804, 0.847059, 1)
+z_index = 11
+layout_mode = 0
+offset_left = 763.333
+offset_top = 1423.33
+offset_right = 1043.33
+offset_bottom = 1823.33
+theme_override_fonts/font = ExtResource("5_uf4rk")
+theme_override_font_sizes/font_size = 200
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Node2D3"]
+offset_left = 4653.0
+offset_top = 1560.0
+offset_right = 4920.0
+offset_bottom = 1773.0
+mouse_filter = 2
+color = Color(0.796078, 0.568627, 0.466667, 1)
+
 [node name="Label" type="Label" parent="CanvasLayer"]
 offset_left = 26.0
 offset_top = 3.0
@@ -59,25 +96,26 @@ text = "Round Completed"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="lodeend" type="Node2D" parent="."]
+[node name="lodeend" type="Node2D" parent="CanvasLayer"]
 position = Vector2(28, 140)
 
-[node name="lodestart" type="Node2D" parent="."]
+[node name="lodestart" type="Node2D" parent="CanvasLayer"]
 position = Vector2(28, -385)
 
-[node name="roidend" type="Node2D" parent="."]
+[node name="roidend" type="Node2D" parent="CanvasLayer"]
 position = Vector2(122, 140)
 
-[node name="roidstart" type="Node2D" parent="."]
+[node name="roidstart" type="Node2D" parent="CanvasLayer"]
 position = Vector2(122, -384)
 
-[node name="cornend" type="Node2D" parent="."]
+[node name="cornend" type="Node2D" parent="CanvasLayer"]
 position = Vector2(228, 140)
 
-[node name="cornstart" type="Node2D" parent="."]
+[node name="cornstart" type="Node2D" parent="CanvasLayer"]
 position = Vector2(229, -382)
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
 
 [connection signal="pressed" from="CanvasLayer/Node2D/lodetreat" to="." method="_on_lodetreat_pressed"]
 [connection signal="pressed" from="CanvasLayer/Node2D2/roidshroom" to="." method="_on_roidshroom_pressed"]
