@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://game/enemies/GlobalPos.gd" id="1_jp8pp"]
 [ext_resource type="PackedScene" uid="uid://bavdb2sbkfnlw" path="res://game/player/witch.tscn" id="1_y23vn"]
-[ext_resource type="PackedScene" uid="uid://dyom15efvlgkk" path="res://game/UI/ui_root.tscn" id="2_d750s"]
 [ext_resource type="Texture2D" uid="uid://cldn76m7jhvad" path="res://Assets/WO Background 1.png" id="3_i68vo"]
+[ext_resource type="PackedScene" uid="uid://dmn4v5btsqyjy" path="res://game/UI/bars.tscn" id="4_6vhnr"]
 
 [node name="Game" type="Node" node_paths=PackedStringArray("playerpos")]
 script = ExtResource("1_jp8pp")
@@ -14,12 +14,7 @@ position = Vector2(591, 331)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="UIRoot" parent="CanvasLayer" instance=ExtResource("2_d750s")]
-offset_left = 16.0
-offset_top = 8.0
-offset_right = 16.0
-offset_bottom = 8.0
-script = null
+[node name="Bars" parent="CanvasLayer" instance=ExtResource("4_6vhnr")]
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 scroll_offset = Vector2(-613, -88)
