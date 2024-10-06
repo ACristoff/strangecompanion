@@ -3,6 +3,8 @@ extends Node2D
 @export var speed = 300
 var damage = 0
 var type = null
+var velocity = Vector2()
+var target = null
 
 var spread_sprite = preload("res://Assets/Player/(FIXED)SpreadBullet_SpriteSheet.PNG")
 var big_sprite = preload("res://Assets/Player/(FIXED)BigBullet_Spritesheet.PNG")
@@ -25,12 +27,8 @@ var bullet_dictionary = {
 func change_type(new_type): 
 	type = new_type
 	sprite.texture = bullet_dictionary[type].sprite
-	#print(new_type)
 	if new_type == "homing":
-		
 		$DetectionField.visible = true
-		print($DetectionField.visible)
-		pass
 	pass
 
 # Called when the node enters the scene tree for the first time.
@@ -40,7 +38,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position += transform.x * speed * delta
+	if target == null:
+		position += transform.x * speed * delta
+	else:
+		if GlobalPos.player != null:
+			velocity = global_position.direction_to(target.global_position)
+			global_position += velocity * speed * delta
+			pass
 	pass
 
 func particle_hit():
@@ -55,11 +59,14 @@ func _on_area_entered(area):
 	if area is ENEMY:
 		particle_hit()
 		area.take_damage(damage)
-		#prints(type)
 		if type != "big":
 			queue_free()
 	pass # Replace with function body.
 
-
 func _on_detection_field_area_entered(area):
+	
+	if target == null && $DetectionField.visible == true:
+		print('bing')
+		if area is ENEMY:
+			target = area
 	pass # Replace with function body.
