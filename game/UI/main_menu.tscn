@@ -23,7 +23,7 @@ offset_bottom = 649.0
 texture = ExtResource("2_camid")
 
 [node name="Buttons" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(186, 554)
+position = Vector2(200, 355)
 scale = Vector2(0.145852, 0.145852)
 texture = ExtResource("3_xis8d")
 vframes = 2
@@ -37,5 +37,24 @@ offset_top = -411.0
 offset_right = 1028.0
 offset_bottom = 521.0
 
+[node name="Buttons2" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(192, 539)
+scale = Vector2(0.145852, 0.145852)
+texture = ExtResource("3_xis8d")
+vframes = 2
+frame = 1
+
+[node name="Quit" type="Button" parent="CanvasLayer/Buttons2"]
+modulate = Color(1, 1, 1, 0)
+z_index = 10
+offset_left = -1028.44
+offset_top = -534.789
+offset_right = 1048.56
+offset_bottom = 397.211
+
 [connection signal="button_down" from="CanvasLayer/Buttons/Play" to="." method="_on_play_button_down"]
+[connection signal="button_up" from="CanvasLayer/Buttons/Play" to="." method="_on_play_button_up"]
 [connection signal="pressed" from="CanvasLayer/Buttons/Play" to="." method="_on_play_pressed"]
+[connection signal="button_down" from="CanvasLayer/Buttons2/Quit" to="." method="_on_quit_button_down"]
+[connection signal="button_up" from="CanvasLayer/Buttons2/Quit" to="." method="_on_quit_button_up"]
+[connection signal="pressed" from="CanvasLayer/Buttons2/Quit" to="." method="_on_quit_pressed"]
