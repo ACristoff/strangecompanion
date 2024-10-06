@@ -74,6 +74,9 @@ func _process(delta):
 	var verticalDirection = Input.get_axis("ui_up", "ui_down")
 	if horizontalDirection:
 		sprite.flip_h = (horizontalDirection == -1)
+		$outfitcrystal/BlueOutfitWitch.flip_h = (horizontalDirection == -1)
+		$outfitcrystal/BlueScarfWitch.flip_h = (horizontalDirection == -1)
+		$outfitcrystal/BlueHatWitch.flip_h = (horizontalDirection == -1)
 		face_right = (horizontalDirection == 1)
 		pass
 	velocity.x = horizontalDirection * SPEED
