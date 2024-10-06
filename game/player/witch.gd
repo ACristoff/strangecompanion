@@ -33,14 +33,14 @@ var SHOOT_MODE = {
 		"SPEED": 100,
 	},
 	"SPREAD": {
-		"TIMER": 1.2,
+		"TIMER": 0.8,
 		"DAMAGE": 2,
 		"AMOUNT": 3,
 		"SPEED": 320,
 	},
 	"HOMING": {
-		"TIMER": 0.4,
-		"DAMAGE": 4,
+		"TIMER": 0.3,
+		"DAMAGE": 1,
 		"AMOUNT": 1,
 		"SPEED": 450,
 	}
