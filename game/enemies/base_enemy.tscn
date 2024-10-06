@@ -1,27 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://d2wtp3s8k1qv5"]
+[gd_scene load_steps=17 format=3 uid="uid://d2wtp3s8k1qv5"]
 
 [ext_resource type="Script" path="res://game/enemies/base_enemy.gd" id="1_ywmhy"]
+[ext_resource type="AudioStream" uid="uid://ckpa6j0gibqef" path="res://game/enemies/PumpkinKill_(I just liked this sound)_01.ogg" id="2_j04fp"]
+[ext_resource type="AudioStream" uid="uid://bepbqa8nts0da" path="res://game/enemies/Pumpkinhit1.wav" id="2_liw31"]
+[ext_resource type="AudioStream" uid="uid://b6rgvulc7g362" path="res://game/enemies/Pumpkinhit2.wav" id="3_ls2uo"]
+[ext_resource type="AudioStream" uid="uid://clpemeia23n3w" path="res://game/enemies/Pumpkinhit3.wav" id="4_ny3kl"]
+[ext_resource type="AudioStream" uid="uid://cgrmdysjf2p7t" path="res://game/enemies/Pumpkinhit4.wav" id="5_sct72"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wsulx"]
 size = Vector2(157, 154)
-
-[sub_resource type="Animation" id="Animation_tdhor"]
-resource_name = "small"
-length = 0.2
-loop_mode = 1
-step = 1.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
-}
 
 [sub_resource type="Animation" id="Animation_743c0"]
 length = 0.001
@@ -74,6 +61,24 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3, 4, 5]
 }
 
+[sub_resource type="Animation" id="Animation_tdhor"]
+resource_name = "small"
+length = 0.2
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g04tp"]
 _data = {
 "RESET": SubResource("Animation_743c0"),
@@ -93,6 +98,13 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 gradient = SubResource("Gradient_qhgf8")
 fill = 1
 fill_from = Vector2(0.477064, 0.504587)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_1v4i7"]
+streams_count = 4
+stream_0/stream = ExtResource("2_liw31")
+stream_1/stream = ExtResource("3_ls2uo")
+stream_2/stream = ExtResource("4_ny3kl")
+stream_3/stream = ExtResource("5_sct72")
 
 [node name="BaseEnemy" type="Area2D" groups=["enemy"]]
 script = ExtResource("1_ywmhy")
@@ -124,3 +136,9 @@ scale = Vector2(7.29688, 7.29688)
 color = Color(1, 0.526667, 0.29, 1)
 energy = 0.7
 texture = SubResource("GradientTexture2D_wbhs7")
+
+[node name="Hit1" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_1v4i7")
+
+[node name="Death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_j04fp")

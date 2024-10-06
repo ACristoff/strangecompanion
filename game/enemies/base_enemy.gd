@@ -73,7 +73,18 @@ func _process(delta):
 
 func take_damage(damage):
 	health -= damage
+	$Hit1.play()
+	#var choice = randi_range(1.4)
+	#if choice == 1:
+		#$Hit1
+	#elif choice ==2:
+		#$Hit2
+	#elif choice ==2:
+		#$Hit3
+	#elif choice ==2:
+		#$Hit3
 	if health <= 0 && type != null:
+		$Death.play()
 		JuicyDetails._addenergy(enemy_types[type].energy)
 		queue_free()
 		
