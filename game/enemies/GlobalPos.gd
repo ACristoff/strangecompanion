@@ -38,7 +38,7 @@ func _on_enemy_spawn_timer_timeout() -> void:
 		new_enemy.construct_enemy("biggie")
 		pass
 	elif choice >= 3 && choice <=5:
-		#print("mediumboy")
+		new_enemy.construct_enemy("middie")
 		pass
 	else:
 		new_enemy.construct_enemy("smalls")

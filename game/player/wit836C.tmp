@@ -1,0 +1,175 @@
+[gd_scene load_steps=16 format=3 uid="uid://bavdb2sbkfnlw"]
+
+[ext_resource type="Script" path="res://game/player/witch.gd" id="1_pmexk"]
+[ext_resource type="Script" path="res://game/player/companion_actor.gd" id="2_c7air"]
+[ext_resource type="Texture2D" uid="uid://cyudht0geepqr" path="res://Assets/Player/lodey.png" id="2_ienoe"]
+[ext_resource type="Texture2D" uid="uid://x8d5v6ojibgs" path="res://Assets/Player/lodeydress.png" id="4_qclgs"]
+[ext_resource type="Texture2D" uid="uid://dim8h4c2j6j2y" path="res://Assets/Player/WO Familiar Six Costume Blank Shortened.png" id="5_w35fb"]
+[ext_resource type="Texture2D" uid="uid://dgcdfge7m2kke" path="res://Assets/Player/WhiteWitch.png" id="6_kiqc3"]
+
+[sub_resource type="Animation" id="Animation_ks7sx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CompanionParent/CompanionActor/Sprite2D/LodeyDress:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_0f3db"]
+resource_name = "dress"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CompanionParent/CompanionActor/Sprite2D/LodeyDress:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yh1gh"]
+_data = {
+"RESET": SubResource("Animation_ks7sx"),
+"dress": SubResource("Animation_0f3db")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w5w1g"]
+radius = 22.0
+height = 66.0
+
+[sub_resource type="Animation" id="Animation_c4m23"]
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_xusv0"]
+resource_name = "standing"
+
+[sub_resource type="Animation" id="Animation_sw54y"]
+resource_name = "walk"
+length = 0.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hv0xa"]
+_data = {
+"RESET": SubResource("Animation_c4m23"),
+"standing": SubResource("Animation_xusv0"),
+"walk": SubResource("Animation_sw54y")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kc7h7"]
+radius = 25.0
+height = 152.0
+
+[node name="Witch" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_pmexk")
+lode_speed = 0.3
+
+[node name="CompanionParent" type="Node2D" parent="."]
+script = ExtResource("2_c7air")
+
+[node name="CompanionActor" type="Node2D" parent="CompanionParent"]
+position = Vector2(250, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="CompanionParent/CompanionActor"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_ienoe")
+
+[node name="LodeyDress" type="Sprite2D" parent="CompanionParent/CompanionActor/Sprite2D"]
+z_index = -1
+position = Vector2(0, -2.5)
+texture = ExtResource("4_qclgs")
+hframes = 3
+vframes = 2
+
+[node name="LodeyOutfit" type="Sprite2D" parent="CompanionParent/CompanionActor/Sprite2D"]
+visible = false
+position = Vector2(2.5, 7.62939e-06)
+texture = ExtResource("5_w35fb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CompanionParent/CompanionActor"]
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_yh1gh")
+}
+autoplay = "dress"
+speed_scale = 0.695
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 4
+position = Vector2(-1.90735e-06, 0)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("6_kiqc3")
+hframes = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_w5w1g")
+
+[node name="ShootTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.75, 0.75)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hv0xa")
+}
+autoplay = "walk"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 6)
+shape = SubResource("CapsuleShape2D_kc7h7")
+
+[node name="CooldownTimer" type="Timer" parent="."]
+wait_time = 7.0
+one_shot = true
+
+[node name="InvulTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="ShootTimer" to="." method="on_shoot_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
+[connection signal="timeout" from="InvulTimer" to="." method="_on_invul_timer_timeout"]
