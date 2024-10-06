@@ -1,24 +1,34 @@
 extends Node2D
 
 @export var speed = 300
-var type = 1
+var base_damage = 0
+var type = null
 
-#var direction = global_transform.basis_xform(Vector2.RIGHT)
-#var rotation_vector = Vector2.UP.rotated(rotation)
+var spread_sprite = preload("res://Assets/Player/SpreadShot_Bullet.PNG")
+var big_sprite = preload("res://Assets/Big_Bullet_SpriteSheet.PNG")
+var homing_sprite = preload("res://Assets/Player/Honing_Bullet_SpriteSheet.PNG")
+
+@onready var sprite = $Sprite2D
+
+var bullet_dictionary = {
+	"spread": {
+		"sprite": spread_sprite
+	},
+	"big": {
+		"sprite": big_sprite
+	},
+	"homing": {
+		"sprite": homing_sprite
+	}
+}
+
+func change_type(new_type): 
+	type = new_type
+	sprite.texture = bullet_dictionary[type].sprite
+	pass
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if type == 1:
-		$crystal.visible = true
-		$bigshot.visible = false
-		$homing.visible = false
-	elif type == 2:
-		$crystal.visible = false
-		$bigshot.visible = true
-		$homing.visible = false
-	elif type == 3:
-		$crystal.visible = false
-		$bigshot.visible = false
-		$homing.visible = true
 	$AnimationPlayer.play("crystal")
 
 

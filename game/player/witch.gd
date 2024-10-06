@@ -115,16 +115,19 @@ func fire_bullet():
 			new_bullet.rotation_degrees = rad_to_deg(angle) + spread_angle
 			new_bullet.global_position = lode.global_position
 			new_bullet.speed = current_mode.SPEED
-			new_bullet.type = 1
+			#new_bullet.type = "spread"
+			new_bullet.change_type("spread")
 			pass
 	elif current_mode == SHOOT_MODE.BIG:
 		var new_bullet = BULLET.instantiate()
 		get_parent().add_child(new_bullet)
 		new_bullet.rotation_degrees = rad_to_deg(angle)
 		new_bullet.global_position = lode.global_position
-		new_bullet.scale = Vector2(3, 3)
+		new_bullet.scale = Vector2(2, 2)
 		new_bullet.speed = current_mode.SPEED
-		new_bullet.type = 2
+		#new_bullet.type = 2
+		#new_bullet.type = "big"
+		new_bullet.change_type("big")
 		pass
 	elif current_mode == SHOOT_MODE.HOMING:
 		var new_bullet = BULLET.instantiate()
@@ -132,7 +135,8 @@ func fire_bullet():
 		new_bullet.rotation_degrees = rad_to_deg(angle)
 		new_bullet.global_position = lode.global_position
 		new_bullet.speed = current_mode.SPEED
-		new_bullet.type = 3
+		#new_bullet.type = 3
+		new_bullet.change_type("homing")
 		pass
 	pass
 
