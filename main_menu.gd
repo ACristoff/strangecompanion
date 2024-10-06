@@ -1,7 +1,6 @@
 extends Control
 
 func _on_play_pressed() -> void:
-	$CanvasLayer/Buttons.frame = 0
 	get_tree().change_scene_to_file("res://game/game.tscn")
 
 
@@ -11,3 +10,15 @@ func _on_quit_pressed() -> void:
 
 func _on_play_button_down() -> void:
 	$CanvasLayer/Buttons.frame = 0
+
+
+func _on_quit_button_down() -> void:
+	$CanvasLayer/Buttons2.frame = 0
+
+
+func _on_quit_button_up() -> void:
+	$CanvasLayer/Buttons2.frame = 1
+
+
+func _on_play_button_up() -> void:
+	$CanvasLayer/Buttons.frame = 1
