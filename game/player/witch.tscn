@@ -140,6 +140,7 @@ shape = SubResource("CapsuleShape2D_w5w1g")
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.75, 0.75)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
