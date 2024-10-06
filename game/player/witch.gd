@@ -60,7 +60,6 @@ func _ready():
 	pass # Replace with function body.
 
 func change_mode(mode):
-	print(mode)
 	current_mode = mode
 	shoot_timer.wait_time = current_mode.TIMER
 	if current_mode == SHOOT_MODE.BIG:
