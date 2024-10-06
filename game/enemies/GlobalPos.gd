@@ -34,8 +34,11 @@ func _on_enemy_spawn_timer_timeout() -> void:
 	var new_enemy = instance_node(enemy1, enemy_pos, self)
 	var choice = randi_range(1,10)
 	
-	if choice <= 3:
+	if choice <= 2:
 		new_enemy.construct_enemy("biggie")
+		pass
+	elif choice >= 3 && choice <=5:
+		#print("mediumboy")
 		pass
 	else:
 		new_enemy.construct_enemy("smalls")

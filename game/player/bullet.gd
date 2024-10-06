@@ -22,6 +22,9 @@ var bullet_dictionary = {
 	},
 	"homing": {
 		"sprite": homing_sprite
+	},
+	"default": {
+		"sprite": normal_sprite
 	}
 }
 
