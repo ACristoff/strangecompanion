@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7x5445w5c78t"
-path="res://.godot/imported/Honing_Bullet_SpriteSheet.PNG-302d1db972fe50cdb142a2e750470e6d.ctex"
+uid="uid://dtn16pb8md2r2"
+path="res://.godot/imported/BlueOutfit_Witch.png-e98d11f4d6a8591c2b0b6cf7b950c090.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Honing_Bullet_SpriteSheet.PNG"
-dest_files=["res://.godot/imported/Honing_Bullet_SpriteSheet.PNG-302d1db972fe50cdb142a2e750470e6d.ctex"]
+source_file="res://Assets/Player/BlueOutfit_Witch.png"
+dest_files=["res://.godot/imported/BlueOutfit_Witch.png-e98d11f4d6a8591c2b0b6cf7b950c090.ctex"]
 
 [params]
 

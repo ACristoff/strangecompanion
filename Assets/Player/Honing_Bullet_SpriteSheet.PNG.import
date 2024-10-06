@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cissgp6siwkox"
-path="res://.godot/imported/Witchbase.png-a00833c3c56dc3b9bd09fb0be12828b4.ctex"
+uid="uid://c7x5445w5c78t"
+path="res://.godot/imported/Honing_Bullet_SpriteSheet.PNG-586a10d26a812dfd1a0f9bcef16f18ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Witchbase.png"
-dest_files=["res://.godot/imported/Witchbase.png-a00833c3c56dc3b9bd09fb0be12828b4.ctex"]
+source_file="res://Assets/Player/Honing_Bullet_SpriteSheet.PNG"
+dest_files=["res://.godot/imported/Honing_Bullet_SpriteSheet.PNG-586a10d26a812dfd1a0f9bcef16f18ec.ctex"]
 
 [params]
 

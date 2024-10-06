@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0463f0c7rsq2"
-path="res://.godot/imported/BlueScarf_Witch.png-157b138e2c27cff397786819dae84332.ctex"
+uid="uid://cyudht0geepqr"
+path="res://.godot/imported/lodey.png-0e82463db72977f8c6afa388e955da8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BlueScarf_Witch.png"
-dest_files=["res://.godot/imported/BlueScarf_Witch.png-157b138e2c27cff397786819dae84332.ctex"]
+source_file="res://Assets/Player/lodey.png"
+dest_files=["res://.godot/imported/lodey.png-0e82463db72977f8c6afa388e955da8f.ctex"]
 
 [params]
 

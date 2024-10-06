@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x8d5v6ojibgs"
-path="res://.godot/imported/lodeydress.png-b13e93dedf9a1a7b951ce7aa53a1ba06.ctex"
+uid="uid://cgcjak2a31aao"
+path="res://.godot/imported/BigShot_Outfit.PNG-8ad90f9a2570c4108cec83a66321b4cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/lodeydress.png"
-dest_files=["res://.godot/imported/lodeydress.png-b13e93dedf9a1a7b951ce7aa53a1ba06.ctex"]
+source_file="res://Assets/Player/BigShot_Outfit.PNG"
+dest_files=["res://.godot/imported/BigShot_Outfit.PNG-8ad90f9a2570c4108cec83a66321b4cb.ctex"]
 
 [params]
 

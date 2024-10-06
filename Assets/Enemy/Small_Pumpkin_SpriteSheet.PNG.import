@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdvhlwj8tjpdg"
-path="res://.godot/imported/BlueWitch.png-16e556b9805ba0f2211e7f197fbeb284.ctex"
+uid="uid://bowoi6ouw7pvw"
+path="res://.godot/imported/Small_Pumpkin_SpriteSheet.PNG-734d1695be98d1c485823ca321da320f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BlueWitch.png"
-dest_files=["res://.godot/imported/BlueWitch.png-16e556b9805ba0f2211e7f197fbeb284.ctex"]
+source_file="res://Assets/Enemy/Small_Pumpkin_SpriteSheet.PNG"
+dest_files=["res://.godot/imported/Small_Pumpkin_SpriteSheet.PNG-734d1695be98d1c485823ca321da320f.ctex"]
 
 [params]
 

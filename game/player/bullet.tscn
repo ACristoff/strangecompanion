@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://game/player/bullet.gd" id="1_fdory"]
 [ext_resource type="Texture2D" uid="uid://bna7g7v7o62da" path="res://icon.svg" id="1_n61bu"]
-[ext_resource type="Texture2D" uid="uid://dxdh2gc0rtmrf" path="res://Assets/SpreadShot_Bullet.PNG" id="2_q478v"]
+[ext_resource type="Texture2D" uid="uid://dxdh2gc0rtmrf" path="res://Assets/Player/SpreadShot_Bullet.PNG" id="2_q478v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d1frv"]
 

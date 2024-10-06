@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var lode = $CompanionParent/CompanionActor
 @onready var sprite = $Sprite2D
 @onready var shoot_timer = $ShootTimer
+
 @onready var anim_player = $AnimationPlayer
 var BULLET = preload("res://game/player/bullet.tscn")
 
@@ -52,6 +53,7 @@ func change_mode(mode):
 	print(mode)
 	current_mode = mode
 	shoot_timer.wait_time = current_mode.TIMER
+	
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

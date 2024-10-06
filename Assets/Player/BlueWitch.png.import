@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxdh2gc0rtmrf"
-path="res://.godot/imported/SpreadShot_Bullet.PNG-5f42f10e8bcbdea6ee5be70e84a9f7bc.ctex"
+uid="uid://cdvhlwj8tjpdg"
+path="res://.godot/imported/BlueWitch.png-23a7eb1f5ee2f085fd94c9f19a2a6870.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/SpreadShot_Bullet.PNG"
-dest_files=["res://.godot/imported/SpreadShot_Bullet.PNG-5f42f10e8bcbdea6ee5be70e84a9f7bc.ctex"]
+source_file="res://Assets/Player/BlueWitch.png"
+dest_files=["res://.godot/imported/BlueWitch.png-23a7eb1f5ee2f085fd94c9f19a2a6870.ctex"]
 
 [params]
 

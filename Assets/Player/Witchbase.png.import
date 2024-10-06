@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtn16pb8md2r2"
-path="res://.godot/imported/BlueOutfit_Witch.png-b5e5132271e1876019d2fda80ce3cffb.ctex"
+uid="uid://cissgp6siwkox"
+path="res://.godot/imported/Witchbase.png-6e6bbe309ce705c6ceae205dcbd690d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BlueOutfit_Witch.png"
-dest_files=["res://.godot/imported/BlueOutfit_Witch.png-b5e5132271e1876019d2fda80ce3cffb.ctex"]
+source_file="res://Assets/Player/Witchbase.png"
+dest_files=["res://.godot/imported/Witchbase.png-6e6bbe309ce705c6ceae205dcbd690d0.ctex"]
 
 [params]
 

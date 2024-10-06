@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyudht0geepqr"
-path="res://.godot/imported/lodey.png-abc9481380a225ee302b670b1cded275.ctex"
+uid="uid://cjnn48fsgeu05"
+path="res://.godot/imported/cirnooutfit.png-44b8b6b70fc21a5c52929be20549f68e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/lodey.png"
-dest_files=["res://.godot/imported/lodey.png-abc9481380a225ee302b670b1cded275.ctex"]
+source_file="res://Assets/Player/cirnooutfit.png"
+dest_files=["res://.godot/imported/cirnooutfit.png-44b8b6b70fc21a5c52929be20549f68e.ctex"]
 
 [params]
 

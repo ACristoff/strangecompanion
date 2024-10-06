@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bafiv0w0m03yh"
-path="res://.godot/imported/BlueHat_Witch.png-e79863bdfdc29f5ce53a075c3e5ed79a.ctex"
+path="res://.godot/imported/BlueHat_Witch.png-7df45cfa192dbced5ba36fd5cdd9cfcb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BlueHat_Witch.png"
-dest_files=["res://.godot/imported/BlueHat_Witch.png-e79863bdfdc29f5ce53a075c3e5ed79a.ctex"]
+source_file="res://Assets/Player/BlueHat_Witch.png"
+dest_files=["res://.godot/imported/BlueHat_Witch.png-7df45cfa192dbced5ba36fd5cdd9cfcb.ctex"]
 
 [params]
 
