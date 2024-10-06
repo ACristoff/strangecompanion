@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://b08c0t2848hfv" path="res://Assets/Witchy Theme.mp3" id="3_l7stl"]
 [ext_resource type="Script" path="res://game/shopspawn.gd" id="3_rdoag"]
 [ext_resource type="PackedScene" uid="uid://dmn4v5btsqyjy" path="res://game/UI/bars.tscn" id="4_6vhnr"]
-[ext_resource type="PackedScene" path="res://game/UI/pause_menu.tscn" id="4_jigdn"]
+[ext_resource type="PackedScene" uid="uid://dbdhw7oqh1t1k" path="res://game/UI/pause_menu.tscn" id="4_jigdn"]
 
 [node name="Game" type="Node" node_paths=PackedStringArray("playerpos")]
 script = ExtResource("1_jp8pp")
