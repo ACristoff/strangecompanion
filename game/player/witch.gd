@@ -20,7 +20,7 @@ var spread_shot_lodey_outfit = preload("res://Assets/Player/cirnooutfit.png")
 var companion_radius = 100
 
 var SHOOT_MODE = {
-	"NORMAL": {
+	"DEFAULT": {
 		"TIMER": 1,
 		"DAMAGE": 3,
 		"AMOUNT": 1,
@@ -46,7 +46,7 @@ var SHOOT_MODE = {
 	}
 }
 
-var current_mode = SHOOT_MODE.NORMAL
+var current_mode = SHOOT_MODE.DEFAULT
 
 var face_right = true
 
@@ -138,6 +138,14 @@ func fire_bullet():
 		new_bullet.damage = current_mode.DAMAGE
 		new_bullet.change_type("homing")
 		pass
+	else:
+		var new_bullet = BULLET.instantiate()
+		get_parent().add_child(new_bullet)
+		new_bullet.rotation_degrees = rad_to_deg(angle)
+		new_bullet.global_position = lode.global_position
+		new_bullet.speed = current_mode.SPEED
+		new_bullet.damage = current_mode.DAMAGE
+		new_bullet.change_type("default")
 	pass
 
 func take_damage():

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://c4vgvt24irxj7"]
 
 [ext_resource type="Script" path="res://game/player/bullet.gd" id="1_fdory"]
-[ext_resource type="Texture2D" uid="uid://c1nlurl1vlaqh" path="res://Assets/Player/(FIXED)SpreadBullet_SpriteSheet.PNG" id="2_fpx5q"]
+[ext_resource type="Texture2D" uid="uid://dcia4xeqb7x2e" path="res://Assets/Player/defaultshot.png" id="2_a5dg1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h3iuo"]
 size = Vector2(20, 68)
@@ -55,7 +55,7 @@ script = ExtResource("1_fdory")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = -0.0234384
 scale = Vector2(0.118164, 0.118164)
-texture = ExtResource("2_fpx5q")
+texture = ExtResource("2_a5dg1")
 hframes = 2
 vframes = 2
 
