@@ -36,6 +36,6 @@ func _on_enemy_spawn_timer_timeout() -> void:
 	if choice <= 5:
 		instance_node(enemy1, enemy_pos, self)
 		choice = randi_range(1,10)
-	else:
-		instance_node(enemy2, enemy_pos, self)
-		choice = randi_range(1,10)
+	#else:
+		#instance_node(enemy2, enemy_pos, self)
+		#choice = randi_range(1,10)

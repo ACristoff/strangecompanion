@@ -37,9 +37,19 @@ func _process(delta):
 	position += transform.x * speed * delta
 	pass
 
+func particle_hit():
+	##Particles triggered here!
+	##Use conditionals like the one below to trigger a specific effect!
+	#if type == bullet_dictionary.spread:
+		#pass
+	pass
+
 
 func _on_area_entered(area):
-	#prints(area, "takes", damage, "damage!")
-	#if area is Enemy
-		#area.take_damage(damage)
+	if area is ENEMY:
+		particle_hit()
+		area.take_damage(damage)
+		#prints(type)
+		if type != "big":
+			queue_free()
 	pass # Replace with function body.
