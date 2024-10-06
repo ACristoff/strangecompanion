@@ -2,6 +2,7 @@ extends Area2D
 class_name ENEMY
 
 var biggie = preload("res://Assets/Enemy/Small_Pumpkin_SpriteSheet.PNG")
+var meddie = preload("res://Assets/Enemy/Pumpkin_Medium_Spritesheet.png")
 var smalls = preload("res://Assets/Enemy/Small_Pumpkin_SpriteSheet.PNG")
 
 var speed = 100
@@ -22,6 +23,14 @@ var enemy_types =  {
 		"speed": 200,
 		"health": 6,
 		"scale": Vector2(0.6,0.6)
+	
+	},
+	"middie": {
+		"energy":7,
+		"speed": 150,
+		
+		
+		
 	}
 }
 
@@ -43,3 +52,7 @@ func take_damage(damage):
 	if health <= 0 && type != null:
 		JuicyDetails._addenergy(enemy_types[type].energy)
 		queue_free()
+		
+		
+#func change_type(type):
+	

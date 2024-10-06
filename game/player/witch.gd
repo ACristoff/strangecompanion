@@ -26,8 +26,8 @@ var companion_radius = 100
 
 var SHOOT_MODE = {
 	"DEFAULT": {
-		"TIMER": 1,
-		"DAMAGE": 3,
+		"TIMER": .6,
+		"DAMAGE": 2,
 		"AMOUNT": 1,
 		"SPEED": 250,
 	},

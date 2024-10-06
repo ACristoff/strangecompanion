@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dldb8tng5evra"]
+[gd_scene load_steps=6 format=3 uid="uid://dldb8tng5evra"]
 
 [ext_resource type="Script" path="res://game/enemies/GlobalPos.gd" id="1_jp8pp"]
 [ext_resource type="PackedScene" uid="uid://bavdb2sbkfnlw" path="res://game/player/witch.tscn" id="1_y23vn"]
 [ext_resource type="Texture2D" uid="uid://cldn76m7jhvad" path="res://Assets/WO Background 1.png" id="3_i68vo"]
 [ext_resource type="PackedScene" uid="uid://dmn4v5btsqyjy" path="res://game/UI/bars.tscn" id="4_6vhnr"]
+
+[sub_resource type="Environment" id="Environment_6hu37"]
+background_mode = 5
+ambient_light_color = Color(0.806973, 0.546975, 0.232296, 1)
+ambient_light_energy = 0.95
+fog_light_energy = 0.0
 
 [node name="Game" type="Node" node_paths=PackedStringArray("playerpos")]
 script = ExtResource("1_jp8pp")
@@ -30,4 +36,9 @@ texture = ExtResource("3_i68vo")
 [node name="Enemy_spawn_timer" type="Timer" parent="."]
 autostart = true
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6hu37")
+
 [connection signal="timeout" from="Enemy_spawn_timer" to="." method="_on_enemy_spawn_timer_timeout"]
+
+[editable path="Witch"]
