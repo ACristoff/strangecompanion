@@ -11,18 +11,26 @@ var score = 1
 var player_speed = 300
 var player_damage = 10
 var player_shotspeed = 20
-
+signal openshop
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-
+	if bar_1 >= 100:
+		bar_1 = 0
+		emitshop()
+	if bar_2 >= 100:
+		bar_2 = 0
+		emitshop()
+	if bar_3 >= 100:
+		bar_3 = 0
+		emitshop()
 func _addenergy(amount):
 	if bar_1_selected == true:
 		bar_1 += amount
@@ -39,3 +47,6 @@ func _addenergy(amount):
 		if bar == 3:
 			bar_3 += amount
 	
+func emitshop():
+	print("if you see more than one, run")
+	emit_signal("openshop")

@@ -8,9 +8,11 @@
 
 [node name="upgrades" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m3fsg")
@@ -18,7 +20,7 @@ script = ExtResource("1_m3fsg")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Node2D" type="Node2D" parent="CanvasLayer"]
-position = Vector2(28, 140)
+position = Vector2(-334, -356)
 scale = Vector2(0.15, 0.15)
 
 [node name="lodetreat" type="TextureButton" parent="CanvasLayer/Node2D"]
@@ -28,7 +30,7 @@ disabled = true
 texture_normal = ExtResource("1_0pv3d")
 
 [node name="Node2D2" type="Node2D" parent="CanvasLayer"]
-position = Vector2(122, 140)
+position = Vector2(-25, -330)
 scale = Vector2(0.15, 0.15)
 
 [node name="roidshroom" type="TextureButton" parent="CanvasLayer/Node2D2"]
@@ -39,7 +41,7 @@ offset_bottom = 2063.0
 texture_normal = ExtResource("2_i6k18")
 
 [node name="Node2D3" type="Node2D" parent="CanvasLayer"]
-position = Vector2(228, 140)
+position = Vector2(345, -374)
 scale = Vector2(0.15, 0.15)
 
 [node name="strugglingcorn" type="TextureButton" parent="CanvasLayer/Node2D3"]
