@@ -16,12 +16,13 @@ var enemy_types =  {
 		"speed": 100,
 		"health": 20,
 		"scale": Vector2(1,1),
-		"sprite": null
+		"sprite": biggie
 	},
 	"smalls": {
 		"energy":5,
 		"speed": 200,
 		"health": 6,
+<<<<<<< HEAD
 		"scale": Vector2(0.6,0.6)
 	
 	},
@@ -31,11 +32,14 @@ var enemy_types =  {
 		
 		
 		
+=======
+		"scale": Vector2(0.6,0.6),
+		"sprite": smalls
+>>>>>>> f4f5c39ca21968c61a6edab2a0a48285ee9bd7d6
 	}
 }
 
 func construct_enemy(new_type):
-	#print(type)
 	type = new_type
 	health = enemy_types[new_type].health
 	speed = enemy_types[new_type].speed
