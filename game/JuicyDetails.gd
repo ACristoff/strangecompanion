@@ -5,7 +5,9 @@ var bar_2 = 60
 var bar_3 = 90
 var outfit = 0
 var score = 0
-
+var player_speed = 300
+var player_damage = 10
+var player_shotspeed = 20
 
 
 

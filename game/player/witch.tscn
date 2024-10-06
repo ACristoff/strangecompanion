@@ -92,6 +92,21 @@ _data = {
 "walk": SubResource("Animation_sw54y")
 }
 
+[sub_resource type="Animation" id="Animation_251op"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("outfitcrystal/BlueHatWitch:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
 [sub_resource type="Animation" id="Animation_jv2yc"]
 resource_name = "hat"
 length = 0.4
@@ -110,25 +125,25 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3]
 }
 
-[sub_resource type="Animation" id="Animation_251op"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kcl4u"]
+_data = {
+"RESET": SubResource("Animation_251op"),
+"hat": SubResource("Animation_jv2yc")
+}
+
+[sub_resource type="Animation" id="Animation_pdj7e"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("outfitcrystal/BlueHatWitch:frame")
+tracks/0/path = NodePath("BlueOutfitWitch:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_kcl4u"]
-_data = {
-"RESET": SubResource("Animation_251op"),
-"hat": SubResource("Animation_jv2yc")
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_wetoh"]
@@ -149,12 +164,18 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3]
 }
 
-[sub_resource type="Animation" id="Animation_pdj7e"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_65ki2"]
+_data = {
+"RESET": SubResource("Animation_pdj7e"),
+"skirt": SubResource("Animation_wetoh")
+}
+
+[sub_resource type="Animation" id="Animation_yo56v"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("BlueOutfitWitch:frame")
+tracks/0/path = NodePath("BlueScarfWitch:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -162,12 +183,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_65ki2"]
-_data = {
-"RESET": SubResource("Animation_pdj7e"),
-"skirt": SubResource("Animation_wetoh")
 }
 
 [sub_resource type="Animation" id="Animation_hvfhf"]
@@ -186,21 +201,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3]
-}
-
-[sub_resource type="Animation" id="Animation_yo56v"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BlueScarfWitch:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ov4j6"]

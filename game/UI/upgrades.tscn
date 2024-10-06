@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpv21fb1y5mj"]
+[gd_scene load_steps=6 format=3 uid="uid://cpv21fb1y5mj"]
 
 [ext_resource type="Texture2D" uid="uid://cf35ico67phj2" path="res://Assets/lodetreat.png" id="1_0pv3d"]
 [ext_resource type="Script" path="res://game/UI/upgradesmovement.gd" id="1_m3fsg"]
 [ext_resource type="Texture2D" uid="uid://ci4aay7vvnmxr" path="res://Assets/roidshroom.png" id="2_i6k18"]
 [ext_resource type="Texture2D" uid="uid://btqcjlqas0h8f" path="res://Assets/strugglecorn.png" id="3_slt1e"]
+[ext_resource type="FontFile" uid="uid://b12uhspi0hqu0" path="res://Assets/Splatfont2.ttf" id="5_uf4rk"]
 
 [node name="upgrades" type="Control"]
 layout_mode = 3
@@ -20,7 +21,7 @@ script = ExtResource("1_m3fsg")
 position = Vector2(28, 140)
 scale = Vector2(0.15, 0.15)
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Node2D"]
+[node name="lodetreat" type="TextureButton" parent="CanvasLayer/Node2D"]
 offset_right = 2048.0
 offset_bottom = 2048.0
 texture_normal = ExtResource("1_0pv3d")
@@ -29,7 +30,7 @@ texture_normal = ExtResource("1_0pv3d")
 position = Vector2(122, 140)
 scale = Vector2(0.15, 0.15)
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Node2D2"]
+[node name="roidshroom" type="TextureButton" parent="CanvasLayer/Node2D2"]
 offset_left = 1955.0
 offset_top = 15.0
 offset_right = 4003.0
@@ -40,12 +41,23 @@ texture_normal = ExtResource("2_i6k18")
 position = Vector2(228, 140)
 scale = Vector2(0.15, 0.15)
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Node2D3"]
+[node name="strugglingcorn" type="TextureButton" parent="CanvasLayer/Node2D3"]
 offset_left = 3870.0
 offset_top = 30.0
 offset_right = 5918.0
 offset_bottom = 2078.0
 texture_normal = ExtResource("3_slt1e")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 26.0
+offset_top = 3.0
+offset_right = 1130.0
+offset_bottom = 142.0
+theme_override_fonts/font = ExtResource("5_uf4rk")
+theme_override_font_sizes/font_size = 69
+text = "Round Completed"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="lodeend" type="Node2D" parent="."]
 position = Vector2(28, 140)
@@ -64,3 +76,9 @@ position = Vector2(228, 140)
 
 [node name="cornstart" type="Node2D" parent="."]
 position = Vector2(229, -382)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="pressed" from="CanvasLayer/Node2D/lodetreat" to="." method="_on_lodetreat_pressed"]
+[connection signal="pressed" from="CanvasLayer/Node2D2/roidshroom" to="." method="_on_roidshroom_pressed"]
+[connection signal="pressed" from="CanvasLayer/Node2D3/strugglingcorn" to="." method="_on_strugglingcorn_pressed"]
