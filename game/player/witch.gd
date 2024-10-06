@@ -24,7 +24,7 @@ var default_shot_outfit = preload("res://Assets/Player/WhiteWitch.png")
 
 @export var SPEED = 300
 @export var health = 100
-@export var lode_speed = 1.2
+@export var lode_speed = 1.5
 
 var companion_radius = 100
 
@@ -183,6 +183,8 @@ func on_shoot_timeout():
 
 func _on_area_2d_area_entered(area):
 	if area is ENEMY:
+		if invul_timer.time_left >0 && !invul_timer.is_stopped():
+			return
 		if current_mode == SHOOT_MODE.DEFAULT:
 			print("YOU DEER")
 			##TODO trigger game end here
@@ -191,11 +193,18 @@ func _on_area_2d_area_entered(area):
 			print("MARIO SHRINK SOUND")
 			change_mode(SHOOT_MODE.DEFAULT)
 			cooldown_timer.start()
+			invul_timer.start()
 		pass
 	pass # Replace with function body.
 
 
 func _on_cooldown_timer_timeout():
 	print('cooldown finished')
+	cooldown_timer.wait_time = 7
 	#cooldown_timer.
+	pass # Replace with function body.
+
+
+func _on_invul_timer_timeout():
+	cooldown_timer.wait_time = 3
 	pass # Replace with function body.
