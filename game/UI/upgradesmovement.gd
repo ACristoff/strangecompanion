@@ -28,6 +28,7 @@ func _shopbegin():
 
 func _on_lodetreat_pressed() -> void:
 	available = false
+	JuicyDetails.player_shotspeed = JuicyDetails.player_shotspeed * .20 +JuicyDetails.player_shotspeed
 	_purchased()
 	pass # Replace with function body.
 	
