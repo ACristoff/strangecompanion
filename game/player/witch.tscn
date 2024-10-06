@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bavdb2sbkfnlw"]
+[gd_scene load_steps=16 format=3 uid="uid://bavdb2sbkfnlw"]
 
 [ext_resource type="Script" path="res://game/player/witch.gd" id="1_pmexk"]
 [ext_resource type="Script" path="res://game/player/companion_actor.gd" id="2_c7air"]
@@ -93,6 +93,10 @@ _data = {
 "walk": SubResource("Animation_sw54y")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kc7h7"]
+radius = 30.0
+height = 184.0
+
 [node name="Witch" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_pmexk")
 lode_speed = 0.3
@@ -151,4 +155,19 @@ libraries = {
 }
 autoplay = "walk"
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 14)
+shape = SubResource("CapsuleShape2D_kc7h7")
+
+[node name="CooldownTimer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+
+[node name="InvulTimer" type="Timer" parent="."]
+wait_time = 2.0
+
 [connection signal="timeout" from="ShootTimer" to="." method="on_shoot_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]

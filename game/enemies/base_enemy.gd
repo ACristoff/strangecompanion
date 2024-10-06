@@ -43,10 +43,3 @@ func take_damage(damage):
 	if health <= 0 && type != null:
 		JuicyDetails._addenergy(enemy_types[type].energy)
 		queue_free()
-
-
-func _on_area_entered(area):
-	print(area)
-	if area is PLAYER:
-		print("shabang")
-	pass # Replace with function body.
