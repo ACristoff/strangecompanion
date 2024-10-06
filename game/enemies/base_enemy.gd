@@ -2,6 +2,7 @@ extends Area2D
 class_name ENEMY
 
 var biggie = preload("res://Assets/Enemy/Small_Pumpkin_SpriteSheet.PNG")
+var smalls = preload("res://Assets/Enemy/Small_Pumpkin_SpriteSheet.PNG")
 
 var speed = 100
 var velocity = Vector2()
