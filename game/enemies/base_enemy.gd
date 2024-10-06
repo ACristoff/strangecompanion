@@ -27,7 +27,6 @@ func construct_enemy(type):
 	speed = enemy_types[type].speed
 	$Sprite2D.scale = $Sprite2D.scale * enemy_types[type].scale
 	$CollisionShape2D.scale = $CollisionShape2D.scale * enemy_types[type].scale
-	pass
 
 func _process(delta):
 	if GlobalPos.player != null:
