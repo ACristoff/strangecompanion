@@ -1,11 +1,13 @@
-[gd_scene load_steps=17 format=3 uid="uid://d2wtp3s8k1qv5"]
+[gd_scene load_steps=20 format=3 uid="uid://d2wtp3s8k1qv5"]
 
 [ext_resource type="Script" path="res://game/enemies/base_enemy.gd" id="1_ywmhy"]
-[ext_resource type="AudioStream" uid="uid://ckpa6j0gibqef" path="res://game/enemies/PumpkinKill_(I just liked this sound)_01.ogg" id="2_j04fp"]
 [ext_resource type="AudioStream" uid="uid://bepbqa8nts0da" path="res://game/enemies/Pumpkinhit1.wav" id="2_liw31"]
 [ext_resource type="AudioStream" uid="uid://b6rgvulc7g362" path="res://game/enemies/Pumpkinhit2.wav" id="3_ls2uo"]
 [ext_resource type="AudioStream" uid="uid://clpemeia23n3w" path="res://game/enemies/Pumpkinhit3.wav" id="4_ny3kl"]
 [ext_resource type="AudioStream" uid="uid://cgrmdysjf2p7t" path="res://game/enemies/Pumpkinhit4.wav" id="5_sct72"]
+[ext_resource type="AudioStream" uid="uid://b2bet1c2bchar" path="res://Assets/Player/Pumpkindeath1.wav" id="6_sntbu"]
+[ext_resource type="AudioStream" uid="uid://cr87trt65s8lm" path="res://Assets/Player/Pumpkindeath2.wav" id="7_h33gq"]
+[ext_resource type="AudioStream" uid="uid://8u2nrbdkoxhk" path="res://Assets/Player/Pumpkindeath3.wav" id="8_msjv8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wsulx"]
 size = Vector2(157, 154)
@@ -90,12 +92,12 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_rd5cr"]
 radius = 74.0
 
-[sub_resource type="Gradient" id="Gradient_qhgf8"]
+[sub_resource type="Gradient" id="Gradient_ugxye"]
 offsets = PackedFloat32Array(0.0649351, 0.649351)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_wbhs7"]
-gradient = SubResource("Gradient_qhgf8")
+gradient = SubResource("Gradient_ugxye")
 fill = 1
 fill_from = Vector2(0.477064, 0.504587)
 
@@ -105,6 +107,12 @@ stream_0/stream = ExtResource("2_liw31")
 stream_1/stream = ExtResource("3_ls2uo")
 stream_2/stream = ExtResource("4_ny3kl")
 stream_3/stream = ExtResource("5_sct72")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_htih6"]
+streams_count = 3
+stream_0/stream = ExtResource("6_sntbu")
+stream_1/stream = ExtResource("7_h33gq")
+stream_2/stream = ExtResource("8_msjv8")
 
 [node name="BaseEnemy" type="Area2D" groups=["enemy"]]
 script = ExtResource("1_ywmhy")
@@ -141,4 +149,7 @@ texture = SubResource("GradientTexture2D_wbhs7")
 stream = SubResource("AudioStreamRandomizer_1v4i7")
 
 [node name="Death" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_j04fp")
+stream = SubResource("AudioStreamRandomizer_htih6")
+volume_db = 2.971
+
+[connection signal="finished" from="Death" to="." method="_on_death_finished"]

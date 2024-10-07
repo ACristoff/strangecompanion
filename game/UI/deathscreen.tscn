@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://mg4lxhalnfcl"]
+[gd_scene load_steps=12 format=3 uid="uid://cc4si241h6k33"]
 
 [ext_resource type="Script" path="res://death.gd" id="1_1y0cd"]
 [ext_resource type="FontFile" uid="uid://b12uhspi0hqu0" path="res://Assets/Splatfont2.ttf" id="2_ti4pi"]
 [ext_resource type="Texture2D" uid="uid://dbugvm540lin2" path="res://Assets/Player/WitchDeath.png" id="3_8ttp7"]
 [ext_resource type="Texture2D" uid="uid://sa8bhqof2q55" path="res://Assets/buttons.png" id="4_5ear2"]
 [ext_resource type="AudioStream" uid="uid://boipf2u3yhv4n" path="res://game/UI/strangecompanionjamdeath.wav" id="5_qlsxf"]
+[ext_resource type="Texture2D" uid="uid://bjymr75l2jm42" path="res://Assets/Player/REDTHING.png" id="6_7o4k0"]
 
 [sub_resource type="Animation" id="Animation_0dn2p"]
 length = 0.001
@@ -44,10 +45,20 @@ _data = {
 "death1": SubResource("Animation_e3c8q")
 }
 
+[sub_resource type="Gradient" id="Gradient_qhgf8"]
+offsets = PackedFloat32Array(0.0649351, 0.649351)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5rxqx"]
+gradient = SubResource("Gradient_qhgf8")
+fill = 1
+fill_from = Vector2(0.477064, 0.504587)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1y0cd")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+z_index = -4096
 offset_left = -7.0
 offset_top = -12.0
 offset_right = 1163.0
@@ -135,6 +146,43 @@ text = "RETRY"
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_qlsxf")
 autoplay = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+z_index = 200
+position = Vector2(885, 344)
+scale = Vector2(4.89062, 6.36328)
+color = Color(1, 0.526667, 0.29, 1)
+energy = 1.16
+texture = SubResource("GradientTexture2D_5rxqx")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+z_index = 200
+position = Vector2(246, 336)
+scale = Vector2(4.89062, 6.36328)
+color = Color(1, 0.526667, 0.29, 1)
+energy = 1.16
+texture = SubResource("GradientTexture2D_5rxqx")
+
+[node name="PointLight2D3" type="PointLight2D" parent="."]
+z_index = 200
+position = Vector2(473, 460)
+scale = Vector2(4.89062, 6.36328)
+color = Color(1, 0.526667, 0.29, 1)
+energy = 1.16
+texture = SubResource("GradientTexture2D_5rxqx")
+
+[node name="Redthing" type="Sprite2D" parent="."]
+z_index = -115
+position = Vector2(557, 570)
+scale = Vector2(0.638426, 0.147917)
+texture = ExtResource("6_7o4k0")
+
+[node name="Redthing2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.396078)
+z_index = -115
+position = Vector2(568, 256)
+scale = Vector2(1.09722, 0.707292)
+texture = ExtResource("6_7o4k0")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="Buttons2/quitbutbetter" to="." method="_on_quitbutbetter_pressed"]

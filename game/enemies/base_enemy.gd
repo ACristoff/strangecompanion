@@ -86,8 +86,12 @@ func take_damage(damage):
 	if health <= 0 && type != null:
 		$Death.play()
 		JuicyDetails._addenergy(enemy_types[type].energy)
-		queue_free()
+		#queue_free()
 		
 		
 #func change_type(type):
 	
+
+
+func _on_death_finished() -> void:
+	queue_free()
