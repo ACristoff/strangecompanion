@@ -5,9 +5,9 @@
 [ext_resource type="AudioStream" uid="uid://b6rgvulc7g362" path="res://game/enemies/Pumpkinhit2.wav" id="3_ls2uo"]
 [ext_resource type="AudioStream" uid="uid://clpemeia23n3w" path="res://game/enemies/Pumpkinhit3.wav" id="4_ny3kl"]
 [ext_resource type="AudioStream" uid="uid://cgrmdysjf2p7t" path="res://game/enemies/Pumpkinhit4.wav" id="5_sct72"]
-[ext_resource type="AudioStream" uid="uid://b2bet1c2bchar" path="res://Assets/Player/Pumpkindeath1.wav" id="6_sntbu"]
-[ext_resource type="AudioStream" uid="uid://cr87trt65s8lm" path="res://Assets/Player/Pumpkindeath2.wav" id="7_h33gq"]
-[ext_resource type="AudioStream" uid="uid://8u2nrbdkoxhk" path="res://Assets/Player/Pumpkindeath3.wav" id="8_msjv8"]
+[ext_resource type="AudioStream" uid="uid://b2bet1c2bchar" path="res://Assets/Audio/sfx/Pumpkindeath1.wav" id="6_sntbu"]
+[ext_resource type="AudioStream" uid="uid://cr87trt65s8lm" path="res://Assets/Audio/sfx/Pumpkindeath2.wav" id="7_h33gq"]
+[ext_resource type="AudioStream" uid="uid://8u2nrbdkoxhk" path="res://Assets/Audio/sfx/Pumpkindeath3.wav" id="8_msjv8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wsulx"]
 size = Vector2(157, 154)

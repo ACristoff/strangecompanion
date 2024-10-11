@@ -1,13 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://dldb8tng5evra"]
+[gd_scene load_steps=10 format=3 uid="uid://dldb8tng5evra"]
 
 [ext_resource type="Script" path="res://game/enemies/GlobalPos.gd" id="1_jp8pp"]
 [ext_resource type="PackedScene" uid="uid://bavdb2sbkfnlw" path="res://game/player/witch.tscn" id="1_y23vn"]
-[ext_resource type="Texture2D" uid="uid://cldn76m7jhvad" path="res://Assets/WO Background 1.png" id="3_i68vo"]
-[ext_resource type="AudioStream" uid="uid://b08c0t2848hfv" path="res://Assets/Witchy Theme.mp3" id="3_l7stl"]
-[ext_resource type="Script" path="res://game/shopspawn.gd" id="3_rdoag"]
-[ext_resource type="PackedScene" uid="uid://dmn4v5btsqyjy" path="res://game/UI/bars.tscn" id="4_6vhnr"]
-[ext_resource type="PackedScene" path="res://game/UI/pause_menu.tscn" id="4_jigdn"]
-[ext_resource type="FontFile" uid="uid://b12uhspi0hqu0" path="res://Assets/Splatfont2.ttf" id="8_npqmh"]
+[ext_resource type="Texture2D" uid="uid://cldn76m7jhvad" path="res://Assets/Environmental/WO Background 1.png" id="3_i68vo"]
+[ext_resource type="AudioStream" uid="uid://b08c0t2848hfv" path="res://Assets/Audio/music/Witchy Theme.mp3" id="3_l7stl"]
+[ext_resource type="Script" path="res://game/UI/menus/upgrade_menu/shopspawn.gd" id="3_rdoag"]
+[ext_resource type="PackedScene" uid="uid://dbdhw7oqh1t1k" path="res://game/UI/menus/pause_menu/pause_menu.tscn" id="4_jigdn"]
+[ext_resource type="FontFile" uid="uid://b12uhspi0hqu0" path="res://Assets/Fonts/Splatfont2.ttf" id="8_npqmh"]
 
 [sub_resource type="Gradient" id="Gradient_n3i0e"]
 offsets = PackedFloat32Array(0.0649351, 0.649351)
@@ -40,8 +39,6 @@ texture = SubResource("GradientTexture2D_f1i6t")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("3_rdoag")
-
-[node name="Bars" parent="CanvasLayer" instance=ExtResource("4_6vhnr")]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_jigdn")]
 

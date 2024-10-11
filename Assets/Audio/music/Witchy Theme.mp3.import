@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b08c0t2848hfv"
+path="res://.godot/imported/Witchy Theme.mp3-2e75ccc3f2a7120be8ee6fc22edc5fda.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/music/Witchy Theme.mp3"
+dest_files=["res://.godot/imported/Witchy Theme.mp3-2e75ccc3f2a7120be8ee6fc22edc5fda.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
