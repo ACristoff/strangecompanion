@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bkx23lnrpdc1m"]
 
-[ext_resource type="Script" path="res://game/enemies/GlobalPos.gd" id="1_gkm8f"]
+[ext_resource type="Script" path="res://to_be_executed/GlobalPos.gd" id="1_gkm8f"]
 
 [node name="Testing ground" type="Node2D"]
 script = ExtResource("1_gkm8f")

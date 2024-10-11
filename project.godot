@@ -17,7 +17,7 @@ config/icon="res://to_be_executed/icon.svg"
 
 [autoload]
 
-GlobalPos="*res://game/enemies/GlobalPos.gd"
+GlobalPos="*res://to_be_executed/GlobalPos.gd"
 JuicyDetails="*res://to_be_executed/JuicyDetails.gd"
 
 [display]
