@@ -27,36 +27,37 @@ var spread_shot_idle = preload("res://Assets/Player/BlueIdle.png")
 var homing_idle = preload("res://Assets/Player/YellowIdle.png")
 var default_idle = preload("res://Assets/Player/WhiteIdle.png")
 
-@export var SPEED = JuicyDetails.player_speed
+#@export var SPEED = JuicyDetails.player_speed
+@export var SPEED = 300
 @export var health = 100
 @export var lode_speed = 1.5
-@export var shot_speed = JuicyDetails.player_shotspeed
-@export var player_damage = JuicyDetails.player_damage
+#@export var shot_speed = JuicyDetails.player_shotspeed
+#@export var player_damage = JuicyDetails.player_damage
 
 var companion_radius = 100
 
 var SHOOT_MODE = {
 	"DEFAULT": {
-		"TIMER": shot_speed - 1.4,
-		"DAMAGE": player_damage - 7,
+		"TIMER": 1.4,
+		"DAMAGE": 7,
 		"AMOUNT": 1,
 		"SPEED": 250,
 	},
 	"BIG": {
-		"TIMER": shot_speed + 1,
-		"DAMAGE": player_damage,
+		"TIMER":  1,
+		"DAMAGE": 1,
 		"AMOUNT": 1,
 		"SPEED": 100,
 	},
 	"SPREAD": {
-		"TIMER": shot_speed - .8,
-		"DAMAGE": player_damage - 7,
+		"TIMER": .8,
+		"DAMAGE": 7,
 		"AMOUNT": 3,
 		"SPEED": 320,
 	},
 	"HOMING": {
-		"TIMER": shot_speed - 1.6,
-		"DAMAGE": player_damage - 8,
+		"TIMER": 1.6,
+		"DAMAGE": 8,
 		"AMOUNT": 1,
 		"SPEED": 450,
 	}
@@ -70,10 +71,6 @@ var face_right = true
 func _ready():
 	lodey_outfit.visible = false
 	shoot_timer.wait_time = current_mode.TIMER
-	
-	##Global can reference it's own children with $
-	##Refer to line 3-6 of this file as an example
-	GlobalPos.player = self
 	pass # Replace with function body.
 
 func change_mode(mode):
@@ -110,27 +107,18 @@ func change_mode(mode):
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	##LODE CODE##
 	lode_parent.rotation_degrees += lode_speed
 	
 	if Input.is_action_just_pressed("select_1"):
 		change_mode(SHOOT_MODE.BIG)
-		JuicyDetails.bar_1_selected = true
-		JuicyDetails.bar_2_selected = false
-		JuicyDetails.bar_3_selected = false
 		pass
 	if Input.is_action_just_pressed("select_2"):
 		change_mode(SHOOT_MODE.SPREAD)
-		JuicyDetails.bar_1_selected = false
-		JuicyDetails.bar_2_selected = true
-		JuicyDetails.bar_3_selected = false
 		pass
 	if Input.is_action_just_pressed("select_3"):
 		change_mode(SHOOT_MODE.HOMING)
-		JuicyDetails.bar_1_selected = false
-		JuicyDetails.bar_2_selected = false
-		JuicyDetails.bar_3_selected = true
 		pass
 	
 	##PLAYER MOVEMENT##
@@ -174,9 +162,9 @@ func _process(delta):
 		else:
 			lodey_outfit.visible = false
 			sprite.texture = default_shot_outfit 
-		print("walking")
+		#print("walking")
 		$Sprite2D.hframes = 8
-		print($Sprite2D.hframes)
+		#print($Sprite2D.hframes)
 		$AnimationPlayer.play("walk")
 	move_and_slide()
 	pass
@@ -245,7 +233,7 @@ func _on_area_2d_area_entered(area):
 			##TODO trigger game end here
 			pass
 		else:
-			print("MARIO SHRINK SOUND")
+			#print("MARIO SHRINK SOUND")
 			change_mode(SHOOT_MODE.DEFAULT)
 			cooldown_timer.start()
 			invul_timer.start()
@@ -254,7 +242,7 @@ func _on_area_2d_area_entered(area):
 
 
 func _on_cooldown_timer_timeout():
-	print('cooldown finished')
+	#print('cooldown finished')
 	cooldown_timer.wait_time = 5
 	#cooldown_timer.
 	pass # Replace with function body.

@@ -15,11 +15,6 @@ run/main_scene="res://game/UI/menus/start_menu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://to_be_executed/icon.svg"
 
-[autoload]
-
-GlobalPos="*res://to_be_executed/GlobalPos.gd"
-JuicyDetails="*res://to_be_executed/JuicyDetails.gd"
-
 [display]
 
 window/stretch/mode="canvas_items"

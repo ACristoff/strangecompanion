@@ -9,6 +9,7 @@ var speed = 100
 var velocity = Vector2()
 var health = 10
 var type = null
+var target = get_tree().get_first_node_in_group("player")
 
 var enemy_types =  {
 	"biggie": {
@@ -48,10 +49,10 @@ var enemy_types =  {
 
 func construct_enemy(new_type):
 	
-	#print(type)
 	type = new_type
 	health = enemy_types[new_type].health
 	speed = enemy_types[new_type].speed
+	
 	$Sprite2D.scale = $Sprite2D.scale * enemy_types[new_type].scale
 	$CollisionShape2D.scale = enemy_types[new_type].collision
 	$RigidBody2D/CollisionShape2D.scale = enemy_types[new_type].collision
@@ -67,8 +68,8 @@ func construct_enemy(new_type):
 	
 
 func _process(delta):
-	if GlobalPos.player != null:
-		velocity = global_position.direction_to(GlobalPos.player.global_position)
+	if target != null:
+		velocity = global_position.direction_to(target.player.global_position)
 		global_position += velocity * speed * delta
 
 func take_damage(damage):
@@ -85,13 +86,9 @@ func take_damage(damage):
 		#$Hit3
 	if health <= 0 && type != null:
 		$Death.play()
-		JuicyDetails._addenergy(enemy_types[type].energy)
+		#JuicyDetails._addenergy(enemy_types[type].energy)
 		#queue_free()
-		
-		
 #func change_type(type):
-	
-
 
 func _on_death_finished() -> void:
 	queue_free()

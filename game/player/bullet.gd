@@ -44,10 +44,8 @@ func _process(delta):
 	if target == null:
 		position += transform.x * speed * delta
 	else:
-		if GlobalPos.player != null:
-			velocity = global_position.direction_to(target.global_position)
-			global_position += velocity * speed * delta
-			pass
+		velocity = global_position.direction_to(target.global_position)
+		global_position += velocity * speed * delta
 	pass
 
 func particle_hit():
