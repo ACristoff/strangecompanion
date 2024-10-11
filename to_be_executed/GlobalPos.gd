@@ -2,7 +2,7 @@ extends Node
 
 var player = null
 var enemy1 = preload("res://game/enemies/base_enemy.tscn")
-var WINDOW = preload("res://game/UI/upgrades.tscn")
+var WINDOW = preload("res://game/UI/menus/upgrade_menu/upgrades.tscn")
 
 @export var playerpos: CharacterBody2D
 

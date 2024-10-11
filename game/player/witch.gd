@@ -240,7 +240,7 @@ func _on_area_2d_area_entered(area):
 		if invul_timer.time_left >0 && !invul_timer.is_stopped():
 			return
 		if current_mode == SHOOT_MODE.DEFAULT:
-			get_tree().change_scene_to_file("res://game/UI/deathscreen.tscn")
+			get_tree().change_scene_to_file("res://game/UI/menus/death_menu/deathscreen.tscn")
 			
 			##TODO trigger game end here
 			pass

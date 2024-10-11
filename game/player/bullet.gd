@@ -6,9 +6,9 @@ var type = null
 var velocity = Vector2()
 var target = null
 
-var spread_sprite = preload("res://Assets/Player/(FIXED)SpreadBullet_SpriteSheet.PNG")
-var big_sprite = preload("res://Assets/Player/(FIXED)BigBullet_Spritesheet.PNG")
-var homing_sprite = preload("res://Assets/Player/(FIXED)HoningBullet_SpriteSheet.PNG")
+var spread_sprite = preload("res://Assets/Projectiles/(FIXED)SpreadBullet_SpriteSheet.PNG")
+var big_sprite = preload("res://Assets/Projectiles/(FIXED)BigBullet_Spritesheet.PNG")
+var homing_sprite = preload("res://Assets/Projectiles/(FIXED)HoningBullet_SpriteSheet.PNG")
 var normal_sprite = preload("res://Assets/Player/defaultshot.png")
 
 @onready var sprite = $Sprite2D

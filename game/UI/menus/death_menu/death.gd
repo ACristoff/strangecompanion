@@ -23,7 +23,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 func _on_quit_pressed() -> void:
 	JuicyDetails.set_script(null)
-	JuicyDetails.set_script(preload("res://game/JuicyDetails.gd"))
+	JuicyDetails.set_script(preload("res://to_be_executed/JuicyDetails.gd"))
 	get_tree().change_scene_to_file("res://game/game.tscn")
 
 
