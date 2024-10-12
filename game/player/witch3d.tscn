@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dy1u50vxhv615"]
+
+[ext_resource type="Texture2D" uid="uid://cyudht0geepqr" path="res://Assets/Player/lodey.png" id="1_bq1jk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xnsoa"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_7o435"]
+albedo_texture = ExtResource("1_bq1jk")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_o2aqg"]
+
+[node name="Node3D" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_xnsoa")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0630113, 0)
+material_override = SubResource("ORMMaterial3D_7o435")
+mesh = SubResource("QuadMesh_o2aqg")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 4.55209, 3.59619)
+fov = 75.9375
