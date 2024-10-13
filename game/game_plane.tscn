@@ -1,9 +1,28 @@
-[gd_scene format=3 uid="uid://bh16sbnglhc1p"]
+[gd_scene load_steps=5 format=3 uid="uid://bh16sbnglhc1p"]
+
+[ext_resource type="PackedScene" uid="uid://dy1u50vxhv615" path="res://game/player/witch3d.tscn" id="1_ym5oi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gnfqi"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rrg8e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hip8k"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(16.7628, 0, 0, 0, 1.00185, 0, 0, 0, 15.307, 0, 0, 0)
+mesh = SubResource("BoxMesh_gnfqi")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-size = Vector3(20, 1, 20)
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+physics_material_override = SubResource("PhysicsMaterial_rrg8e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_hip8k")
+
+[node name="Node3D" parent="." instance=ExtResource("1_ym5oi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00196338, 1.85205, -0.000447989)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.80869, 2.38683)
