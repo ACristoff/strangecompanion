@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" path="res://game/player/witch_3d.gd" id="1_1p16b"]
 [ext_resource type="Texture2D" uid="uid://cyudht0geepqr" path="res://Assets/Player/lodey.png" id="1_bq1jk"]
-[ext_resource type="Script" path="res://game/player/companion.gd" id="2_gfqew"]
+[ext_resource type="Script" path="res://game/player/orbit_circumference.gd" id="2_oloij"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xnsoa"]
 
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_7o435"]
 albedo_texture = ExtResource("1_bq1jk")
@@ -13,19 +15,11 @@ particles_anim_loop = false
 
 [sub_resource type="QuadMesh" id="QuadMesh_o2aqg"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xnsoa"]
-
 [node name="Witch3D" type="CharacterBody3D"]
 script = ExtResource("1_1p16b")
 
-[node name="LodeyParent" type="Node3D" parent="."]
-script = ExtResource("2_gfqew")
-
-[node name="Lodey" type="Node3D" parent="LodeyParent"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="LodeyParent/Lodey"]
-material_override = SubResource("ORMMaterial3D_7o435")
-mesh = SubResource("QuadMesh_o2aqg")
+[node name="OrbitCircumference" type="Node3D" parent="."]
+script = ExtResource("2_oloij")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_xnsoa")

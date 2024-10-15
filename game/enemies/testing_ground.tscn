@@ -1,9 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkx23lnrpdc1m"]
-
-[ext_resource type="Script" path="res://to_be_executed/GlobalPos.gd" id="1_gkm8f"]
+[gd_scene format=3 uid="uid://bkx23lnrpdc1m"]
 
 [node name="Testing ground" type="Node2D"]
-script = ExtResource("1_gkm8f")
 
 [node name="Enemy_spawn_timer" type="Timer" parent="."]
 wait_time = 0.5

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dolf2b1hfa7ke"]
+
+[ext_resource type="Script" path="res://game/player/companion_point.gd" id="1_kkw3y"]
+
+[node name="companion_point" type="Node3D"]
+script = ExtResource("1_kkw3y")
