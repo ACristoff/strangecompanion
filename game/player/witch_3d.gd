@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 const SPEED = 5.0
+var COMPANION = preload("res://game/player/companion.tscn")
 
 func _physics_process(delta):
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -16,16 +17,25 @@ func _physics_process(delta):
 
 
 func _on_button_pressed() -> void:
-	pass # Replace with function body.
+	var new_fren = COMPANION.instantiate()
+	add_child(new_fren)
+	new_fren.construct_companion("banana")
+	
 
 
 func _on_button_2_pressed() -> void:
-	pass # Replace with function body.
+	var new_fren = COMPANION.instantiate()
+	add_child(new_fren)
+	new_fren.construct_companion("strawberry")
 
 
 func _on_button_3_pressed() -> void:
-	pass # Replace with function body.
+	var new_fren = COMPANION.instantiate()
+	add_child(new_fren)
+	new_fren.construct_companion("pineapple")
 
 
 func _on_button_4_pressed() -> void:
-	pass # Replace with function body.
+	var new_fren = COMPANION.instantiate()
+	add_child(new_fren)
+	new_fren.construct_companion("watermelon")

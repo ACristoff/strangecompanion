@@ -1,19 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dy1u50vxhv615"]
+[gd_scene load_steps=5 format=3 uid="uid://dy1u50vxhv615"]
 
 [ext_resource type="Script" path="res://game/player/witch_3d.gd" id="1_1p16b"]
-[ext_resource type="Texture2D" uid="uid://cyudht0geepqr" path="res://Assets/Player/lodey.png" id="1_bq1jk"]
 [ext_resource type="Script" path="res://game/player/orbit_circumference.gd" id="2_oloij"]
+[ext_resource type="Texture2D" uid="uid://cr7ux645pfu26" path="res://Assets/Debug_Assets/flandre.png" id="3_dymod"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xnsoa"]
-
-[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_7o435"]
-albedo_texture = ExtResource("1_bq1jk")
-billboard_mode = 3
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
-
-[sub_resource type="QuadMesh" id="QuadMesh_o2aqg"]
 
 [node name="Witch3D" type="CharacterBody3D"]
 script = ExtResource("1_1p16b")
@@ -24,12 +15,11 @@ script = ExtResource("2_oloij")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_xnsoa")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0630113, 0)
-material_override = SubResource("ORMMaterial3D_7o435")
-mesh = SubResource("QuadMesh_o2aqg")
-skeleton = NodePath("../CollisionShape3D")
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 4.55209, 3.59619)
 fov = 75.9375
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+billboard = 1
+texture = ExtResource("3_dymod")

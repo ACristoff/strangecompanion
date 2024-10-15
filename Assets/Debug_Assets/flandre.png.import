@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjnn48fsgeu05"
-path.s3tc="res://.godot/imported/cirnooutfit.png-44b8b6b70fc21a5c52929be20549f68e.s3tc.ctex"
+uid="uid://cr7ux645pfu26"
+path.s3tc="res://.godot/imported/flandre.png-266feae5fde85e89f5f4d5e9265b478c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Player/cirnooutfit.png"
-dest_files=["res://.godot/imported/cirnooutfit.png-44b8b6b70fc21a5c52929be20549f68e.s3tc.ctex"]
+source_file="res://Assets/Debug_Assets/flandre.png"
+dest_files=["res://.godot/imported/flandre.png-266feae5fde85e89f5f4d5e9265b478c.s3tc.ctex"]
 
 [params]
 
