@@ -1,20 +1,20 @@
-extends Node3D
+extends Node
 
-#@export var companions_owned : Array[Node3D]
+
+var number_of_companions = 0
+var identification = 0
+
+signal construct_new_companion
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
-	
-func spawn_companion():
-	
-	pass
 
-func update_companion():
-	pass
-	#print(companions_owned)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	#update_companion()
+	#print(number_of_companions)
 	pass
+
+func refresh_companions_manager():
+	emit_signal("construct_new_companion")

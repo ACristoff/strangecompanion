@@ -6,6 +6,7 @@ var pinable = preload("res://Assets/Debug_Assets/pineapple.png")
 var melahn = preload("res://Assets/Debug_Assets/watermelon.png")
 
 var type = null
+var identification_number = 1
 
 
 var companion_types =  {
@@ -33,9 +34,14 @@ func construct_companion(new_type):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	CompanionManager.construct_new_companion.connect(refresh_companions)
+	identification_number = CompanionManager.identification
+	$LodeyParent/Label3D.text = str(identification_number)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	#print(identification_number)
+	
+func refresh_companions():
+	queue_free()

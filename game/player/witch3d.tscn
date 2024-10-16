@@ -6,8 +6,9 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xnsoa"]
 
-[node name="Witch3D" type="CharacterBody3D"]
+[node name="Witch3D" type="CharacterBody3D" node_paths=PackedStringArray("parent_node")]
 script = ExtResource("1_1p16b")
+parent_node = NodePath(".")
 
 [node name="OrbitCircumference" type="Node3D" parent="."]
 script = ExtResource("2_oloij")

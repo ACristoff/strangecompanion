@@ -5,11 +5,16 @@ var d := 0.0
 var radius := 2
 var speed := 2.0
 var awake = false
-var amount = 2
+var amount = 1
+var b = PI/CompanionManager.number_of_companions
+var identification_number = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	d = 3.14159265358979/amount
+	identification_number = CompanionManager.identification
+	#print($"..".identification_number)
+	#var b = PI/CompanionManager.number_of_companions
+	d = b * identification_number
 	position = Vector3(
 			sin(d * -speed) * (radius + 0.5),
 			0,
@@ -21,7 +26,7 @@ func _ready():
 func _process(delta):
 	if d >= 3.14159265358979:
 		d = 0
-	print(d)
+	#print(d)
 	if awake == true:
 		d += delta
 		
