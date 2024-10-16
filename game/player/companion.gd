@@ -12,8 +12,6 @@ var identification_number = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	identification_number = CompanionManager.identification
-	#print($"..".identification_number)
-	#var b = PI/CompanionManager.number_of_companions
 	d = b * identification_number
 	position = Vector3(
 			sin(d * -speed) * (radius + 0.5),

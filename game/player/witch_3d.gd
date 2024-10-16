@@ -6,8 +6,7 @@ var COMPANION = preload("res://game/player/companion.tscn")
 @export var parent_node = self
 
 func _ready() -> void:
-	#var chronological_selection = 0
-	print(joined_companions)
+	pass
 	
 
 func _physics_process(delta):
@@ -42,17 +41,10 @@ func refresh_companions(type):
 	joined_companions.append(type)
 	#deletes current companions
 	CompanionManager.refresh_companions_manager()
-	#var new_fren = COMPANION.instantiate()
-	#add_child(new_fren)
-	#new_fren.construct_companion(type)
 	CompanionManager.identification = 0
 	CompanionManager.number_of_companions += 1
 	for item in joined_companions:
-		#await get_tree().create_timer(.3).timeout
 		CompanionManager.identification += 1
-		#var chronological_selection = 0
-		#var type_companion = joined_companions[chronological_selection]
-		#chronological_selection += 1
 		var new_fren = COMPANION.instantiate()
 		parent_node.add_child(new_fren)
 		new_fren.construct_companion(item)

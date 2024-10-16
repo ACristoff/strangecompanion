@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dy1u50vxhv615"]
+[gd_scene load_steps=4 format=3 uid="uid://dy1u50vxhv615"]
 
 [ext_resource type="Script" path="res://game/player/witch_3d.gd" id="1_1p16b"]
-[ext_resource type="Script" path="res://game/player/orbit_circumference.gd" id="2_oloij"]
 [ext_resource type="Texture2D" uid="uid://cr7ux645pfu26" path="res://Assets/Debug_Assets/flandre.png" id="3_dymod"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xnsoa"]
@@ -9,9 +8,6 @@
 [node name="Witch3D" type="CharacterBody3D" node_paths=PackedStringArray("parent_node")]
 script = ExtResource("1_1p16b")
 parent_node = NodePath(".")
-
-[node name="OrbitCircumference" type="Node3D" parent="."]
-script = ExtResource("2_oloij")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_xnsoa")
