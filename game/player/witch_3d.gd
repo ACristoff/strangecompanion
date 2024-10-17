@@ -48,5 +48,5 @@ func refresh_companions(type):
 		var new_fren = COMPANION.instantiate()
 		parent_node.add_child(new_fren)
 		new_fren.construct_companion(item)
-	print(joined_companions)
+	#print(joined_companions)
 	
