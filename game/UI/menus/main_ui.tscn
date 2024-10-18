@@ -1,0 +1,238 @@
+[gd_scene load_steps=18 format=3 uid="uid://cnjr8w550qngg"]
+
+[ext_resource type="Script" path="res://game/UI/menus/four_main_menu/4_menu_button_logic.gd" id="1_5gajj"]
+[ext_resource type="Texture2D" uid="uid://dlalxv0keb41g" path="res://Assets/UI_elements/UI_box_1.png" id="1_tp26t"]
+[ext_resource type="Theme" uid="uid://b0sf65k3no04m" path="res://game/UI/themes/button_theme_1.tres" id="2_arxip"]
+[ext_resource type="Texture2D" uid="uid://b5rrq53elafxe" path="res://Assets/UI_elements/UI_box_2.png" id="2_l0pqr"]
+[ext_resource type="Texture2D" uid="uid://br1t27prjawmm" path="res://Assets/UI_elements/UI_box_3.png" id="3_ur5ng"]
+[ext_resource type="Theme" uid="uid://drypsm4rfjsao" path="res://game/UI/themes/label_theme_1.tres" id="3_vbpwe"]
+[ext_resource type="Texture2D" uid="uid://caj7w75det0qq" path="res://Assets/UI_elements/doll.png" id="4_8skkb"]
+[ext_resource type="FontFile" uid="uid://cb3x2hhl5jo7d" path="res://Assets/Fonts/SatinStitchBold-Podd.ttf" id="5_aqvhy"]
+[ext_resource type="Texture2D" uid="uid://bue0ns7epatlh" path="res://Assets/UI_elements/hanger.png" id="7_5dtky"]
+[ext_resource type="Texture2D" uid="uid://cjxnsddhaadj0" path="res://Assets/UI_elements/doll_small.png" id="8_65onq"]
+[ext_resource type="Texture2D" uid="uid://ck8v2v2mad3di" path="res://Assets/UI_elements/trophy.png" id="9_khf87"]
+[ext_resource type="Shader" path="res://Assets/Shaders/screen_blending_mode.gdshader" id="10_0woui"]
+[ext_resource type="Texture2D" uid="uid://vlflci18aoh5" path="res://Assets/UI_elements/cog.png" id="11_lqbm5"]
+[ext_resource type="PackedScene" uid="uid://d1gnghynfqqi5" path="res://Assets/Shaders/bg_scroll_texture.tscn" id="12_jbcb6"]
+[ext_resource type="Shader" path="res://Assets/Shaders/scroll_screen.gdshader" id="13_pk7tu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_svsfu"]
+shader = ExtResource("10_0woui")
+shader_parameter/intensity = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5pj6t"]
+shader = ExtResource("13_pk7tu")
+shader_parameter/speed = 0.05
+shader_parameter/intensity = 1.0
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5gajj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -47.0
+offset_top = -47.0
+offset_right = 1974.0
+offset_bottom = 1160.0
+color = Color(0.21, 0, 0.42, 1)
+
+[node name="Control" type="Control" parent="."]
+z_index = 1
+material = SubResource("ShaderMaterial_svsfu")
+anchors_preset = 0
+offset_right = 1908.0
+offset_bottom = 1106.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+modulate = Color(1, 0.9075, 0.63, 1)
+use_parent_material = true
+layout_mode = 0
+offset_left = 1539.0
+offset_top = 427.0
+offset_right = 2035.0
+offset_bottom = 896.0
+rotation = 0.48993
+texture = ExtResource("11_lqbm5")
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+modulate = Color(1, 0.942, 0.71, 1)
+use_parent_material = true
+layout_mode = 0
+offset_left = 748.0
+offset_top = 420.0
+offset_right = 1514.0
+offset_bottom = 1100.0
+texture = ExtResource("9_khf87")
+
+[node name="TextureRect3" type="TextureRect" parent="Control"]
+modulate = Color(1, 0.75, 0.95, 1)
+use_parent_material = true
+layout_mode = 0
+offset_left = 891.0
+offset_top = 27.0
+offset_right = 1871.0
+offset_bottom = 529.0
+rotation = -0.0877758
+texture = ExtResource("7_5dtky")
+
+[node name="TextureRect4" type="TextureRect" parent="Control"]
+modulate = Color(0.84, 0.898667, 1, 1)
+use_parent_material = true
+layout_mode = 0
+offset_left = 118.0
+offset_top = 36.0
+offset_right = 781.0
+offset_bottom = 1035.0
+texture = ExtResource("4_8skkb")
+
+[node name="bg_scroll_texture" parent="." instance=ExtResource("12_jbcb6")]
+layout_mode = 1
+offset_left = -47.0
+offset_top = -47.0
+offset_right = -47.0
+offset_bottom = -47.0
+
+[node name="TextureRect" parent="bg_scroll_texture" index="0"]
+modulate = Color(0.733334, 0.2, 1, 0.392157)
+material = SubResource("ShaderMaterial_5pj6t")
+offset_left = -307.0
+offset_top = -799.0
+offset_right = 2651.0
+offset_bottom = 2186.0
+texture = ExtResource("8_65onq")
+expand_mode = 3
+stretch_mode = 1
+
+[node name="SettingsIcon" type="TextureRect" parent="."]
+self_modulate = Color(1, 0.937255, 0.85098, 1)
+layout_mode = 2
+offset_left = 1384.0
+offset_top = 467.0
+offset_right = 1889.0
+offset_bottom = 1054.0
+pivot_offset = Vector2(256, 291)
+texture = ExtResource("3_ur5ng")
+stretch_mode = 2
+
+[node name="SettingsButton" type="Button" parent="SettingsIcon"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_right = 506.0
+offset_bottom = 587.0
+
+[node name="Label" type="Label" parent="SettingsIcon"]
+modulate = Color(0.8, 0.7676, 0.728, 1)
+layout_mode = 0
+offset_right = 505.0
+offset_bottom = 588.0
+theme_override_colors/font_outline_color = Color(0.54, 0.54, 0.54, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("5_aqvhy")
+theme_override_font_sizes/font_size = 80
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChallengesIcon" type="TextureRect" parent="."]
+self_modulate = Color(1, 0.878431, 0.509804, 1)
+layout_mode = 2
+offset_left = 875.0
+offset_top = 467.0
+offset_right = 1380.0
+offset_bottom = 1054.0
+pivot_offset = Vector2(258, 274)
+texture = ExtResource("3_ur5ng")
+stretch_mode = 2
+
+[node name="ChallengesButton" type="Button" parent="ChallengesIcon"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_right = 505.0
+offset_bottom = 587.0
+
+[node name="Label" type="Label" parent="ChallengesIcon"]
+modulate = Color(1, 0.793333, 0.6, 1)
+layout_mode = 0
+offset_right = 505.0
+offset_bottom = 589.0
+theme_override_colors/font_outline_color = Color(0.54, 0.297, 0.297, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("5_aqvhy")
+theme_override_font_sizes/font_size = 80
+text = "Challenges"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartIcon" type="TextureRect" parent="."]
+self_modulate = Color(0.278431, 0.807843, 1, 1)
+layout_mode = 2
+offset_left = 50.0
+offset_top = 45.0
+offset_right = 871.0
+offset_bottom = 1071.0
+pivot_offset = Vector2(399, 478)
+size_flags_horizontal = 0
+texture = ExtResource("1_tp26t")
+
+[node name="StartButton" type="Button" parent="StartIcon"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 821.0
+offset_bottom = 1026.0
+theme = ExtResource("2_arxip")
+theme_override_font_sizes/font_size = 150
+text = "START"
+
+[node name="Label" type="Label" parent="StartIcon"]
+layout_mode = 0
+offset_right = 821.0
+offset_bottom = 1025.0
+theme = ExtResource("3_vbpwe")
+theme_override_colors/font_outline_color = Color(0, 0.26, 0.39, 1)
+theme_override_constants/outline_size = 20
+text = "START"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WardrobeIcon" type="TextureRect" parent="."]
+self_modulate = Color(1, 0.329412, 0.686275, 1)
+layout_mode = 2
+offset_left = 875.0
+offset_top = 45.0
+offset_right = 1901.0
+offset_bottom = 463.0
+pivot_offset = Vector2(525, 193)
+texture = ExtResource("2_l0pqr")
+stretch_mode = 2
+
+[node name="WardrobeButton" type="Button" parent="WardrobeIcon"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1027.0
+offset_bottom = 419.0
+
+[node name="Label" type="Label" parent="WardrobeIcon"]
+modulate = Color(0.81, 0.0729, 0.66258, 1)
+layout_mode = 0
+offset_right = 1027.0
+offset_bottom = 419.0
+theme_override_colors/font_outline_color = Color(0.405, 0, 0.81, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("5_aqvhy")
+theme_override_font_sizes/font_size = 100
+text = "WARDROBE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="SettingsIcon/SettingsButton" to="." method="_on_settings_button_mouse_entered"]
+[connection signal="mouse_entered" from="ChallengesIcon/ChallengesButton" to="." method="_on_challenges_button_mouse_entered"]
+[connection signal="mouse_entered" from="StartIcon/StartButton" to="." method="_on_start_button_mouse_entered"]
+[connection signal="mouse_entered" from="WardrobeIcon/WardrobeButton" to="." method="_on_wardrobe_button_mouse_entered"]
+
+[editable path="bg_scroll_texture"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1gnghynfqqi5"]
+
+[ext_resource type="Shader" path="res://Assets/Shaders/scrollshader.gdshader" id="1_ahxs6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j1a16"]
+shader = ExtResource("1_ahxs6")
+shader_parameter/speed = 0.5
+shader_parameter/intensity = 1.0
+
+[node name="bg_scroll_texture" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_j1a16")
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1077.0
