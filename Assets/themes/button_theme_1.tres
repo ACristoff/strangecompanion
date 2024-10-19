@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://b0sf65k3no04m"]
+
+[ext_resource type="FontFile" uid="uid://cb3x2hhl5jo7d" path="res://Assets/Fonts/SatinStitchBold-Podd.ttf" id="1_xtwp8"]
+[ext_resource type="StyleBox" uid="uid://bdkcthrb3x82c" path="res://Assets/themes/style_box_flat.tres" id="2_0la8r"]
+
+[resource]
+Button/font_sizes/font_size = 150
+Button/fonts/font = ExtResource("1_xtwp8")
+Button/styles/normal = ExtResource("2_0la8r")

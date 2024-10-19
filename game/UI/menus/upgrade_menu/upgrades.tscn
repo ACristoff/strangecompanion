@@ -36,6 +36,7 @@ offset_left = 1955.0
 offset_top = 15.0
 offset_right = 4003.0
 offset_bottom = 2063.0
+pivot_offset = Vector2(1861.82, 1861.82)
 texture_normal = ExtResource("3_1fv5o")
 
 [node name="Node2D3" type="Node2D" parent="CanvasLayer"]

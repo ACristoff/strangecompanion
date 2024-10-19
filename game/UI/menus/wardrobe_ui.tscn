@@ -1,0 +1,221 @@
+[gd_scene load_steps=15 format=3 uid="uid://d267pgd6pal37"]
+
+[ext_resource type="Theme" uid="uid://bkkct5plssgvw" path="res://Assets/themes/button_theme_2.tres" id="1_ievg7"]
+[ext_resource type="PackedScene" uid="uid://d1gnghynfqqi5" path="res://Assets/Shaders/bg_scroll_texture.tscn" id="1_ugdul"]
+[ext_resource type="Script" path="res://game/UI/menus/four_main_menu/2_ward&stitch_button_logic.gd" id="1_wlck5"]
+[ext_resource type="Texture2D" uid="uid://b0f7ovec18p6l" path="res://Assets/UI_elements/UI_right_box.png" id="2_nn5yo"]
+[ext_resource type="Shader" path="res://Assets/Shaders/scroll_screen.gdshader" id="2_v38iw"]
+[ext_resource type="Theme" uid="uid://xk8thxufmqj0" path="res://Assets/themes/label_theme_2.tres" id="3_3moke"]
+[ext_resource type="Texture2D" uid="uid://hdk55fml8m4y" path="res://Assets/UI_elements/stitching.png" id="3_desi7"]
+[ext_resource type="Shader" path="res://Assets/Shaders/screen_blending_mode.gdshader" id="4_406yn"]
+[ext_resource type="Texture2D" uid="uid://1x157hd8ctax" path="res://Assets/UI_elements/stitches.png" id="7_qldxr"]
+[ext_resource type="Texture2D" uid="uid://b2f5e6k7d8eij" path="res://Assets/UI_elements/dress.png" id="8_ccx83"]
+[ext_resource type="Texture2D" uid="uid://dpr85n5kvcfqn" path="res://Assets/UI_elements/UI_back_arrow.png" id="9_myi2n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7aeja"]
+shader = ExtResource("4_406yn")
+shader_parameter/intensity = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wyni2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iavuw"]
+shader = ExtResource("2_v38iw")
+shader_parameter/speed = 0.05
+shader_parameter/intensity = 1.0
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wlck5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -47.0
+offset_top = -47.0
+offset_right = 1974.0
+offset_bottom = 1160.0
+color = Color(0, 0.153, 0.27, 1)
+
+[node name="Control" type="Control" parent="."]
+z_index = 10
+material = SubResource("ShaderMaterial_7aeja")
+anchors_preset = 0
+offset_left = 160.0
+offset_top = 79.0
+offset_right = 200.0
+offset_bottom = 119.0
+scale = Vector2(0.8, 0.8)
+
+[node name="dress" type="TextureRect" parent="Control"]
+modulate = Color(0.966167, 0.71, 1, 1)
+texture_repeat = 2
+material = SubResource("ShaderMaterial_wyni2")
+use_parent_material = true
+layout_mode = 2
+offset_left = 102.5
+offset_top = 131.25
+offset_right = 973.5
+offset_bottom = 1051.25
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("8_ccx83")
+stretch_mode = 6
+
+[node name="stitches" type="TextureRect" parent="Control"]
+modulate = Color(1, 0.930667, 0.48, 1)
+use_parent_material = true
+layout_mode = 2
+offset_left = 1082.5
+offset_top = 151.25
+offset_right = 1864.5
+offset_bottom = 1060.25
+mouse_filter = 2
+texture = ExtResource("7_qldxr")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="bg_scroll_texture" parent="." instance=ExtResource("1_ugdul")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="TextureRect" parent="bg_scroll_texture" index="0"]
+modulate = Color(0.183833, 0.17, 1, 0.584314)
+material = SubResource("ShaderMaterial_iavuw")
+offset_left = -112.0
+offset_top = -107.0
+offset_right = 1992.0
+offset_bottom = 1197.0
+texture = ExtResource("3_desi7")
+expand_mode = 3
+stretch_mode = 1
+
+[node name="bg_scroll_texture2" parent="." instance=ExtResource("1_ugdul")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="TextureRect" parent="bg_scroll_texture2" index="0"]
+modulate = Color(1, 0.2, 0.333334, 0.392157)
+material = SubResource("ShaderMaterial_iavuw")
+offset_left = -107.0
+offset_top = -99.0
+offset_right = 1995.0
+offset_bottom = 1190.0
+texture = ExtResource("3_desi7")
+expand_mode = 3
+stretch_mode = 1
+flip_v = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+offset_right = 223.0
+offset_bottom = 224.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="Button" type="Button" parent="MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_ievg7")
+icon = ExtResource("9_myi2n")
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -789.5
+offset_top = -454.5
+offset_right = 789.5
+offset_bottom = 454.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+pivot_offset = Vector2(789, 454)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 115
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer3/HBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 2.0
+
+[node name="OutfitsButton" type="Button" parent="MarginContainer3/HBoxContainer/MarginContainer"]
+self_modulate = Color(0.2211, 0.2211, 0.67, 1)
+layout_mode = 2
+theme = ExtResource("1_ievg7")
+icon = ExtResource("2_nn5yo")
+
+[node name="Label" type="Label" parent="MarginContainer3/HBoxContainer/MarginContainer/OutfitsButton"]
+modulate = Color(0.47, 0.5495, 1, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_3moke")
+text = "Outfits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="VSeparator" parent="MarginContainer3/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer3/HBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 2.0
+
+[node name="StitchesButton" type="Button" parent="MarginContainer3/HBoxContainer/MarginContainer2"]
+self_modulate = Color(0.99, 0.3069, 0.3069, 1)
+layout_mode = 2
+theme = ExtResource("1_ievg7")
+icon = ExtResource("2_nn5yo")
+
+[node name="Label" type="Label" parent="MarginContainer3/HBoxContainer/MarginContainer2/StitchesButton"]
+modulate = Color(0.31, 0.031, 0.0356499, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_3moke")
+text = "Stitches"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="button_down" from="MarginContainer3/HBoxContainer/MarginContainer/OutfitsButton" to="." method="_on_outfits_button_button_down"]
+[connection signal="button_up" from="MarginContainer3/HBoxContainer/MarginContainer/OutfitsButton" to="." method="_on_outfits_button_button_up"]
+[connection signal="mouse_entered" from="MarginContainer3/HBoxContainer/MarginContainer/OutfitsButton" to="." method="_on_outfits_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer3/HBoxContainer/MarginContainer/OutfitsButton" to="." method="_on_outfits_button_pressed"]
+[connection signal="button_down" from="MarginContainer3/HBoxContainer/MarginContainer2/StitchesButton" to="." method="_on_stitches_button_button_down"]
+[connection signal="button_up" from="MarginContainer3/HBoxContainer/MarginContainer2/StitchesButton" to="." method="_on_stitches_button_button_up"]
+[connection signal="mouse_entered" from="MarginContainer3/HBoxContainer/MarginContainer2/StitchesButton" to="." method="_on_stitches_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer3/HBoxContainer/MarginContainer2/StitchesButton" to="." method="_on_stitches_button_pressed"]
+
+[editable path="bg_scroll_texture"]
+[editable path="bg_scroll_texture2"]

@@ -1,0 +1,892 @@
+[gd_scene load_steps=13 format=3 uid="uid://bseewv2li5o1r"]
+
+[ext_resource type="Script" path="res://game/UI/menus/four_main_menu/challenges_ui.gd" id="1_2qh51"]
+[ext_resource type="PackedScene" uid="uid://d1gnghynfqqi5" path="res://Assets/Shaders/bg_scroll_texture.tscn" id="1_v02o8"]
+[ext_resource type="Shader" path="res://Assets/Shaders/scroll_screen.gdshader" id="2_qga2v"]
+[ext_resource type="Texture2D" uid="uid://hdk55fml8m4y" path="res://Assets/UI_elements/stitching.png" id="3_1eihn"]
+[ext_resource type="Theme" uid="uid://bkkct5plssgvw" path="res://Assets/themes/button_theme_2.tres" id="4_t8484"]
+[ext_resource type="Texture2D" uid="uid://dpr85n5kvcfqn" path="res://Assets/UI_elements/UI_back_arrow.png" id="5_7jm3s"]
+[ext_resource type="Texture2D" uid="uid://dbdmvhfwr1jk4" path="res://Assets/UI_elements/UI_box_5.png" id="6_euaaa"]
+[ext_resource type="Texture2D" uid="uid://cgnaqukmdb8yo" path="res://Assets/UI_elements/UI_button.png" id="7_o27hd"]
+[ext_resource type="Theme" uid="uid://xk8thxufmqj0" path="res://Assets/themes/label_theme_2.tres" id="8_6mqym"]
+[ext_resource type="Texture2D" uid="uid://dsgcvsu6wyftl" path="res://Assets/UI_elements/UI_lock_2.png" id="9_la856"]
+[ext_resource type="Texture2D" uid="uid://3klbrou3na8m" path="res://Assets/UI_elements/UI_lock.png" id="10_jw7o2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1nu0s"]
+shader = ExtResource("2_qga2v")
+shader_parameter/speed = 0.05
+shader_parameter/intensity = 1.0
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2qh51")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -47.0
+offset_top = -47.0
+offset_right = 1974.0
+offset_bottom = 1160.0
+mouse_filter = 2
+color = Color(0.49, 0.263375, 0.1225, 1)
+
+[node name="bg_scroll_texture" parent="." instance=ExtResource("1_v02o8")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="TextureRect" parent="bg_scroll_texture" index="0"]
+modulate = Color(1, 0.235, 0.15, 0.392157)
+material = SubResource("ShaderMaterial_1nu0s")
+offset_left = -112.0
+offset_top = -107.0
+offset_right = 1992.0
+offset_bottom = 1197.0
+mouse_filter = 2
+texture = ExtResource("3_1eihn")
+expand_mode = 3
+stretch_mode = 1
+
+[node name="bg_scroll_texture2" parent="." instance=ExtResource("1_v02o8")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="TextureRect" parent="bg_scroll_texture2" index="0"]
+modulate = Color(1, 0.683333, 0, 0.572549)
+material = SubResource("ShaderMaterial_1nu0s")
+offset_left = -107.0
+offset_top = -99.0
+offset_right = 1995.0
+offset_bottom = 1190.0
+mouse_filter = 2
+texture = ExtResource("3_1eihn")
+expand_mode = 3
+stretch_mode = 1
+flip_v = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 424.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 2
+offset_left = -52.0
+offset_right = 2253.0
+offset_bottom = 1350.0
+size_flags_horizontal = 10
+size_flags_vertical = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 390
+theme_override_constants/margin_right = 30
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer"]
+custom_minimum_size = Vector2(2200, 960)
+layout_mode = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="challenge" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+theme_override_constants/margin_bottom = 30
+
+[node name="MarginContainer5" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge"]
+layout_mode = 2
+theme_override_constants/margin_top = 60
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge/MarginContainer5"]
+modulate = Color(0.693, 0.7, 0.7, 1)
+layout_mode = 2
+texture = ExtResource("6_euaaa")
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge/MarginContainer5"]
+layout_mode = 2
+theme_override_constants/margin_left = 45
+theme_override_constants/margin_right = 1585
+
+[node name="Button" type="Button" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge/MarginContainer5/MarginContainer3"]
+self_modulate = Color(1, 0.725, 0.34, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_t8484")
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+icon = ExtResource("7_o27hd")
+
+[node name="Label" type="Label" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge/MarginContainer5/MarginContainer3/Button"]
+modulate = Color(1, 0.426667, 0.2, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_6mqym")
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge/MarginContainer5"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -265
+theme_override_constants/margin_top = -220
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge/MarginContainer5/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_la856")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge/MarginContainer5"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -287
+theme_override_constants/margin_top = -25
+
+[node name="TextureRect2" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge/MarginContainer5/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("10_jw7o2")
+expand_mode = 3
+stretch_mode = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge/MarginContainer5"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge/MarginContainer5/MarginContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("8_6mqym")
+theme_override_font_sizes/font_size = 75
+text = "\"Challenge\""
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="challenge2" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+theme_override_constants/margin_bottom = 30
+
+[node name="MarginContainer5" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge2"]
+layout_mode = 2
+theme_override_constants/margin_top = 60
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge2/MarginContainer5"]
+modulate = Color(0.693, 0.7, 0.7, 1)
+layout_mode = 2
+texture = ExtResource("6_euaaa")
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge2/MarginContainer5"]
+layout_mode = 2
+theme_override_constants/margin_left = 45
+theme_override_constants/margin_right = 1585
+
+[node name="Button" type="Button" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge2/MarginContainer5/MarginContainer3"]
+self_modulate = Color(1, 0.725, 0.34, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_t8484")
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+icon = ExtResource("7_o27hd")
+
+[node name="Label" type="Label" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge2/MarginContainer5/MarginContainer3/Button"]
+modulate = Color(1, 0.426667, 0.2, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_6mqym")
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge2/MarginContainer5"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -265
+theme_override_constants/margin_top = -220
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge2/MarginContainer5/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_la856")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge2/MarginContainer5"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -287
+theme_override_constants/margin_top = -25
+
+[node name="TextureRect2" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge2/MarginContainer5/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("10_jw7o2")
+expand_mode = 3
+stretch_mode = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge2/MarginContainer5"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge2/MarginContainer5/MarginContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("8_6mqym")
+theme_override_font_sizes/font_size = 75
+text = "\"Challenge\""
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="challenge3" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+theme_override_constants/margin_bottom = 30
+
+[node name="MarginContainer5" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge3"]
+layout_mode = 2
+theme_override_constants/margin_top = 60
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge3/MarginContainer5"]
+modulate = Color(0.693, 0.7, 0.7, 1)
+layout_mode = 2
+texture = ExtResource("6_euaaa")
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge3/MarginContainer5"]
+layout_mode = 2
+theme_override_constants/margin_left = 45
+theme_override_constants/margin_right = 1585
+
+[node name="Button" type="Button" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge3/MarginContainer5/MarginContainer3"]
+self_modulate = Color(1, 0.725, 0.34, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_t8484")
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+icon = ExtResource("7_o27hd")
+
+[node name="Label" type="Label" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge3/MarginContainer5/MarginContainer3/Button"]
+modulate = Color(1, 0.426667, 0.2, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_6mqym")
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge3/MarginContainer5"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -265
+theme_override_constants/margin_top = -220
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge3/MarginContainer5/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_la856")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge3/MarginContainer5"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -287
+theme_override_constants/margin_top = -25
+
+[node name="TextureRect2" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge3/MarginContainer5/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("10_jw7o2")
+expand_mode = 3
+stretch_mode = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge3/MarginContainer5"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge3/MarginContainer5/MarginContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("8_6mqym")
+theme_override_font_sizes/font_size = 75
+text = "\"Challenge\""
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="challenge4" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+theme_override_constants/margin_bottom = 30
+
+[node name="MarginContainer5" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge4"]
+layout_mode = 2
+theme_override_constants/margin_top = 60
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge4/MarginContainer5"]
+modulate = Color(0.693, 0.7, 0.7, 1)
+layout_mode = 2
+texture = ExtResource("6_euaaa")
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge4/MarginContainer5"]
+layout_mode = 2
+theme_override_constants/margin_left = 45
+theme_override_constants/margin_right = 1585
+
+[node name="Button" type="Button" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge4/MarginContainer5/MarginContainer3"]
+self_modulate = Color(1, 0.725, 0.34, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_t8484")
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+icon = ExtResource("7_o27hd")
+
+[node name="Label" type="Label" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge4/MarginContainer5/MarginContainer3/Button"]
+modulate = Color(1, 0.426667, 0.2, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_6mqym")
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge4/MarginContainer5"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -265
+theme_override_constants/margin_top = -220
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge4/MarginContainer5/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_la856")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge4/MarginContainer5"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -287
+theme_override_constants/margin_top = -25
+
+[node name="TextureRect2" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge4/MarginContainer5/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("10_jw7o2")
+expand_mode = 3
+stretch_mode = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge4/MarginContainer5"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge4/MarginContainer5/MarginContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("8_6mqym")
+theme_override_font_sizes/font_size = 75
+text = "\"Challenge\""
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="challenge5" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+theme_override_constants/margin_bottom = 30
+
+[node name="MarginContainer5" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge5"]
+layout_mode = 2
+theme_override_constants/margin_top = 60
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge5/MarginContainer5"]
+modulate = Color(0.693, 0.7, 0.7, 1)
+layout_mode = 2
+texture = ExtResource("6_euaaa")
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge5/MarginContainer5"]
+layout_mode = 2
+theme_override_constants/margin_left = 45
+theme_override_constants/margin_right = 1585
+
+[node name="Button" type="Button" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge5/MarginContainer5/MarginContainer3"]
+self_modulate = Color(1, 0.725, 0.34, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_t8484")
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+icon = ExtResource("7_o27hd")
+
+[node name="Label" type="Label" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge5/MarginContainer5/MarginContainer3/Button"]
+modulate = Color(1, 0.426667, 0.2, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_6mqym")
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge5/MarginContainer5"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -265
+theme_override_constants/margin_top = -220
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge5/MarginContainer5/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_la856")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge5/MarginContainer5"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -287
+theme_override_constants/margin_top = -25
+
+[node name="TextureRect2" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge5/MarginContainer5/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("10_jw7o2")
+expand_mode = 3
+stretch_mode = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge5/MarginContainer5"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge5/MarginContainer5/MarginContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("8_6mqym")
+theme_override_font_sizes/font_size = 75
+text = "\"Challenge\""
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="challenge6" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+theme_override_constants/margin_bottom = 30
+
+[node name="MarginContainer5" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge6"]
+layout_mode = 2
+theme_override_constants/margin_top = 60
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge6/MarginContainer5"]
+modulate = Color(0.693, 0.7, 0.7, 1)
+layout_mode = 2
+texture = ExtResource("6_euaaa")
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge6/MarginContainer5"]
+layout_mode = 2
+theme_override_constants/margin_left = 45
+theme_override_constants/margin_right = 1585
+
+[node name="Button" type="Button" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge6/MarginContainer5/MarginContainer3"]
+self_modulate = Color(1, 0.725, 0.34, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_t8484")
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+icon = ExtResource("7_o27hd")
+
+[node name="Label" type="Label" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge6/MarginContainer5/MarginContainer3/Button"]
+modulate = Color(1, 0.426667, 0.2, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_6mqym")
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge6/MarginContainer5"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -265
+theme_override_constants/margin_top = -220
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge6/MarginContainer5/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_la856")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge6/MarginContainer5"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -287
+theme_override_constants/margin_top = -25
+
+[node name="TextureRect2" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge6/MarginContainer5/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("10_jw7o2")
+expand_mode = 3
+stretch_mode = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge6/MarginContainer5"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge6/MarginContainer5/MarginContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("8_6mqym")
+theme_override_font_sizes/font_size = 75
+text = "\"Challenge\""
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="challenge7" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+theme_override_constants/margin_bottom = 30
+
+[node name="MarginContainer5" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge7"]
+layout_mode = 2
+theme_override_constants/margin_top = 60
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge7/MarginContainer5"]
+modulate = Color(0.693, 0.7, 0.7, 1)
+layout_mode = 2
+texture = ExtResource("6_euaaa")
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge7/MarginContainer5"]
+layout_mode = 2
+theme_override_constants/margin_left = 45
+theme_override_constants/margin_right = 1585
+
+[node name="Button" type="Button" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge7/MarginContainer5/MarginContainer3"]
+self_modulate = Color(1, 0.725, 0.34, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_t8484")
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+icon = ExtResource("7_o27hd")
+
+[node name="Label" type="Label" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge7/MarginContainer5/MarginContainer3/Button"]
+modulate = Color(1, 0.426667, 0.2, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_6mqym")
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge7/MarginContainer5"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -265
+theme_override_constants/margin_top = -220
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge7/MarginContainer5/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_la856")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge7/MarginContainer5"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -287
+theme_override_constants/margin_top = -25
+
+[node name="TextureRect2" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge7/MarginContainer5/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("10_jw7o2")
+expand_mode = 3
+stretch_mode = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge7/MarginContainer5"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge7/MarginContainer5/MarginContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("8_6mqym")
+theme_override_font_sizes/font_size = 75
+text = "\"Challenge\""
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="challenge8" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+theme_override_constants/margin_bottom = 30
+
+[node name="MarginContainer5" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge8"]
+layout_mode = 2
+theme_override_constants/margin_top = 60
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge8/MarginContainer5"]
+modulate = Color(0.693, 0.7, 0.7, 1)
+layout_mode = 2
+texture = ExtResource("6_euaaa")
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge8/MarginContainer5"]
+layout_mode = 2
+theme_override_constants/margin_left = 45
+theme_override_constants/margin_right = 1585
+
+[node name="Button" type="Button" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge8/MarginContainer5/MarginContainer3"]
+self_modulate = Color(1, 0.725, 0.34, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_t8484")
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+icon = ExtResource("7_o27hd")
+
+[node name="Label" type="Label" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge8/MarginContainer5/MarginContainer3/Button"]
+modulate = Color(1, 0.426667, 0.2, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_6mqym")
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge8/MarginContainer5"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -265
+theme_override_constants/margin_top = -220
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge8/MarginContainer5/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_la856")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge8/MarginContainer5"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -287
+theme_override_constants/margin_top = -25
+
+[node name="TextureRect2" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge8/MarginContainer5/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("10_jw7o2")
+expand_mode = 3
+stretch_mode = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge8/MarginContainer5"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge8/MarginContainer5/MarginContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("8_6mqym")
+theme_override_font_sizes/font_size = 75
+text = "\"Challenge\""
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="challenge9" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+theme_override_constants/margin_bottom = 30
+
+[node name="MarginContainer5" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge9"]
+layout_mode = 2
+theme_override_constants/margin_top = 60
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge9/MarginContainer5"]
+modulate = Color(0.693, 0.7, 0.7, 1)
+layout_mode = 2
+texture = ExtResource("6_euaaa")
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge9/MarginContainer5"]
+layout_mode = 2
+theme_override_constants/margin_left = 45
+theme_override_constants/margin_right = 1585
+
+[node name="Button" type="Button" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge9/MarginContainer5/MarginContainer3"]
+self_modulate = Color(1, 0.725, 0.34, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_t8484")
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+icon = ExtResource("7_o27hd")
+
+[node name="Label" type="Label" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge9/MarginContainer5/MarginContainer3/Button"]
+modulate = Color(1, 0.426667, 0.2, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_6mqym")
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge9/MarginContainer5"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -265
+theme_override_constants/margin_top = -220
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge9/MarginContainer5/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_la856")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge9/MarginContainer5"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -287
+theme_override_constants/margin_top = -25
+
+[node name="TextureRect2" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge9/MarginContainer5/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("10_jw7o2")
+expand_mode = 3
+stretch_mode = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge9/MarginContainer5"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge9/MarginContainer5/MarginContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("8_6mqym")
+theme_override_font_sizes/font_size = 75
+text = "\"Challenge\""
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="challenge10" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+theme_override_constants/margin_bottom = 30
+
+[node name="MarginContainer5" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge10"]
+layout_mode = 2
+theme_override_constants/margin_top = 60
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge10/MarginContainer5"]
+modulate = Color(0.693, 0.7, 0.7, 1)
+layout_mode = 2
+texture = ExtResource("6_euaaa")
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge10/MarginContainer5"]
+layout_mode = 2
+theme_override_constants/margin_left = 45
+theme_override_constants/margin_right = 1585
+
+[node name="Button" type="Button" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge10/MarginContainer5/MarginContainer3"]
+self_modulate = Color(1, 0.725, 0.34, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_t8484")
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+icon = ExtResource("7_o27hd")
+
+[node name="Label" type="Label" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge10/MarginContainer5/MarginContainer3/Button"]
+modulate = Color(1, 0.426667, 0.2, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_6mqym")
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge10/MarginContainer5"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -265
+theme_override_constants/margin_top = -220
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge10/MarginContainer5/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_la856")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge10/MarginContainer5"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -287
+theme_override_constants/margin_top = -25
+
+[node name="TextureRect2" type="TextureRect" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge10/MarginContainer5/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("10_jw7o2")
+expand_mode = 3
+stretch_mode = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge10/MarginContainer5"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/ScrollContainer/VBoxContainer/challenge10/MarginContainer5/MarginContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("8_6mqym")
+theme_override_font_sizes/font_size = 75
+text = "\"Challenge\""
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 223.0
+offset_bottom = 224.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="Button" type="Button" parent="MarginContainer"]
+layout_mode = 2
+theme = ExtResource("4_t8484")
+icon = ExtResource("5_7jm3s")
+
+[connection signal="pressed" from="MarginContainer/Button" to="." method="_on_button_pressed"]
+
+[editable path="bg_scroll_texture"]
+[editable path="bg_scroll_texture2"]
