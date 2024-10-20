@@ -13,8 +13,8 @@ parent_node = NodePath(".")
 shape = SubResource("CapsuleShape3D_xnsoa")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 4.55209, 3.59619)
-fov = 75.9375
+transform = Transform3D(1, 0, 0, 0, 0.389799, 0.9209, 0, -0.9209, 0.389799, 0, 6.10555, 1.64478)
+fov = 100.0
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)

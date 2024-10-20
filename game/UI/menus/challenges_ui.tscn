@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bseewv2li5o1r"]
+[gd_scene load_steps=14 format=3 uid="uid://bseewv2li5o1r"]
 
 [ext_resource type="Script" path="res://game/UI/menus/four_main_menu/challenges_ui.gd" id="1_2qh51"]
 [ext_resource type="PackedScene" uid="uid://d1gnghynfqqi5" path="res://Assets/Shaders/bg_scroll_texture.tscn" id="1_v02o8"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://hdk55fml8m4y" path="res://Assets/UI_elements/stitching.png" id="3_1eihn"]
 [ext_resource type="Theme" uid="uid://bkkct5plssgvw" path="res://Assets/themes/button_theme_2.tres" id="4_t8484"]
 [ext_resource type="Texture2D" uid="uid://dpr85n5kvcfqn" path="res://Assets/UI_elements/UI_back_arrow.png" id="5_7jm3s"]
+[ext_resource type="Texture2D" uid="uid://dlalxv0keb41g" path="res://Assets/UI_elements/UI_box_1.png" id="5_j2856"]
 [ext_resource type="Texture2D" uid="uid://dbdmvhfwr1jk4" path="res://Assets/UI_elements/UI_box_5.png" id="6_euaaa"]
 [ext_resource type="Texture2D" uid="uid://cgnaqukmdb8yo" path="res://Assets/UI_elements/UI_button.png" id="7_o27hd"]
 [ext_resource type="Theme" uid="uid://xk8thxufmqj0" path="res://Assets/themes/label_theme_2.tres" id="8_6mqym"]
@@ -81,6 +82,48 @@ texture = ExtResource("3_1eihn")
 expand_mode = 3
 stretch_mode = 1
 flip_v = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+modulate = Color(0.48, 0.21304, 0.1392, 1)
+layout_direction = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -966.0
+offset_top = -309.0
+offset_right = 963.0
+offset_bottom = 607.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_j2856")
+patch_margin_left = 100
+patch_margin_top = 100
+patch_margin_right = 100
+patch_margin_bottom = 100
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="."]
+modulate = Color(0.48, 0.21304, 0.1392, 1)
+layout_direction = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1178.0
+offset_top = -421.0
+offset_right = 1130.0
+offset_bottom = -221.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_j2856")
+patch_margin_left = 100
+patch_margin_top = 100
+patch_margin_right = 100
+patch_margin_bottom = 100
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 1
