@@ -1,24 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvdnmpr3jgcvb"]
+[gd_scene load_steps=4 format=3 uid="uid://cvdnmpr3jgcvb"]
 
 [ext_resource type="Script" path="res://game/world/terrain_generator.gd" id="1_nlybv"]
+[ext_resource type="PackedScene" uid="uid://cjpl473vgxj6a" path="res://game/world/chunk.tscn" id="2_n5pim"]
 [ext_resource type="PackedScene" uid="uid://dy1u50vxhv615" path="res://game/player/witch3d.tscn" id="2_ofe75"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_5fwqa"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_6i2ts"]
 
 [node name="TerrainGenerator" type="Node3D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_nlybv")
 player = NodePath("Witch3D")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
-mesh = SubResource("PlaneMesh_5fwqa")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-transform = Transform3D(200, 0, 0, 0, 1, 0, 0, 0, 200, 0, 0, 0)
-shape = SubResource("BoxShape3D_6i2ts")
+[node name="MeshInstance3D" parent="." instance=ExtResource("2_n5pim")]
 
 [node name="Witch3D" parent="." instance=ExtResource("2_ofe75")]
