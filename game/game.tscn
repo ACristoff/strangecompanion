@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://game/game_manager.gd" id="1_3jbo7"]
 [ext_resource type="PackedScene" uid="uid://bavdb2sbkfnlw" path="res://game/player/witch.tscn" id="1_y23vn"]
-[ext_resource type="Texture2D" uid="uid://cldn76m7jhvad" path="res://Assets/Environmental/WO Background 1.png" id="3_i68vo"]
 [ext_resource type="AudioStream" uid="uid://b08c0t2848hfv" path="res://Assets/Audio/music/Witchy Theme.mp3" id="3_l7stl"]
 [ext_resource type="Script" path="res://game/UI/menus/upgrade_menu/shopspawn.gd" id="3_rdoag"]
 [ext_resource type="PackedScene" uid="uid://dbdhw7oqh1t1k" path="res://game/UI/menus/pause_menu/pause_menu.tscn" id="4_jigdn"]
@@ -16,6 +15,9 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 gradient = SubResource("Gradient_n3i0e")
 fill = 1
 fill_from = Vector2(0.477064, 0.504587)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_akybt"]
+load_path = "res://.godot/imported/WO Background 1.png-34927661582a2b6356b2fae1812c4ea2.s3tc.ctex"
 
 [node name="Game" type="Node"]
 script = ExtResource("1_3jbo7")
@@ -50,7 +52,7 @@ repeat_times = 5
 z_index = -10
 position = Vector2(608, 301)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_i68vo")
+texture = SubResource("CompressedTexture2D_akybt")
 
 [node name="Enemy_spawn_timer" type="Timer" parent="."]
 autostart = true

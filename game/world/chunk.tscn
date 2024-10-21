@@ -1,6 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjpl473vgxj6a"]
+[gd_scene load_steps=5 format=3 uid="uid://cjpl473vgxj6a"]
+
+[ext_resource type="Shader" uid="uid://jhm70h4cxwyn" path="res://Assets/Shaders/chunk.tres" id="1_migyj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_skutk"]
+render_priority = 0
+shader = ExtResource("1_migyj")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5fwqa"]
+material = SubResource("ShaderMaterial_skutk")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6i2ts"]
 

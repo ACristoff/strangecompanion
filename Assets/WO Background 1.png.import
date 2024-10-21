@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgdcxdpwxt0ua"
-path="res://.godot/imported/WO Border.png-26668d631638331db5b3ff5cd1c29c86.ctex"
+uid="uid://dm8km4hy7wr3q"
+path="res://.godot/imported/WO Background 1.png-99e872ecd68a7f1a1043b46c5b489087.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Environmental/WO Border.png"
-dest_files=["res://.godot/imported/WO Border.png-26668d631638331db5b3ff5cd1c29c86.ctex"]
+source_file="res://Assets/WO Background 1.png"
+dest_files=["res://.godot/imported/WO Background 1.png-99e872ecd68a7f1a1043b46c5b489087.ctex"]
 
 [params]
 
