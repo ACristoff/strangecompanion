@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dy1u50vxhv615"]
 
 [ext_resource type="Script" path="res://game/player/witch_3d.gd" id="1_1p16b"]
-[ext_resource type="Texture2D" uid="uid://cr7ux645pfu26" path="res://Assets/Debug_Assets/flandre.png" id="3_dymod"]
+[ext_resource type="Texture2D" uid="uid://7k2lh3hhay3p" path="res://Assets/Debug_Assets/witch_sketch.png" id="2_hpowb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xnsoa"]
 
@@ -21,4 +21,4 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 billboard = 1
 shaded = true
 alpha_cut = 2
-texture = ExtResource("3_dymod")
+texture = ExtResource("2_hpowb")
