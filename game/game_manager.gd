@@ -1,11 +1,9 @@
 extends Node
 
+func on_player_health_updated(new_value):
+	
+	pass
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func on_enemy_health_updated(new_value):
+	
 	pass

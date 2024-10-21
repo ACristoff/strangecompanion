@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="StrangeCompanion"
-run/main_scene="res://game/UI/menus/start_menu/main_menu.tscn"
+run/main_scene="res://game/game_3d.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://to_be_executed/icon.svg"
 
 [autoload]
 
 CompanionManager="*res://game/companion_manager.gd"
+GameManager="*res://game/game_manager.gd"
 
 [display]
 
