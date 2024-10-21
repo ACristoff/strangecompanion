@@ -1,9 +1,9 @@
 extends Node3D
 
-var bana = preload("res://Assets/Debug_Assets/banana.png")
-var stawbewwy = preload("res://Assets/Debug_Assets/strawberry.png")
-var pinable = preload("res://Assets/Debug_Assets/pineapple.png")
-var melahn = preload("res://Assets/Debug_Assets/watermelon.png")
+var bana = preload("res://Assets/Debug_Assets/stabbey_sketch.png")
+var stawbewwy = preload("res://Assets/Debug_Assets/mami_sketch.png")
+var pinable = preload("res://Assets/Debug_Assets/kanon_sketch.png")
+var melahn = preload("res://Assets/Debug_Assets/hacke_sketch.png")
 
 var type = null
 var identification_number = 1
