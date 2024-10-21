@@ -18,6 +18,7 @@ config/icon="res://to_be_executed/icon.svg"
 [autoload]
 
 CompanionManager="*res://game/companion_manager.gd"
+GameManager="*res://game/game_manager.gd"
 
 [display]
 
