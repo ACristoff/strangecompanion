@@ -9,6 +9,7 @@ var player_position = Vector2()
 var new_cell = Vector2(0,0)
 var player_cell_position = Vector2(0,0)
 
+##TODO
 var cells = []
 var active_cells = []
 
@@ -37,7 +38,6 @@ func get_player_cell(player_coordinates):
 
 func get_global_coordinates(cell_coordinate):
 	var global_coord = Vector2(cell_coordinate.x * (terrain.x * 2), cell_coordinate.y * (terrain.y * 2))
-	#print(global_coord)
 	return global_coord
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
