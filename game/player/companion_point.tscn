@@ -1,6 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://dolf2b1hfa7ke"]
+[gd_scene load_steps=4 format=3 uid="uid://dolf2b1hfa7ke"]
 
 [ext_resource type="Script" path="res://game/player/companion_point.gd" id="1_kkw3y"]
+[ext_resource type="Script" path="res://game/player/companion.gd" id="2_b4usy"]
+[ext_resource type="Texture2D" uid="uid://bw2vluvxy1lwk" path="res://Assets/Debug_Assets/PointerFire.png" id="3_bkyl6"]
 
 [node name="companion_point" type="Node3D"]
 script = ExtResource("1_kkw3y")
+
+[node name="LodeyParent" type="Node3D" parent="."]
+script = ExtResource("2_b4usy")
+
+[node name="Lodey" type="Node3D" parent="LodeyParent"]
+
+[node name="Sprite3D" type="Sprite3D" parent="LodeyParent"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+billboard = 1
+texture = ExtResource("3_bkyl6")
+
+[node name="Label3D" type="Label3D" parent="LodeyParent"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 1.63013, 0)
+billboard = 1
+text = "1"

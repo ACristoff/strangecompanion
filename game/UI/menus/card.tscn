@@ -1,0 +1,320 @@
+[gd_scene load_steps=10 format=3 uid="uid://df24oomeoyv3f"]
+
+[ext_resource type="Texture2D" uid="uid://hgbiyx0cutq8" path="res://Assets/UI_elements/card.png" id="1_cqti1"]
+[ext_resource type="Texture2D" uid="uid://bo6owjw1w2i26" path="res://Assets/Cover_art/Oin1Ud.png" id="2_5yrog"]
+[ext_resource type="Script" path="res://game/UI/menus/card_information.gd" id="2_fvr8x"]
+[ext_resource type="Texture2D" uid="uid://bw2vluvxy1lwk" path="res://Assets/Debug_Assets/PointerFire.png" id="3_osq01"]
+[ext_resource type="Theme" uid="uid://xk8thxufmqj0" path="res://Assets/themes/label_theme_2.tres" id="3_ufpqe"]
+
+[sub_resource type="Animation" id="Animation_0kl7q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Icon:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/BackBorder:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/BackBG:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_dely6"]
+resource_name = "card_flip"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Icon:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/BackBorder:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/BackBG:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_atew0"]
+resource_name = "card_flip"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Icon:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/BackBorder:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/BackBG:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i85im"]
+_data = {
+"RESET": SubResource("Animation_0kl7q"),
+"card_flip": SubResource("Animation_dely6"),
+"card_flip (2)": SubResource("Animation_atew0")
+}
+
+[node name="Card" type="TextureButton"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -1455.0
+offset_right = 388.0
+offset_bottom = -841.0
+grow_vertical = 2
+texture_normal = ExtResource("1_cqti1")
+script = ExtResource("2_fvr8x")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(194, 307)
+
+[node name="FrontBG" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 13.0
+offset_right = 377.0
+offset_bottom = 602.0
+color = Color(0.278431, 0.152941, 0.160784, 1)
+
+[node name="FrontBorder" type="TextureRect" parent="Control"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+texture = ExtResource("1_cqti1")
+stretch_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control/FrontBorder"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.107
+anchor_top = 0.135
+anchor_right = 0.871
+anchor_bottom = 0.594
+offset_left = 7.484
+offset_top = 0.109993
+offset_right = 0.052002
+offset_bottom = 0.283966
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.11, 0.0374, 0.03861, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Portrait" type="TextureRect" parent="Control/FrontBorder/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_osq01")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="Control/FrontBorder"]
+self_modulate = Color(0.298039, 0.298039, 0.298039, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 114.0
+offset_top = 34.0
+offset_right = -111.0
+offset_bottom = -539.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_ufpqe")
+theme_override_font_sizes/font_size = 30
+text = "CROSS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="Control/FrontBorder"]
+self_modulate = Color(0.298039, 0.298039, 0.298039, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = 377.0
+offset_right = -33.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_ufpqe")
+theme_override_font_sizes/font_size = 30
+text = "cutttttttte"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BackBG" type="ColorRect" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 14.0
+offset_top = 13.0
+offset_right = 377.0
+offset_bottom = 602.0
+color = Color(1, 0.92549, 0, 1)
+
+[node name="BackBorder" type="TextureRect" parent="Control"]
+visible = false
+self_modulate = Color(1, 0.92549, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+texture = ExtResource("1_cqti1")
+stretch_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -143.0
+offset_right = 180.0
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_5yrog")
+stretch_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_i85im")
+}
+speed_scale = 3.0

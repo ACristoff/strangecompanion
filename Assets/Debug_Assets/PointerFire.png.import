@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c50jvpoe5cb6f"
-path.s3tc="res://.godot/imported/hacke_sketch.png-406412ad26c6f608779d5e8cc0e19579.s3tc.ctex"
+uid="uid://bw2vluvxy1lwk"
+path.s3tc="res://.godot/imported/PointerFire.png-ef6f7f04f7a90957b2302b0b2b3f2a33.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Debug_Assets/hacke_sketch.png"
-dest_files=["res://.godot/imported/hacke_sketch.png-406412ad26c6f608779d5e8cc0e19579.s3tc.ctex"]
+source_file="res://Assets/Debug_Assets/PointerFire.png"
+dest_files=["res://.godot/imported/PointerFire.png-ef6f7f04f7a90957b2302b0b2b3f2a33.s3tc.ctex"]
 
 [params]
 
