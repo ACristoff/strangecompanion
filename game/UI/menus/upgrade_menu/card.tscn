@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://hgbiyx0cutq8" path="res://Assets/UI_elements/card.png" id="1_cqti1"]
 [ext_resource type="Texture2D" uid="uid://bo6owjw1w2i26" path="res://Assets/Cover_art/Oin1Ud.png" id="2_5yrog"]
-[ext_resource type="Script" path="res://game/UI/menus/card_information.gd" id="2_fvr8x"]
+[ext_resource type="Script" path="res://game/UI/menus/upgrade_menu/card_information.gd" id="2_fvr8x"]
 [ext_resource type="Texture2D" uid="uid://bw2vluvxy1lwk" path="res://Assets/Debug_Assets/PointerFire.png" id="3_osq01"]
 [ext_resource type="Texture2D" uid="uid://ptnmy46lq8lj" path="res://Assets/Debug_Assets/yellow_gem.png" id="3_qafsu"]
 [ext_resource type="Theme" uid="uid://xk8thxufmqj0" path="res://Assets/themes/label_theme_2.tres" id="3_ufpqe"]
