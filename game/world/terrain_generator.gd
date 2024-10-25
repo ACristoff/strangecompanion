@@ -17,7 +17,7 @@ var active_cells = []
 func _ready() -> void:
 	pass # Replace with function body.
 
-func load_new_chunk(cell):
+func generate_new_cell(cell):
 	var new_chunk := chunk.instantiate()
 	var chunk_pos_2d = get_global_coordinates(cell)
 	var chunk_pos = Vector3(
@@ -49,5 +49,5 @@ func _process(delta: float) -> void:
 	
 	if new_cell != player_cell_position:
 		player_cell_position = new_cell
-		load_new_chunk(player_cell_position)
+		generate_new_cell(player_cell_position)
 		pass
