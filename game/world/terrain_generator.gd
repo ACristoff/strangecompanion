@@ -1,6 +1,7 @@
 extends Node3D
 
 @export var player = Node3D
+
 @onready var chunk = preload("res://game/world/chunk.tscn")
 @onready var terrain = Vector2(10, 10)
 
@@ -41,7 +42,7 @@ func get_global_coordinates(cell_coordinate):
 	return global_coord
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	player_position.x = player.global_position.x
 	player_position.y = player.global_position.z
 	
