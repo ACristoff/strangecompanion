@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d38a7tvuseqai"]
 
-[ext_resource type="Script" path="res://game/UI/menus/card_manager.gd" id="1_l7vwp"]
+[ext_resource type="Script" path="res://game/UI/menus/upgrade_menu/card_manager.gd" id="1_l7vwp"]
 
 [node name="Card_Manager" type="Control"]
 layout_mode = 3
