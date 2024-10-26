@@ -22,8 +22,9 @@ func _ready() -> void:
 	load_cells_at(Vector2(0,0))
 	pass # Replace with function body.
 
-func unload_cells_from(cell):
-	prints(cell, active_cells)
+func unload_cells_from(origin):
+	for cell in active_cells:
+		pass
 	pass
 
 func load_cells_at(cell):
