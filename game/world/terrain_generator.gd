@@ -10,8 +10,11 @@ var player_position = Vector2()
 var new_cell = Vector2(0,0)
 var player_cell_position = Vector2(0,0)
 
-##TODO
-var inactive_cells = []
+##Vector2: Data
+var inactive_cells = {
+	
+}
+##Vector2: Node
 var active_cells = {
 	
 }
@@ -28,11 +31,12 @@ func unload_cells_from(origin):
 	#print()
 	for cell in active_cells.keys():
 		#print(cell.x)
+		##If the cell is more than one away, unload it
 		if cell.x > origin.x + 1 || cell.x < origin.x - 1 || cell.y > origin.y + 1 || cell.y < origin.y - 1:
 			active_cells[cell].queue_free()
 			active_cells.erase(cell)
-			##TODO add to inactive list here and save the prop data in the list
-			#print(active_cells[cell])
+			##TODO add props to inactive list here and save the prop data in the list
+			inactive_cells[cell] = {}
 		pass
 	pass
 
@@ -77,7 +81,6 @@ func generate_new_cell(cell):
 	)
 	self.add_child(new_chunk)
 	new_chunk.global_position = chunk_pos
-	#active_cells.append(cell)
 	active_cells[cell] = new_chunk
 	#prints(cell, "GENERATED!")
 	pass
