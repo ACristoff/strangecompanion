@@ -12,7 +12,9 @@ var player_cell_position = Vector2(0,0)
 
 ##TODO
 var inactive_cells = []
-var active_cells = []
+var active_cells = {
+	
+}
 
 enum CELL_STATES {ACTIVE, INACTIVE, NULL}
 
@@ -23,7 +25,14 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func unload_cells_from(origin):
-	for cell in active_cells:
+	#print()
+	for cell in active_cells.keys():
+		#print(cell.x)
+		if cell.x > origin.x + 1 || cell.x < origin.x - 1 || cell.y > origin.y + 1 || cell.y < origin.y - 1:
+			active_cells[cell].queue_free()
+			active_cells.erase(cell)
+			##TODO add to inactive list here and save the prop data in the list
+			#print(active_cells[cell])
 		pass
 	pass
 
@@ -47,6 +56,7 @@ func load_cells_at(cell):
 				##TODO load cells here
 				pass
 			pass
+	#print(active_cells)
 	pass
 
 func cell_checker(cell):
@@ -67,7 +77,8 @@ func generate_new_cell(cell):
 	)
 	self.add_child(new_chunk)
 	new_chunk.global_position = chunk_pos
-	active_cells.append(cell)
+	#active_cells.append(cell)
+	active_cells[cell] = new_chunk
 	#prints(cell, "GENERATED!")
 	pass
 
