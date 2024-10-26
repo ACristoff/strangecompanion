@@ -57,7 +57,8 @@ func load_cells_at(cell):
 			##The cell exists, but isn't loaded and will be loaded in here
 			elif position_status == CELL_STATES.INACTIVE:
 				#prints(position_to_check, "INACTIVE")
-				##TODO load cells here
+				##TODO load cells here replace generate cell
+				generate_new_cell(position_to_check)
 				pass
 			pass
 	#print(active_cells)
