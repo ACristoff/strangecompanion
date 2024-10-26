@@ -198,6 +198,7 @@ func generate_card():
 	var type = CARD_TYPES.DOLLS
 	var card_name
 	
+	
 	#KEEP TRACK OF CARDS GENERATED ON A STACK [card1, card2, card3]
 	#KEEP TRACK OF ACTIVE DOLLS - MESSAGE BUS
 	#KEEP TRACK OF ITEMS - MESSAGE BUS
@@ -210,6 +211,9 @@ func generate_card():
 	#UPDATE CARD NAME
 	#UPDATE TYPE
 	#SEND THAT SHIT
+	
+	if iteration == 0:
+		pass
 	
 	if type == CARD_TYPES.GEMS:
 		var card_result = card_data['GEMS']['RED']
@@ -263,7 +267,10 @@ func card_constructor(title, description, border_color, text_color, portrait, ty
 func _ready() -> void:
 	print(randomized_cardType_index)
 	#card_constructor('test', 'test', CARD_TYPES.GEM)
-	generate_card()
+	iteration = 0
+	for i in 3:
+		generate_card()
+		iteration += 1
 	pass
 	
 
