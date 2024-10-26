@@ -22,9 +22,11 @@ func _ready() -> void:
 	load_cells_at(Vector2(0,0))
 	pass # Replace with function body.
 
+func unload_cells_from(cell):
+	prints(cell, active_cells)
+	pass
+
 func load_cells_at(cell):
-	
-	#prints(cell, "TIME TO CHECK")
 	for i in 3:
 		for j in 3:
 			var position_to_check = Vector2(cell.x + (i - 1), cell.y + (j - 1))
@@ -44,7 +46,6 @@ func load_cells_at(cell):
 				##TODO load cells here
 				pass
 			pass
-	
 	pass
 
 func cell_checker(cell):
@@ -66,7 +67,7 @@ func generate_new_cell(cell):
 	self.add_child(new_chunk)
 	new_chunk.global_position = chunk_pos
 	active_cells.append(cell)
-	prints(cell, "GENERATED!")
+	#prints(cell, "GENERATED!")
 	pass
 
 
@@ -92,5 +93,6 @@ func _process(_delta: float) -> void:
 	if new_cell != player_cell_position:
 		player_cell_position = new_cell
 		load_cells_at(new_cell)
+		unload_cells_from(new_cell)
 		#generate_new_cell(player_cell_position)
 		pass
