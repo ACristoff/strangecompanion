@@ -18,9 +18,11 @@ func _physics_process(_delta):
 	#var direction = (Vector3(input_dir.x, 0, input_dir.y))
 	if debug_mode == true && Input.is_action_just_pressed("debug_scroll_down"):
 		camera.fov += 5
+		camera.position.y += 5
 		pass
 	elif debug_mode == true && Input.is_action_just_pressed("debug_scroll_up"):
 		camera.fov -= 5
+		camera.position.y -= 5
 		pass
 	if direction:
 		velocity.x = direction.x * SPEED
