@@ -12,7 +12,7 @@ material = SubResource("ShaderMaterial_skutk")
 [sub_resource type="BoxShape3D" id="BoxShape3D_6i2ts"]
 
 [node name="MeshInstance3D" type="MeshInstance3D"]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
 mesh = SubResource("PlaneMesh_5fwqa")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]

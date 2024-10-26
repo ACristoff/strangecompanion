@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvdnmpr3jgcvb"]
+[gd_scene load_steps=5 format=3 uid="uid://cvdnmpr3jgcvb"]
 
 [ext_resource type="Script" path="res://game/world/terrain_generator.gd" id="1_nlybv"]
-[ext_resource type="PackedScene" uid="uid://cjpl473vgxj6a" path="res://game/world/chunk.tscn" id="2_n5pim"]
 [ext_resource type="PackedScene" uid="uid://dy1u50vxhv615" path="res://game/player/witch3d.tscn" id="2_ofe75"]
 [ext_resource type="Texture2D" uid="uid://cgnaqukmdb8yo" path="res://Assets/UI_elements/UI_button.png" id="4_xh3uf"]
 [ext_resource type="Theme" uid="uid://xk8thxufmqj0" path="res://Assets/themes/label_theme_2.tres" id="5_caf0d"]
@@ -9,8 +8,6 @@
 [node name="TerrainGenerator" type="Node3D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_nlybv")
 player = NodePath("Witch3D")
-
-[node name="MeshInstance3D" parent="." instance=ExtResource("2_n5pim")]
 
 [node name="Witch3D" parent="." instance=ExtResource("2_ofe75")]
 
