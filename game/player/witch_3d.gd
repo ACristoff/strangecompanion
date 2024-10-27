@@ -4,12 +4,14 @@ extends CharacterBody3D
 
 const SPEED = 5.0
 var companion = preload("res://game/player/companion.tscn")
-@export var joined_companions : Array[String] = []
+var companion_visuals = preload("res://game/player/com_visuals.tscn")
+#@export var joined_companions : Array[String] = []
 @export var parent_node = self
 var debug_mode := true
+var buffer = 0
 
 func _ready() -> void:
-	pass
+	CompanionManager.give_follow_point.connect(set_reference)
 	
 
 func _physics_process(_delta):
@@ -34,30 +36,45 @@ func _physics_process(_delta):
 
 
 func _on_button_pressed() -> void:
-	refresh_companions("banana")
+	receive_companion_create_request("banana")
 
 
 func _on_button_2_pressed() -> void:
-	refresh_companions("pineapple")
+	receive_companion_create_request("pineapple")
 
 
 func _on_button_3_pressed() -> void:
-	refresh_companions("strawberry")
+	receive_companion_create_request("strawberry")
 
 
 func _on_button_4_pressed() -> void:
-	refresh_companions("watermelon")
+	receive_companion_create_request("watermelon")
+	
+func receive_companion_create_request(type):
+	## MAKES IT EASIER TO CREATE COMPANIONS
+	CompanionManager.give_follow_point.emit("CHANGE THIS YAHOO")
+	refresh_companions(str(type))
+	
 	
 func refresh_companions(type):
-	joined_companions.append(type)
+	CompanionManager.joined_companions.append(type)
 	#deletes current companions
 	CompanionManager.refresh_companions_manager()
 	CompanionManager.identification = 0
+	buffer = 0
 	CompanionManager.number_of_companions += 1
-	for item in joined_companions:
+	for item in CompanionManager.joined_companions:
 		CompanionManager.identification += 1
+		buffer += 1
 		var new_fren = companion.instantiate()
 		parent_node.add_child(new_fren)
-		new_fren.construct_companion(item)
+		if buffer == CompanionManager.number_of_companions:
+			print("spawn new!")
+			var new_fren_visuals = companion_visuals.instantiate()
+			parent_node.add_child(new_fren_visuals)
+			new_fren_visuals.construct_companion(item)
+			new_fren_visuals.update_position(new_fren.global_position, CompanionManager.identification)
 	#print(joined_companions)
 	
+func set_reference(position):
+	print(position)

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://2n58gq1adfm8"]
+
+[ext_resource type="Script" path="res://game/player/com_visuals.gd" id="1_8aa8p"]
+[ext_resource type="Texture2D" uid="uid://bw2vluvxy1lwk" path="res://Assets/Debug_Assets/PointerFire.png" id="2_lb0ym"]
+
+[node name="com_visuals" type="Node3D"]
+script = ExtResource("1_8aa8p")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+billboard = 1
+texture = ExtResource("2_lb0ym")
