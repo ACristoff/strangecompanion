@@ -52,7 +52,7 @@ func _on_button_4_pressed() -> void:
 	
 func receive_companion_create_request(type):
 	## MAKES IT EASIER TO CREATE COMPANIONS
-	CompanionManager.give_follow_point.emit("CHANGE THIS YAHOO")
+	#CompanionManager.give_follow_point.emit("CHANGE THIS YAHOO")
 	refresh_companions(str(type))
 	
 	
@@ -73,7 +73,9 @@ func refresh_companions(type):
 			var new_fren_visuals = companion_visuals.instantiate()
 			parent_node.add_child(new_fren_visuals)
 			new_fren_visuals.construct_companion(item)
-			new_fren_visuals.update_position(new_fren.global_position, CompanionManager.identification)
+			#CompanionManager.give_follow_point.emit(new_fren)
+		CompanionManager.give_follow_point.emit(new_fren)
+			#new_fren_visuals.update_position(new_fren.global_position, CompanionManager.identification)
 	#print(joined_companions)
 	
 func set_reference(position):
