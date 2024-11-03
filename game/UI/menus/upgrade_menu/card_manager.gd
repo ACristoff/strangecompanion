@@ -33,6 +33,8 @@ var possibleDolls : Array[String] = [
 	 #"BAWL",
 	 #"GROVE",
 	 ]
+
+
 var possibleItems : Array[String] = [
 	"SCISSORS",
 	 "SOCKS",
@@ -287,9 +289,12 @@ var card_data = {
 	},
 }
 
+var possibledolls2 = card_data["DOLLS"].keys()
+
 func generate_card():
 	#var type = CARD_TYPES.GEMS
 	#var card_name
+	
 	
 	
 	#KEEP TRACK OF CARDS GENERATED ON A STACK [card1, card2, card3]

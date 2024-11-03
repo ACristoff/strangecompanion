@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://bs2sog6lgirkp"]
+[gd_scene load_steps=4 format=3 uid="uid://bs2sog6lgirkp"]
 
 [ext_resource type="Script" path="res://game/game_manager.gd" id="1_45gt8"]
 [ext_resource type="PackedScene" uid="uid://cvdnmpr3jgcvb" path="res://game/world/terrain_generator.tscn" id="1_cyjtg"]
+[ext_resource type="PackedScene" uid="uid://b3dru07aqd4ft" path="res://game/world/enemy_manager.tscn" id="3_gjn2n"]
 
 [node name="game_3d" type="Node"]
 script = ExtResource("1_45gt8")
 
 [node name="TerrainGenerator" parent="." instance=ExtResource("1_cyjtg")]
+
+[node name="EnemyManager" parent="." instance=ExtResource("3_gjn2n")]
