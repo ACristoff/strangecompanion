@@ -11,7 +11,7 @@ var current_wave = 0
 
 func _process(_delta):
 	if GameManager.player != null:
-		mob_spawn_box.global_position = GameManager.player.global_position + Vector3(-10, 0, -10)
+		mob_spawn_box.global_position = GameManager.player.global_position + Vector3(-35, 0, -25)
 		pass
 	pass
 
