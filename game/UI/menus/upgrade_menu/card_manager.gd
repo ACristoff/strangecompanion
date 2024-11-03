@@ -465,6 +465,7 @@ func _ready() -> void:
 	for i in 3:
 		generate_card()
 		iteration += 1
+		await get_tree().create_timer(.4).timeout
 	pass
 	
 

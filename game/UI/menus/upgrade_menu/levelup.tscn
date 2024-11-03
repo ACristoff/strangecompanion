@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://c6hfq24qcolrf"]
 
-[ext_resource type="Script" path="res://game/UI/menus/levelup.gd" id="1_2pyb2"]
+[ext_resource type="Script" path="res://game/UI/menus/upgrade_menu/levelup.gd" id="1_2pyb2"]
 [ext_resource type="Texture2D" uid="uid://hgbiyx0cutq8" path="res://Assets/UI_elements/card.png" id="1_53o8o"]
-[ext_resource type="PackedScene" uid="uid://df24oomeoyv3f" path="res://game/UI/menus/card.tscn" id="3_deuu8"]
+[ext_resource type="PackedScene" uid="uid://df24oomeoyv3f" path="res://game/UI/menus/upgrade_menu/card.tscn" id="3_deuu8"]
 [ext_resource type="Theme" uid="uid://xk8thxufmqj0" path="res://Assets/themes/label_theme_2.tres" id="4_40fmk"]
 
 [node name="Control" type="Control"]

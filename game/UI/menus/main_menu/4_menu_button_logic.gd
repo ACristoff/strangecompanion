@@ -6,9 +6,9 @@ extends Control
 @onready var challenges = $MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MarginContainer
 @onready var settings = $MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MarginContainer2
 
-@onready var wardrobescene = preload("res://game/UI/menus/wardrobe_ui.tscn")
-@onready var challengesscene = preload("res://game/UI/menus/challenges_ui.tscn")
-@onready var settingsscene = preload("res://game/UI/menus/settings_ui.tscn")
+@onready var wardrobescene = preload("res://game/UI/menus/main_menu/wardrobe_ui.tscn")
+@onready var challengesscene = preload("res://game/UI/menus/main_menu/challenges_ui.tscn")
+@onready var settingsscene = preload("res://game/UI/menus/settings_menu/settings_ui.tscn")
 @onready var gamescene = preload("res://game/game_plane.tscn")
 
 var down = 1
