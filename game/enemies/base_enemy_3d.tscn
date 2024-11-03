@@ -17,3 +17,23 @@ pixel_size = 0.002
 billboard = 1
 texture = ExtResource("1_ew5nx")
 hframes = 2
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 100.0
+offset_bottom = 20.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Control"]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 20.0
+step = 1.0
+value = 100.0
+show_percentage = false
