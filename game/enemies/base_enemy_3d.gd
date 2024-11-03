@@ -9,7 +9,13 @@ var target = GameManager.player
 
 #Take Damage
 	#Update HealthBar
+func take_damage(damage):
+	pass
 
 #Do Damage
+func do_damage():
+	pass
 
 #Die
+func die():
+	queue_free()
