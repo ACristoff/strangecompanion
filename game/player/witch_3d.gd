@@ -11,6 +11,8 @@ var debug_mode := true
 var buffer = 0
 
 func _ready() -> void:
+	GameManager.player = self
+	receive_companion_create_request("banana")
 	CompanionManager.give_follow_point.connect(set_reference)
 	
 

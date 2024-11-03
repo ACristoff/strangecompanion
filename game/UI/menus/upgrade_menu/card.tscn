@@ -333,4 +333,4 @@ stretch_mode = 2
 libraries = {
 "": SubResource("AnimationLibrary_i85im")
 }
-speed_scale = 3.0
+speed_scale = 2.036

@@ -16,11 +16,39 @@ var oora_copies = 0
 var bawl_copies = 0
 
 var iteration = 0
+var inventory = CompanionManager.joined_companions
 
 enum CARD_TYPES {GEMS, ITEMS, DOLLS}
 
-@export_enum( "GEMS", "DOLLS", "ITEMS") var constructType
-
+var possibleDolls : Array[String] = [
+	"LODEY",
+	 "STABBEY",
+	 "MAMI",
+	 "KANON",
+	 "HACKE",
+	 "DUNE",
+	 "RIFF",
+	 "NYAO",
+	 "OORA",
+	 #"BAWL",
+	 #"GROVE",
+	 ]
+var possibleItems : Array[String] = [
+	"SCISSORS",
+	 "SOCKS",
+	 "PATCH",
+	 "NEEDLE",
+	 "SPOOL",
+	 "LAYERS",
+	 "GLOVES",
+	 "PIN",
+	 "EARRINGS",
+	  ]
+var possibleGems : Array[String] = [
+	"RED",
+	 "BLUE",
+	 "YELLOW",
+	  ]
 var randomized_cardType_index:int = CARD_TYPES.values()[ randi()%CARD_TYPES.size() ]
 
 var card_data = {
@@ -165,38 +193,103 @@ var card_data = {
 			"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
-		"BAWL": {
-			"title": "Bawl",
-			"description": [
-				"Curls in a ball and protects you from incoming attacks.",
-				"Spins faster",
-				"Obtain an additional Bawl",
-				"Spins even faster",
-				"Obtain an additional Bawl and spins even faster"
-				],
+		#"BAWL": {
+			#"title": "Bawl",
+			#"description": [
+				#"Curls in a ball and protects you from incoming attacks.",
+				#"Spins faster",
+				#"Obtain an additional Bawl",
+				#"Spins even faster",
+				#"Obtain an additional Bawl and spins even faster"
+				#],
+			#"portrait": "res://Assets/Debug_Assets/PointerFire.png",
+			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
+			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
+		#},
+		#"GROVE": {
+			#"title": "Grove",
+			#"description": [
+				#"Does not attack, instead grows to produce valuables",
+				#"Grows faster",
+				#"Harvests yeild more",
+				#"Grows even faster",
+				#"Grows even faster and harvests yeild more when Grove touches enemies",
+				#],
+			#"portrait": "res://Assets/Debug_Assets/PointerFire.png",
+			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
+			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
+		#},
+	},
+	"ITEMS": {
+		"SCISSORS": {
+			"title": "Scissors",
+			"description": "Increases Damage by 8%",
 			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
 			"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
-		"GROVE": {
-			"title": "Grove",
-			"description": [
-				"Does not attack, instead grows to produce valuables",
-				"Grows faster",
-				"Harvests yeild more",
-				"Grows even faster",
-				"Grows even faster and harvests yeild more when Grove touches enemies",
-				],
+		"SOCKS": {
+			"title": "Silk Socks",
+			"description": "Increases Speed by 8%",
 			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
 			"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
-	}
+		"PATCH": {
+			"title": "Heart Patch",
+			"description": "Increases Maximum Health by 8%",
+			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
+			"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
+			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
+		},
+		"NEEDLE": {
+			"title": "Needle & Thread",
+			"description": "Increases Attack Frequency by 8%",
+			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
+			"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
+			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
+		},
+		"SPOOL": {
+			"title": "Wooden Spool O' Yarn",
+			"description": "Increases Duration of Attack by 8%",
+			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
+			"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
+			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
+		},
+		"LAYERS": {
+			"title": "More Layers",
+			"description": "Increases Defense by 8%",
+			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
+			"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
+			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
+		},
+		"GLOVES": {
+			"title": "Magnetic Gloves",
+			"description": "Increases XP Pickup Radius by 8%",
+			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
+			"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
+			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
+		},
+		"PIN": {
+			"title": "Golden Pendent",
+			"description": "Increases Gold Gain by 8%",
+			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
+			"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
+			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
+		},
+		"EARRINGS": {
+			"title": "Prismatic Earrings",
+			"description": "Increases XP Gain by 8%",
+			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
+			"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
+			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
+		},
+	},
 }
 
 func generate_card():
-	var type = CARD_TYPES.DOLLS
-	var card_name
+	#var type = CARD_TYPES.GEMS
+	#var card_name
 	
 	
 	#KEEP TRACK OF CARDS GENERATED ON A STACK [card1, card2, card3]
@@ -212,11 +305,111 @@ func generate_card():
 	#UPDATE TYPE
 	#SEND THAT SHIT
 	
-	if iteration == 0:
-		pass
+	var type
+	var card_name
 	
+	#var card_result = card_data['ITEMS']['EARRINGS']
+	#var card_result = card_data["DOLLS"]["KANON"]
+	#var card_result = card_data["ITEMS"]["SCISSORS"]
+	
+	if iteration == 0:
+		var iterationChoice = randi_range(0, 2)
+		if iterationChoice == 0:
+			type = CARD_TYPES.GEMS
+			var selection = possibleGems.pick_random()
+			card_information_setter(type, selection)
+		elif iterationChoice == 1:
+			type = CARD_TYPES.DOLLS
+			if CompanionManager.joined_companions.size() > 4:
+				var selection = CompanionManager.joined_companions.pick_random()
+				card_information_setter(type, selection)
+			else:
+				var selection = possibleDolls.pick_random()
+				card_information_setter(type, selection)
+		else:
+			type = CARD_TYPES.DOLLS
+			if CompanionManager.joined_companions.size() <= 0:
+				var selection = possibleDolls.pick_random()
+				card_information_setter(type, selection)
+			else:
+				var selection = CompanionManager.joined_companions.pick_random()
+				card_information_setter(type, selection)
+	#-------------ITERATION 0------------------
+	elif iteration == 1:
+		var iterationChoice = randi_range(0, 3)
+		#0  new doll
+		#1  doll upgrade
+		#2  new item
+		#3  item upgrade
+		if iterationChoice == 0:
+			type = CARD_TYPES.DOLLS
+			if CompanionManager.joined_companions.size() > 4:
+				var selection = CompanionManager.joined_companions.pick_random()
+				card_information_setter(type, selection)
+			else:
+				var selection = possibleDolls.pick_random()
+				card_information_setter(type, selection)
+		elif iterationChoice == 1:
+			type = CARD_TYPES.DOLLS
+			if CompanionManager.joined_companions.size() <= 0:
+				var selection = possibleDolls.pick_random()
+				card_information_setter(type, selection)
+			else:
+				var selection = CompanionManager.joined_companions.pick_random()
+				card_information_setter(type, selection)
+		elif iterationChoice == 2:
+			type = CARD_TYPES.ITEMS
+			if CompanionManager.joined_items.size() > 4:
+				var selection = CompanionManager.joined_items.pick_random()
+				card_information_setter(type, selection)
+			else:
+				var selection = possibleItems.pick_random()
+				card_information_setter(type, selection)
+		else:
+			type = CARD_TYPES.ITEMS
+			if CompanionManager.joined_items.size() <= 0:
+				var selection = possibleItems.pick_random()
+				card_information_setter(type, selection)
+			else:
+				var selection = CompanionManager.joined_items.pick_random()
+				card_information_setter(type, selection)
+			
+	#-------------ITERATION 1------------------
+	else: 
+		var iterationChoice = randi_range(0, 2)
+		#0  new item
+		#1  item upgrade
+		#2  doll upgrade
+		if iterationChoice == 0:
+			type = CARD_TYPES.ITEMS
+			if CompanionManager.joined_items.size() > 4:
+				var selection = CompanionManager.joined_items.pick_random()
+				card_information_setter(type, selection)
+			else:
+				var selection = possibleItems.pick_random()
+				card_information_setter(type, selection)
+		elif iterationChoice == 1:
+			type = CARD_TYPES.ITEMS
+			if CompanionManager.joined_items.size() <= 0:
+				var selection = possibleItems.pick_random()
+				card_information_setter(type, selection)
+			else:
+				var selection = CompanionManager.joined_items.pick_random()
+				card_information_setter(type, selection)
+		else:
+			type = CARD_TYPES.DOLLS
+			if CompanionManager.joined_companions.size() <= 0:
+				var selection = possibleDolls.pick_random()
+				card_information_setter(type, selection)
+			else:
+				var selection = CompanionManager.joined_companions.pick_random()
+				card_information_setter(type, selection)
+	#-------------ITERATION 2------------------
+	
+	
+func card_information_setter(type, selection):
 	if type == CARD_TYPES.GEMS:
-		var card_result = card_data['GEMS']['RED']
+		var card_result = card_data["GEMS"][str(selection)]
 		card_constructor(
 			card_result.title, 
 			card_result.description,
@@ -228,7 +421,7 @@ func generate_card():
 		pass
 	
 	if type == CARD_TYPES.DOLLS:
-		var card_result = card_data["DOLLS"]["NYAO"]
+		var card_result = card_data["DOLLS"][str(selection)]
 		card_constructor(
 			card_result.title, 
 			card_result.description[0],
@@ -239,10 +432,10 @@ func generate_card():
 		)
 		pass
 	if type == CARD_TYPES.ITEMS:
-		var card_result = card_data["ITEMS"]["SCISSORS"]
+		var card_result = card_data["ITEMS"][str(selection)]
 		card_constructor(
 			card_result.title, 
-			card_result.description[0],
+			card_result.description,
 			card_result.borderColor,
 			card_result.textColor,
 			card_result.portrait,
@@ -251,7 +444,7 @@ func generate_card():
 
 func card_constructor(title, description, border_color, text_color, portrait, type):
 	var new_card = CARD.instantiate()
-	self.add_child(new_card)
+	$HBoxContainer.add_child(new_card)
 	new_card.title = title
 	new_card.description = description
 	new_card.border_color = border_color
@@ -260,12 +453,13 @@ func card_constructor(title, description, border_color, text_color, portrait, ty
 	new_card.type = type
 	#new_card.yell()
 	new_card.update()
+	print(new_card.title)
 	pass
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print(randomized_cardType_index)
+	#print(randomized_cardType_index)
 	#card_constructor('test', 'test', CARD_TYPES.GEM)
 	iteration = 0
 	for i in 3:

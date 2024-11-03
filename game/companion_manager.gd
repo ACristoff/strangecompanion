@@ -21,6 +21,7 @@ var companion_types =  {
 }
 
 var joined_companions : Array[String] = []
+var joined_items : Array[String] = []
 var number_of_companions = 0
 var identification = 0
 
