@@ -20,7 +20,25 @@ var inventory = CompanionManager.joined_companions
 enum CARD_TYPES {GEMS, ITEMS, DOLLS}
 
 var randomized_cardType_index:int = CARD_TYPES.values()[ randi()%CARD_TYPES.size() ]
-
+var rarities = {
+	"RARITIES":{
+		"COMMON": {
+			"border": "res://Assets/UI_elements/Cards/graycard.png"
+		},
+		"UNCOMMON": {
+			"border": "res://Assets/UI_elements/Cards/greencard.png"
+		},
+		"RARE": {
+			"border": "res://Assets/UI_elements/Cards/bluecard.png"
+		},
+		"EXOTIC": {
+			"border": "res://Assets/UI_elements/Cards/purplecard.png"
+		},
+		"LEGENDARY": {
+			"border": "res://Assets/UI_elements/Cards/yellowcard.png"
+		},
+	}
+}
 var card_data = {
 	"GEMS": {
 		"RED": {
@@ -291,114 +309,93 @@ func generate_card():
 	if iteration == 0:
 		var iterationChoice = randi_range(0, 2)
 		if iterationChoice == 0:
-			rarity = "GOLD"
+			rarity = "LEGENDARY"
 			NewGem(type, rarity)
 		elif iterationChoice == 1:
-			type = CARD_TYPES.DOLLS
-			if CompanionManager.joined_companions.size() > 4:
-				var selection = CompanionManager.joined_companions.pick_random()
-				card_information_setter(type, selection)
-			else:
-				var selection = possibleDolls.pick_random()
-				card_information_setter(type, selection)
+			rarity = "EXOTIC"
+			NewDoll(type, rarity)
 		else:
-			type = CARD_TYPES.DOLLS
-			if CompanionManager.joined_companions.size() <= 0:
-				var selection = possibleDolls.pick_random()
-				card_information_setter(type, selection)
-			else:
-				var selection = CompanionManager.joined_companions.pick_random()
-				card_information_setter(type, selection)
+			rarity = "RARE"
+			UpgradeDoll(type, rarity)
+				
 	#-------------ITERATION 0------------------
 	elif iteration == 1:
 		var iterationChoice = randi_range(0, 3)
-		#0  new doll
-		#1  doll upgrade
-		#2  new item
-		#3  item upgrade
 		if iterationChoice == 0:
-			type = CARD_TYPES.DOLLS
-			if CompanionManager.joined_companions.size() > 4:
-				var selection = CompanionManager.joined_companions.pick_random()
-				card_information_setter(type, selection)
-			else:
-				var selection = possibleDolls.pick_random()
-				card_information_setter(type, selection)
+			rarity = "EXOTIC"
+			NewDoll(type, rarity)
 		elif iterationChoice == 1:
-			type = CARD_TYPES.DOLLS
-			if CompanionManager.joined_companions.size() <= 0:
-				var selection = possibleDolls.pick_random()
-				card_information_setter(type, selection)
-			else:
-				var selection = CompanionManager.joined_companions.pick_random()
-				card_information_setter(type, selection)
+			rarity = "RARE"
+			UpgradeDoll(type, rarity)
 		elif iterationChoice == 2:
-			type = CARD_TYPES.ITEMS
-			if CompanionManager.joined_items.size() > 4:
-				var selection = CompanionManager.joined_items.pick_random()
-				card_information_setter(type, selection)
-			else:
-				var selection = possibleItems.pick_random()
-				card_information_setter(type, selection)
+			rarity = "UNCOMMON"
+			NewItem(type, rarity)
 		else:
-			type = CARD_TYPES.ITEMS
-			if CompanionManager.joined_items.size() <= 0:
-				var selection = possibleItems.pick_random()
-				card_information_setter(type, selection)
-			else:
-				var selection = CompanionManager.joined_items.pick_random()
-				card_information_setter(type, selection)
+			rarity = "COMMON"
+			UpgradeItem(type, rarity)
 			
 	#-------------ITERATION 1------------------
 	else: 
 		var iterationChoice = randi_range(0, 2)
-		#0  new item
-		#1  item upgrade
-		#2  doll upgrade
+		
 		if iterationChoice == 0:
-			type = CARD_TYPES.ITEMS
-			if CompanionManager.joined_items.size() > 4:
-				var selection = CompanionManager.joined_items.pick_random()
-				card_information_setter(type, selection)
-			else:
-				var selection = possibleItems.pick_random()
-				card_information_setter(type, selection)
+			rarity = "RARE"
+			UpgradeDoll(type, rarity)
 		elif iterationChoice == 1:
-			type = CARD_TYPES.ITEMS
-			if CompanionManager.joined_items.size() <= 0:
-				var selection = possibleItems.pick_random()
-				card_information_setter(type, selection)
-			else:
-				var selection = CompanionManager.joined_items.pick_random()
-				card_information_setter(type, selection)
+			rarity = "UNCOMMON"
+			NewItem(type, rarity)
 		else:
-			type = CARD_TYPES.DOLLS
-			if CompanionManager.joined_companions.size() <= 0:
-				var selection = possibleDolls.pick_random()
-				card_information_setter(type, selection)
-			else:
-				var selection = CompanionManager.joined_companions.pick_random()
-				card_information_setter(type, selection)
+			rarity = "COMMON"
+			UpgradeItem(type, rarity)
+		
 	#-------------ITERATION 2------------------
-func UpgradeDoll():
-	pass
-func UpgradeItem():
-	pass
+func UpgradeDoll(type, rarity):
+	type = CARD_TYPES.DOLLS
+	if CompanionManager.joined_companions.size() <= 0:
+		var selection = possibleDolls.pick_random()
+		card_information_setter(type, selection, rarity)
+	else:
+		var selection = CompanionManager.joined_companions.pick_random()
+		card_information_setter(type, selection, rarity)
+func UpgradeItem(type, rarity):
+	type = CARD_TYPES.ITEMS
+	if CompanionManager.joined_items.size() <= 0:
+		var selection = possibleItems.pick_random()
+		card_information_setter(type, selection, rarity)
+	else:
+		var selection = CompanionManager.joined_items.pick_random()
+		card_information_setter(type, selection, rarity)
 func NewDoll(type, rarity):
-	pass
+	type = CARD_TYPES.DOLLS
+	if CompanionManager.joined_companions.size() > 4:
+		var selection = CompanionManager.joined_companions.pick_random()
+		card_information_setter(type, selection, rarity)
+	else:
+		var selection = possibleDolls.pick_random()
+		card_information_setter(type, selection, rarity)
+		
 func NewItem(type, rarity):
-	pass
+	type = CARD_TYPES.ITEMS
+	if CompanionManager.joined_items.size() > 4:
+		var selection = CompanionManager.joined_items.pick_random()
+		card_information_setter(type, selection, rarity)
+	else:
+		var selection = possibleItems.pick_random()
+		card_information_setter(type, selection, rarity)
+	
 func NewGem(type, rarity):
 	type = CARD_TYPES.GEMS
 	var selection = possibleGems.pick_random()
-	card_information_setter(type, selection)
+	card_information_setter(type, selection, rarity)
 	
-func card_information_setter(type, selection):
+func card_information_setter(type, selection, rarity):
 	if type == CARD_TYPES.GEMS:
+		var rarity_result = rarities["RARITIES"][str(rarity)]
 		var card_result = card_data["GEMS"][str(selection)]
 		card_constructor(
 			card_result.title, 
 			card_result.description,
+			rarity_result.border,
 			card_result.textColor,
 			card_result.portrait,
 			CARD_TYPES.GEMS
@@ -406,30 +403,35 @@ func card_information_setter(type, selection):
 		pass
 	
 	if type == CARD_TYPES.DOLLS:
+		var rarity_result = rarities["RARITIES"][str(rarity)]
 		var card_result = card_data["DOLLS"][str(selection)]
 		card_constructor(
 			card_result.title, 
 			card_result.description[0],
+			rarity_result.border,
 			card_result.textColor,
 			card_result.portrait,
 			CARD_TYPES.GEMS
 		)
 		pass
 	if type == CARD_TYPES.ITEMS:
+		var rarity_result = rarities["RARITIES"][str(rarity)]
 		var card_result = card_data["ITEMS"][str(selection)]
 		card_constructor(
 			card_result.title, 
 			card_result.description,
+			rarity_result.border,
 			card_result.textColor,
 			card_result.portrait,
 			CARD_TYPES.ITEMS
 			)
 
-func card_constructor(title, description, text_color, portrait, type):
+func card_constructor(title, description, rarity_result, text_color, portrait, type):
 	var new_card = CARD.instantiate()
 	$HBoxContainer.add_child(new_card)
 	new_card.title = title
 	new_card.description = description
+	new_card.rarity = rarity_result
 	new_card.text_color = text_color
 	new_card.portrait = portrait
 	new_card.type = type

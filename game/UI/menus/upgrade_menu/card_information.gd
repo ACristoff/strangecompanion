@@ -97,6 +97,7 @@ signal card_selected#(type, name, copy)
 
 @export var title := 'TITLE'
 @export var description := 'DESCRIPTION'
+@export var rarity = ''
 @export var type = ''
 @export var text_color: Color
 #@export var border_color: Color
@@ -110,6 +111,7 @@ signal card_selected#(type, name, copy)
 func update():
 	title_label.text = title
 	description_label.text = description
+	border.texture = load(rarity)
 	portrait_texture.texture = load(portrait)
 	#border.self_modulate = border_color
 	title_label.self_modulate = text_color

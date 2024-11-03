@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvdnmpr3jgcvb"]
+[gd_scene load_steps=5 format=3 uid="uid://cvdnmpr3jgcvb"]
 
 [ext_resource type="Script" path="res://game/world/terrain_generator.gd" id="1_nlybv"]
 [ext_resource type="PackedScene" uid="uid://dy1u50vxhv615" path="res://game/player/witch3d.tscn" id="2_ofe75"]
 [ext_resource type="Texture2D" uid="uid://cgnaqukmdb8yo" path="res://Assets/UI_elements/UI_button.png" id="4_xh3uf"]
 [ext_resource type="Theme" uid="uid://xk8thxufmqj0" path="res://Assets/themes/label_theme_2.tres" id="5_caf0d"]
-[ext_resource type="PackedScene" uid="uid://b3dru07aqd4ft" path="res://game/world/enemy_manager.tscn" id="5_s6sjw"]
 
 [node name="TerrainGenerator" type="Node3D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_nlybv")
@@ -47,5 +46,3 @@ theme_override_font_sizes/font_size = 80
 text = "LEVEL UP"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="EnemyManager" parent="." instance=ExtResource("5_s6sjw")]
