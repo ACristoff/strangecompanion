@@ -17,40 +17,8 @@ var bawl_copies = 0
 
 var iteration = 0
 var inventory = CompanionManager.joined_companions
-
 enum CARD_TYPES {GEMS, ITEMS, DOLLS}
 
-var possibleDolls : Array[String] = [
-	"LODEY",
-	 "STABBEY",
-	 "MAMI",
-	 "KANON",
-	 "HACKE",
-	 "DUNE",
-	 "RIFF",
-	 "NYAO",
-	 "OORA",
-	 #"BAWL",
-	 #"GROVE",
-	 ]
-
-
-var possibleItems : Array[String] = [
-	"SCISSORS",
-	 "SOCKS",
-	 "PATCH",
-	 "NEEDLE",
-	 "SPOOL",
-	 "LAYERS",
-	 "GLOVES",
-	 "PIN",
-	 "EARRINGS",
-	  ]
-var possibleGems : Array[String] = [
-	"RED",
-	 "BLUE",
-	 "YELLOW",
-	  ]
 var randomized_cardType_index:int = CARD_TYPES.values()[ randi()%CARD_TYPES.size() ]
 
 var card_data = {
@@ -59,21 +27,21 @@ var card_data = {
 			"title": "Red Style Gem",
 			"description": "You see memories of destruction and despair",
 			"portrait": "res://Assets/Debug_Assets/red_gem.png",
-			"borderColor": Color.from_hsv(7.0/359.0, 96.0/100.0, 80.0/100.0, 255.0/255.0),
+			#"borderColor": Color.from_hsv(7.0/359.0, 96.0/100.0, 80.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(35.0/359.0, 23.0/100.0, 100.0/100.0, 255.0/255.0)
 		},
 		"BLUE": {
 			"title": "Blue Style Gem",
 			"description": "You see memories of an endless storm",
 			"portrait": "res://Assets/Debug_Assets/blue_gem.png",
-			"borderColor": Color.from_hsv(199.0/359.0, 90.0/100.0, 100.0/100.0, 255.0/255.0),
+			#"borderColor": Color.from_hsv(199.0/359.0, 90.0/100.0, 100.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(187.0/359.0, 29.0/100.0, 95.0/100.0, 255.0/225.0)
 		},
 		"YELLOW": {
 			"title": "Yellow Style Gem",
 			"description": "You see memories of a raging swarm",
 			"portrait": "res://Assets/Debug_Assets/yellow_gem.png",
-			"borderColor": Color.from_hsv(35.0/359.0, 94.0/100.0, 100.0/100.0, 255.0/255.0),
+			#"borderColor": Color.from_hsv(35.0/359.0, 94.0/100.0, 100.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(40.0/359.0, 22.0/100.0, 100.0/100.0, 255.0/255.0)
 		}
 	},
@@ -88,7 +56,7 @@ var card_data = {
 				"Shoots an additional projectile",
 				],
 			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
-			"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
+			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"STABBEY": {
@@ -101,7 +69,7 @@ var card_data = {
 				"Gains an extra blade, and swings faster",
 				],
 			"portrait": "res://Assets/Debug_Assets/stabbey_sketch.png",
-			"borderColor": Color.from_hsv(64.0/359.0, 53.0/100.0, 100.0/100.0, 255.0/255.0),
+			#"borderColor": Color.from_hsv(64.0/359.0, 53.0/100.0, 100.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(57.0/359.0, 25.0/100.0, 83.0/100.0, 225.0/225.0)
 		},
 		"MAMI": {
@@ -114,7 +82,7 @@ var card_data = {
 				"Food bounces once on the floor"
 				],
 			"portrait": "res://Assets/Debug_Assets/mami_sketch.png",
-			"borderColor": Color.from_hsv(43.0/359, 39.0/100.0, 100.0/100.0, 255.0/255.0),
+			#"borderColor": Color.from_hsv(43.0/359, 39.0/100.0, 100.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(181.0/359, 22.0/100.0, 95.0/100.0, 255.0/255.0)
 		},
 		"KANON": {
@@ -127,7 +95,7 @@ var card_data = {
 				"Shoots out of all 8 cannons consecutively"
 				],
 			"portrait": "res://Assets/Debug_Assets/kanon_sketch.png",
-			"borderColor": Color.from_hsv(0.0/359.0, 0.0/100.0, 61.0/100.0, 255.0/255.0),
+			#"borderColor": Color.from_hsv(0.0/359.0, 0.0/100.0, 61.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(19.0/359.0, 63.0/100.0, 80.0/100.0, 255.0/255.0)
 		},
 		"HACKE": {
@@ -140,7 +108,7 @@ var card_data = {
 				"Selection areas get larger and activate twice"
 				],
 			"portrait": "res://Assets/Debug_Assets/hacke_sketch.png",
-			"borderColor": Color.from_hsv(227.0/359.0, 80.0/100.0, 16.0/100.0, 255.0/255.0),
+			#"borderColor": Color.from_hsv(227.0/359.0, 80.0/100.0, 16.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(70.0/359.0, 74.0/100.0, 100.0/100.0, 255.0/255.0)
 		},
 		"DUNE": {
@@ -153,7 +121,7 @@ var card_data = {
 				"Shoots an additional projectile and sandstorms split of into 3 smaller storms",
 				],
 			"portrait": "res://Assets/Debug_Assets/dune_sketch.png",
-			"borderColor": Color.from_hsv(40.0/359.0, 100.0/100.0, 60.0/100.0, 255.0/255.0),
+			#"borderColor": Color.from_hsv(40.0/359.0, 100.0/100.0, 60.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(216.0/359.0, 46.0/100.0, 87.0/100.0, 255.0/255.0)
 		},
 		"RIFF": {
@@ -166,7 +134,7 @@ var card_data = {
 				"Lightning can chain onto 5 more enemies and stuns them for .05 seconds longer",
 				],
 			"portrait": "res://Assets/Debug_Assets/riff_sketch.png",
-			"borderColor": Color.from_hsv(300.0/359.0, 82.0/100.0, 100.0/100.0, 255.0/255.0),
+			#"borderColor": Color.from_hsv(300.0/359.0, 82.0/100.0, 100.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(187.0/359.0, 29.0/100.0, 95.0/100.0, 255.0/255.0)
 		},
 		"NYAO": {
@@ -179,7 +147,7 @@ var card_data = {
 				"Shoots even more frequently" 
 				],
 			"portrait": "res://Assets/Debug_Assets/nyao_sketch.png",
-			"borderColor": Color.from_hsv(40.0/359.0, 11.0/100.0, 100.0/100.0, 225.0/225.0),
+			#"borderColor": Color.from_hsv(40.0/359.0, 11.0/100.0, 100.0/100.0, 225.0/225.0),
 			"textColor": Color.from_hsv(4.0/359.0, 98.0/100.0, 98.0/100.0, 225.0/225.0)
 		},
 		"OORA": {
@@ -192,7 +160,7 @@ var card_data = {
 				"Area gets even larger and knocks back enemies slightly",
 				],
 			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
-			"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
+			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		#"BAWL": {
@@ -227,69 +195,72 @@ var card_data = {
 			"title": "Scissors",
 			"description": "Increases Damage by 8%",
 			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
-			"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
+			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"SOCKS": {
 			"title": "Silk Socks",
 			"description": "Increases Speed by 8%",
 			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
-			"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
+			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"PATCH": {
 			"title": "Heart Patch",
 			"description": "Increases Maximum Health by 8%",
 			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
-			"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
+			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"NEEDLE": {
 			"title": "Needle & Thread",
 			"description": "Increases Attack Frequency by 8%",
 			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
-			"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
+			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"SPOOL": {
 			"title": "Wooden Spool O' Yarn",
 			"description": "Increases Duration of Attack by 8%",
 			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
-			"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
+			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"LAYERS": {
 			"title": "More Layers",
 			"description": "Increases Defense by 8%",
 			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
-			"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
+			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"GLOVES": {
 			"title": "Magnetic Gloves",
 			"description": "Increases XP Pickup Radius by 8%",
 			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
-			"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
+			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"PIN": {
 			"title": "Golden Pendent",
 			"description": "Increases Gold Gain by 8%",
 			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
-			"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
+			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"EARRINGS": {
 			"title": "Prismatic Earrings",
 			"description": "Increases XP Gain by 8%",
 			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
-			"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
+			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 	},
 }
 
-var possibledolls2 = card_data["DOLLS"].keys()
+var possibleDolls = card_data["DOLLS"].keys()
+var possibleItems = card_data["ITEMS"].keys()
+var possibleGems = card_data["GEMS"].keys()
+
 
 func generate_card():
 	#var type = CARD_TYPES.GEMS
@@ -312,7 +283,7 @@ func generate_card():
 	
 	var type
 	var card_name
-	
+	var rarity
 	#var card_result = card_data['ITEMS']['EARRINGS']
 	#var card_result = card_data["DOLLS"]["KANON"]
 	#var card_result = card_data["ITEMS"]["SCISSORS"]
@@ -320,9 +291,8 @@ func generate_card():
 	if iteration == 0:
 		var iterationChoice = randi_range(0, 2)
 		if iterationChoice == 0:
-			type = CARD_TYPES.GEMS
-			var selection = possibleGems.pick_random()
-			card_information_setter(type, selection)
+			rarity = "GOLD"
+			NewGem(type, rarity)
 		elif iterationChoice == 1:
 			type = CARD_TYPES.DOLLS
 			if CompanionManager.joined_companions.size() > 4:
@@ -410,7 +380,18 @@ func generate_card():
 				var selection = CompanionManager.joined_companions.pick_random()
 				card_information_setter(type, selection)
 	#-------------ITERATION 2------------------
-	
+func UpgradeDoll():
+	pass
+func UpgradeItem():
+	pass
+func NewDoll(type, rarity):
+	pass
+func NewItem(type, rarity):
+	pass
+func NewGem(type, rarity):
+	type = CARD_TYPES.GEMS
+	var selection = possibleGems.pick_random()
+	card_information_setter(type, selection)
 	
 func card_information_setter(type, selection):
 	if type == CARD_TYPES.GEMS:
@@ -418,7 +399,6 @@ func card_information_setter(type, selection):
 		card_constructor(
 			card_result.title, 
 			card_result.description,
-			card_result.borderColor,
 			card_result.textColor,
 			card_result.portrait,
 			CARD_TYPES.GEMS
@@ -430,7 +410,6 @@ func card_information_setter(type, selection):
 		card_constructor(
 			card_result.title, 
 			card_result.description[0],
-			card_result.borderColor,
 			card_result.textColor,
 			card_result.portrait,
 			CARD_TYPES.GEMS
@@ -441,18 +420,16 @@ func card_information_setter(type, selection):
 		card_constructor(
 			card_result.title, 
 			card_result.description,
-			card_result.borderColor,
 			card_result.textColor,
 			card_result.portrait,
 			CARD_TYPES.ITEMS
 			)
 
-func card_constructor(title, description, border_color, text_color, portrait, type):
+func card_constructor(title, description, text_color, portrait, type):
 	var new_card = CARD.instantiate()
 	$HBoxContainer.add_child(new_card)
 	new_card.title = title
 	new_card.description = description
-	new_card.border_color = border_color
 	new_card.text_color = text_color
 	new_card.portrait = portrait
 	new_card.type = type
