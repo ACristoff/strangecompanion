@@ -78,7 +78,7 @@ var card_data = {
 				"Projectiles  deal  5  more  base  damage",
 				"Shoots  an  additional  projectile",
 				],
-			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
+			"portrait": "res://Assets/Player/lodey.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
