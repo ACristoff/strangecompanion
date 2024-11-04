@@ -13,7 +13,7 @@ func set_reference(new_fren):
 	if identification_number == CompanionManager.identification:
 		following_currently = new_fren
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if following_currently:
 		var tween = create_tween()
 		tween.set_trans(Tween.TRANS_CIRC)
@@ -23,8 +23,9 @@ func _physics_process(delta: float) -> void:
 func construct_companion(new_type):
 	type = new_type
 	$Sprite3D.texture = CompanionManager.companion_types[type].sprite
-func update_position(position, idNum):
-	print(position)
+
+func update_position(new_position, idNum):
+	print(new_position)
 	print(idNum)
 #func set_reference(new_fren):
 	#following_currently = new_fren

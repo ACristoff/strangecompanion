@@ -6,21 +6,17 @@ extends Node3D
 @onready var mob_timer = $MobTimer
 @onready var wave_timer = $WaveTimer
 @onready var wave_delay_timer = $WaveDelayTimer
-##TODO Change this eventually
-#var basic_enemy = preload("res://game/enemies/base_enemy_3d.tscn")
 
 
 @export var wave_data: Array[Wave] = []
 var current_wave = 0
 var enemy_count = 0
 
-
 func _ready():
 	wave_update(wave_data[current_wave])
 	pass
 
 func _on_wave_delay_timer_timeout():
-	#prints(wave_timer.wait_time)
 	wave_timer.start()
 	mob_timer.start()
 	pass # Replace with function body.
@@ -46,7 +42,6 @@ func _on_mob_timer_timeout():
 		add_child(mob)
 		mob.global_position = mob_spawn_location.global_position
 		enemy_count += 1
-
 
 func _on_wave_timer_timeout():
 	print("wave finished")
