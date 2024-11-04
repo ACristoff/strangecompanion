@@ -109,6 +109,7 @@ signal card_selected#(type, name, copy)
 #@export var border_color: Color
 @export var portrait = ''
 @export var icon = ''
+@export var nameCard = ''
 
 #func yell():
 	#print('test')
@@ -124,6 +125,8 @@ func update():
 	title_label.self_modulate = text_color
 	description_label.self_modulate = text_color
 	icon_texture.texture = load(icon)
+	nameCard = nameCard
+	#print(index)
 	pass
 
 #var card_types =  {
@@ -350,6 +353,7 @@ func button_shrink(state):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#print(nameCard)
 	self.disabled = true
 	await get_tree().create_timer(.6).timeout
 	$AnimationPlayer.play("card_flip")
@@ -395,8 +399,8 @@ func rotaty():
 
 
 func _on_pressed() -> void:
-	
-	print("card_pressed")
+	print(nameCard)
+	#print("card_pressed")
 	emit_signal("card_selected")
 
 

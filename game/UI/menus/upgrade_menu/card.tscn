@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://df24oomeoyv3f"]
+[gd_scene load_steps=20 format=3 uid="uid://df24oomeoyv3f"]
 
 [ext_resource type="Texture2D" uid="uid://hgbiyx0cutq8" path="res://Assets/UI_elements/card.png" id="1_cqti1"]
 [ext_resource type="Texture2D" uid="uid://bo6owjw1w2i26" path="res://Assets/Cover_art/Oin1Ud.png" id="2_5yrog"]
@@ -11,6 +11,50 @@
 [ext_resource type="FontFile" uid="uid://dvnxy1qd07i8p" path="res://Assets/Fonts/RuskaDisplay-Regular.otf" id="5_li0a1"]
 [ext_resource type="Texture2D" uid="uid://otql2fl8butl" path="res://Assets/UI_elements/Cards/gem_icon.png" id="9_fxntk"]
 [ext_resource type="PackedScene" uid="uid://3xoxx6ln6nlh" path="res://Assets/Particles/Particle_Effects/shine.tscn" id="10_snfni"]
+
+[sub_resource type="Shader" id="Shader_r6tmt"]
+code = "shader_type canvas_item;
+
+// --- Uniforms --- //
+uniform float percentage: hint_range(0.0, 1.0, 0.01) = 1.0;
+
+uniform sampler2D burn_texture;
+group_uniforms layer_1;
+uniform vec4 layer_1: source_color = vec4(0.2, 0.2, 0.2, 1.0);
+uniform float size_1 = 0.05;
+group_uniforms layer_2;
+uniform vec4 layer_2: source_color = vec4(1.0, 0.0, 0.0, 1.0);
+uniform float size_2 = 0.05;
+group_uniforms layer_3;
+uniform vec4 layer_3: source_color = vec4(1.0, 0.5, 0.0, 1.0);
+uniform float size_3 = 0.05;
+
+// --- Functions --- //
+void fragment() {
+	float noise = texture(burn_texture, UV).r * (1.0 - (size_1 + size_2 + size_3 + 0.01));
+
+	COLOR.a -= step(percentage, noise);
+	COLOR.rgb = mix(COLOR.rgb, layer_3.rgb, step(percentage, noise + size_1 + size_2 + size_3));
+	COLOR.rgb = mix(COLOR.rgb, layer_2.rgb, step(percentage, noise + size_1 + size_2));
+	COLOR.rgb = mix(COLOR.rgb, layer_1.rgb, step(percentage, noise + size_1));
+}
+
+
+
+"
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lm25y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1pm6c"]
+shader = SubResource("Shader_r6tmt")
+shader_parameter/percentage = 1.0
+shader_parameter/burn_texture = SubResource("NoiseTexture2D_lm25y")
+shader_parameter/layer_1 = Color(0.2, 0.2, 0.2, 1)
+shader_parameter/size_1 = 0.05
+shader_parameter/layer_2 = Color(1, 0, 0, 1)
+shader_parameter/size_2 = 0.05
+shader_parameter/layer_3 = Color(1, 0.5, 0, 1)
+shader_parameter/size_3 = 0.05
 
 [sub_resource type="Animation" id="Animation_0kl7q"]
 length = 0.001
@@ -228,6 +272,7 @@ tracks/8/keys = {
 
 [sub_resource type="Animation" id="Animation_atew0"]
 resource_name = "card_flip"
+length = 2.0
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -277,6 +322,30 @@ tracks/3/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, -1300)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/FrontBorder/New:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_434fx"]
 resource_name = "invisible"
@@ -315,6 +384,7 @@ _data = {
 
 [node name="Card" type="TextureButton"]
 self_modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_1pm6c")
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

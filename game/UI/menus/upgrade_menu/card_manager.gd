@@ -41,7 +41,8 @@ var card_data = {
 			"title": "Red  Style  Gem",
 			"description": "You  see  memories  of  destruction  and  despair",
 			"portrait": "res://Assets/Debug_Assets/red_gem.png",
-			"icon": "res://Assets/UI_elements/Cards/gem_icon.png"
+			"icon": "res://Assets/UI_elements/Cards/gem_icon.png",
+			"NAME": "RED",
 			#"borderColor": Color.from_hsv(7.0/359.0, 96.0/100.0, 80.0/100.0, 255.0/255.0),
 			#"textColor": Color("ffa313")
 		},
@@ -49,7 +50,8 @@ var card_data = {
 			"title": "Blue  Style  Gem",
 			"description": "You  see  memories  of  an  endless  storm",
 			"portrait": "res://Assets/Debug_Assets/blue_gem.png",
-			"icon": "res://Assets/UI_elements/Cards/gem_icon.png"
+			"icon": "res://Assets/UI_elements/Cards/gem_icon.png",
+			"NAME": "BLUE",
 			#"borderColor": Color.from_hsv(199.0/359.0, 90.0/100.0, 100.0/100.0, 255.0/255.0),
 			#"textColor": Color("ffa313")
 		},
@@ -57,7 +59,8 @@ var card_data = {
 			"title": "Yellow  Style  Gem",
 			"description": "You  see  memories  of  a  raging  swarm",
 			"portrait": "res://Assets/Debug_Assets/yellow_gem.png",
-			"icon": "res://Assets/UI_elements/Cards/gem_icon.png"
+			"icon": "res://Assets/UI_elements/Cards/gem_icon.png",
+			"NAME": "YELLOW",
 			#"borderColor": Color.from_hsv(35.0/359.0, 94.0/100.0, 100.0/100.0, 255.0/255.0),
 			#"textColor": Color("ffa313")
 		}
@@ -73,7 +76,8 @@ var card_data = {
 				"Shoots  an  additional  projectile",
 				],
 			"portrait": "res://Assets/Player/lodey.png",
-			"icon": "res://Assets/UI_elements/Cards/doll_icon.png"
+			"icon": "res://Assets/UI_elements/Cards/doll_icon.png",
+			"NAME": "LODEY",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
@@ -87,7 +91,8 @@ var card_data = {
 				"Gains  an  extra  blade  and  swings  faster",
 				],
 			"portrait": "res://Assets/Debug_Assets/stabbey_sketch.png",
-			"icon": "res://Assets/UI_elements/Cards/doll_icon.png"
+			"icon": "res://Assets/UI_elements/Cards/doll_icon.png",
+			"NAME": "STABBEY",
 			#"borderColor": Color.from_hsv(64.0/359.0, 53.0/100.0, 100.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(57.0/359.0, 25.0/100.0, 83.0/100.0, 225.0/225.0)
 		},
@@ -101,7 +106,8 @@ var card_data = {
 				"Food  bounces  once  on  the  floor"
 				],
 			"portrait": "res://Assets/Debug_Assets/mami_sketch.png",
-			"icon": "res://Assets/UI_elements/Cards/doll_icon.png"
+			"icon": "res://Assets/UI_elements/Cards/doll_icon.png",
+			"NAME": "MAMI",
 			#"borderColor": Color.from_hsv(43.0/359, 39.0/100.0, 100.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(181.0/359, 22.0/100.0, 95.0/100.0, 255.0/255.0)
 		},
@@ -115,7 +121,8 @@ var card_data = {
 				"Shoots  out  of  all  8  cannons  consecutively"
 				],
 			"portrait": "res://Assets/Debug_Assets/kanon_sketch.png",
-			"icon": "res://Assets/UI_elements/Cards/doll_icon.png"
+			"icon": "res://Assets/UI_elements/Cards/doll_icon.png",
+			"NAME": "KANON",
 			#"borderColor": Color.from_hsv(0.0/359.0, 0.0/100.0, 61.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(19.0/359.0, 63.0/100.0, 80.0/100.0, 255.0/255.0)
 		},
@@ -129,7 +136,8 @@ var card_data = {
 				"Selection  areas  get  larger  and  activate  twice"
 				],
 			"portrait": "res://Assets/Debug_Assets/hacke_sketch.png",
-			"icon": "res://Assets/UI_elements/Cards/doll_icon.png"
+			"icon": "res://Assets/UI_elements/Cards/doll_icon.png",
+			"NAME": "HACKE",
 			#"borderColor": Color.from_hsv(227.0/359.0, 80.0/100.0, 16.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(70.0/359.0, 74.0/100.0, 100.0/100.0, 255.0/255.0)
 		},
@@ -143,7 +151,8 @@ var card_data = {
 				"Shoots  an  additional  projectile  and  sandstorms  split  of  into  3  smaller  storms",
 				],
 			"portrait": "res://Assets/Debug_Assets/dune_sketch.png",
-			"icon": "res://Assets/UI_elements/Cards/doll_icon.png"
+			"icon": "res://Assets/UI_elements/Cards/doll_icon.png",
+			"NAME": "DUNE",
 			#"borderColor": Color.from_hsv(40.0/359.0, 100.0/100.0, 60.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(216.0/359.0, 46.0/100.0, 87.0/100.0, 255.0/255.0)
 		},
@@ -157,7 +166,8 @@ var card_data = {
 				"Lightning  can  chain  onto  5  more  enemies  and  stuns  them  for  .05  seconds  longer",
 				],
 			"portrait": "res://Assets/Debug_Assets/riff_sketch.png",
-			"icon": "res://Assets/UI_elements/Cards/doll_icon.png"
+			"icon": "res://Assets/UI_elements/Cards/doll_icon.png",
+			"NAME": "RIFF",
 			#"borderColor": Color.from_hsv(300.0/359.0, 82.0/100.0, 100.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(187.0/359.0, 29.0/100.0, 95.0/100.0, 255.0/255.0)
 		},
@@ -171,7 +181,8 @@ var card_data = {
 				"Shoots  even  more  frequently" 
 				],
 			"portrait": "res://Assets/Debug_Assets/nyao_sketch.png",
-			"icon": "res://Assets/UI_elements/Cards/doll_icon.png"
+			"icon": "res://Assets/UI_elements/Cards/doll_icon.png",
+			"NAME": "NYAO",
 			#"borderColor": Color.from_hsv(40.0/359.0, 11.0/100.0, 100.0/100.0, 225.0/225.0),
 			#"textColor": Color.from_hsv(4.0/359.0, 98.0/100.0, 98.0/100.0, 225.0/225.0)
 		},
@@ -185,7 +196,8 @@ var card_data = {
 				"Area  gets  even  larger  and  knocks  back  enemies  slightly",
 				],
 			"portrait": "res://Assets/Debug_Assets/oora_sketch.png",
-			"icon": "res://Assets/UI_elements/Cards/doll_icon.png"
+			"icon": "res://Assets/UI_elements/Cards/doll_icon.png",
+			"NAME": "OORA",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
@@ -221,7 +233,8 @@ var card_data = {
 			"title": "Scissors",
 			"description": "Increases  Damage  by  8%",
 			"portrait": "res://Assets/Debug_Assets/scissors_sketch.png",
-			"icon": "res://Assets/UI_elements/Cards/item_icon.png"
+			"icon": "res://Assets/UI_elements/Cards/item_icon.png",
+			"NAME": "SCISSORS",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
@@ -229,7 +242,8 @@ var card_data = {
 			"title": "Silk  Socks",
 			"description": "Increases  Speed  by  8%",
 			"portrait": "res://Assets/Debug_Assets/wool_socks_sketch.png",
-			"icon": "res://Assets/UI_elements/Cards/item_icon.png"
+			"icon": "res://Assets/UI_elements/Cards/item_icon.png",
+			"NAME": "SOCKS",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
@@ -237,7 +251,8 @@ var card_data = {
 			"title": "Heart  Patch",
 			"description": "Increases  Maximum  Health  by  8%",
 			"portrait": "res://Assets/Debug_Assets/heart_patch_sketch.png",
-			"icon": "res://Assets/UI_elements/Cards/item_icon.png"
+			"icon": "res://Assets/UI_elements/Cards/item_icon.png",
+			"NAME": "PATCH",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
@@ -245,7 +260,8 @@ var card_data = {
 			"title": "Needle  &  Thread",
 			"description": "Increases  Attack  Frequency  by  8%",
 			"portrait": "res://Assets/Debug_Assets/needleandthread_sketch.png",
-			"icon": "res://Assets/UI_elements/Cards/item_icon.png"
+			"icon": "res://Assets/UI_elements/Cards/item_icon.png",
+			"NAME": "NEEDLE",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
@@ -253,7 +269,8 @@ var card_data = {
 			"title": "Wooden  Spool  O'  Yarn",
 			"description": "Increases  Duration  of  Attack  by  8%",
 			"portrait": "res://Assets/Debug_Assets/wooden_spool_sketch.png",
-			"icon": "res://Assets/UI_elements/Cards/item_icon.png"
+			"icon": "res://Assets/UI_elements/Cards/item_icon.png",
+			"NAME": "SPOOL",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
@@ -261,7 +278,8 @@ var card_data = {
 			"title": "Extra  Scarf",
 			"description": "Increases  Defense  by  8%",
 			"portrait": "res://Assets/Debug_Assets/extra_scarf_sketch.png",
-			"icon": "res://Assets/UI_elements/Cards/item_icon.png"
+			"icon": "res://Assets/UI_elements/Cards/item_icon.png",
+			"NAME": "SCARF",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
@@ -269,7 +287,8 @@ var card_data = {
 			"title": "Magnetic  Gloves",
 			"description": "Increases  XP  Pickup  Radius  by  8%",
 			"portrait": "res://Assets/Debug_Assets/magnetic_gloves_sketch.png",
-			"icon": "res://Assets/UI_elements/Cards/item_icon.png"
+			"icon": "res://Assets/UI_elements/Cards/item_icon.png",
+			"NAME": "GLOVES",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
@@ -277,7 +296,8 @@ var card_data = {
 			"title": "Golden  Pendant",
 			"description": "Increases  Gold  Gain  by  8%",
 			"portrait": "res://Assets/Debug_Assets/gold_pin_sketch.png",
-			"icon": "res://Assets/UI_elements/Cards/item_icon.png"
+			"icon": "res://Assets/UI_elements/Cards/item_icon.png",
+			"NAME": "PIN",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
@@ -285,7 +305,8 @@ var card_data = {
 			"title": "Prismatic  Earrings",
 			"description": "Increases  XP  Gain  by  8%",
 			"portrait": "res://Assets/Debug_Assets/prismatic_earrings_sketch.png",
-			"icon": "res://Assets/UI_elements/Cards/item_icon.png"
+			"icon": "res://Assets/UI_elements/Cards/item_icon.png",
+			"NAME": "EARRINGS",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
@@ -376,6 +397,7 @@ func UpgradeDoll(type, rarity):
 	type = CARD_TYPES.DOLLS
 	if CompanionManager.joined_companions.size() <= 0:
 		var selection = possibleDolls.pick_random()
+		print(selection)
 		if card_checker(temp_stack, selection) == true:
 			UpgradeDoll(type, rarity)
 			return
@@ -383,6 +405,7 @@ func UpgradeDoll(type, rarity):
 		temp_stack.append(selection)
 	else:
 		var selection = CompanionManager.joined_companions.pick_random()
+		print(selection)
 		if card_checker(temp_stack, selection) == true:
 			UpgradeDoll(type, rarity)
 			return
@@ -393,6 +416,7 @@ func UpgradeItem(type, rarity):
 	type = CARD_TYPES.ITEMS
 	if CompanionManager.joined_items.size() <= 0:
 		var selection = possibleItems.pick_random()
+		print(selection)
 		if card_checker(temp_stack, selection) == true:
 			UpgradeItem(type, rarity)
 			return
@@ -400,6 +424,7 @@ func UpgradeItem(type, rarity):
 		temp_stack.append(selection)
 	else:
 		var selection = CompanionManager.joined_items.pick_random()
+		print(selection)
 		if card_checker(temp_stack, selection) == true:
 			UpgradeItem(type, rarity)
 			return
@@ -410,6 +435,7 @@ func NewDoll(type, rarity):
 	type = CARD_TYPES.DOLLS
 	if CompanionManager.joined_companions.size() > 4:
 		var selection = CompanionManager.joined_companions.pick_random()
+		print(selection)
 		if card_checker(temp_stack, selection) == true:
 			NewDoll(type, rarity)
 			return
@@ -417,6 +443,7 @@ func NewDoll(type, rarity):
 		temp_stack.append(selection)
 	else:
 		var selection = possibleDolls.pick_random()
+		print(selection)
 		if card_checker(temp_stack, selection) == true:
 			NewDoll(type, rarity)
 			return
@@ -427,6 +454,7 @@ func NewItem(type, rarity):
 	type = CARD_TYPES.ITEMS
 	if CompanionManager.joined_items.size() > 4:
 		var selection = CompanionManager.joined_items.pick_random()
+		print(selection)
 		if card_checker(temp_stack, selection) == true:
 			NewItem(type, rarity)
 			return
@@ -435,6 +463,7 @@ func NewItem(type, rarity):
 		
 	else:
 		var selection = possibleItems.pick_random()
+		print(selection)
 		##Card checker returns true if a non-unique card is detected in the given array
 		if card_checker(temp_stack, selection) == true:
 			#print('ruh roh rerun this until unique')
@@ -448,6 +477,7 @@ func NewItem(type, rarity):
 func NewGem(type, rarity):
 	type = CARD_TYPES.GEMS
 	var selection = possibleGems.pick_random()
+	print(selection)
 	card_information_setter(type, selection, rarity)
 	temp_stack.append(selection)
 
@@ -457,12 +487,13 @@ func card_generator(type, is_upgrade):
 
 func card_information_setter(type, selection, rarity):
 	if type == CARD_TYPES.GEMS:
-		var rarity_result = rarities["RARITIES"][str(rarity)]
-		var card_result = card_data["GEMS"][str(selection)]
+		var rarity_result = rarities["RARITIES"][rarity]
+		var card_result = card_data["GEMS"][selection]
 		if !CompanionManager.joined_gems.has(selection):
 			seen = true
 		else:
 			seen = false
+		#selection = card_result
 		card_constructor(
 			card_result.title, 
 			card_result.description,
@@ -470,18 +501,21 @@ func card_information_setter(type, selection, rarity):
 			rarity_result.textColor,
 			card_result.portrait,
 			card_result.icon,
+			#card_result.NAME,
 			CARD_TYPES.GEMS,
+			selection,
 			seen
 		)
 		pass
 		
 	if type == CARD_TYPES.DOLLS:
-		var rarity_result = rarities["RARITIES"][str(rarity)]
-		var card_result = card_data["DOLLS"][str(selection)]
+		var rarity_result = rarities["RARITIES"][rarity]
+		var card_result = card_data["DOLLS"][selection]
 		if !CompanionManager.joined_companions.has(selection):
 			seen = true
 		else:
 			seen = false
+		#selection = card_result
 		card_constructor(
 			card_result.title, 
 			card_result.description[0],
@@ -489,17 +523,20 @@ func card_information_setter(type, selection, rarity):
 			rarity_result.textColor,
 			card_result.portrait,
 			card_result.icon,
+			#card_result.NAME,
 			CARD_TYPES.DOLLS,
+			selection,
 			seen
 		)
 		pass
 	if type == CARD_TYPES.ITEMS:
-		var rarity_result = rarities["RARITIES"][str(rarity)]
-		var card_result = card_data["ITEMS"][str(selection)]
+		var rarity_result = rarities["RARITIES"][rarity]
+		var card_result = card_data["ITEMS"][selection]
 		if !CompanionManager.joined_items.has(selection):
 			seen = true
 		else:
 			seen = false
+		#selection = 
 		card_constructor(
 			card_result.title, 
 			card_result.description,
@@ -507,11 +544,13 @@ func card_information_setter(type, selection, rarity):
 			rarity_result.textColor,
 			card_result.portrait,
 			card_result.icon,
+			#card_result.NAME,
 			CARD_TYPES.ITEMS,
+			selection,
 			seen
 			)
 
-func card_constructor(title, description, rarity_result, text_color, portrait, icon, type, seen):
+func card_constructor(title, description, rarity_result, text_color, portrait, icon, type, selection, seen):
 	var new_card = CARD.instantiate()
 	$HBoxContainer.add_child(new_card)
 	new_card.title = title
@@ -522,6 +561,9 @@ func card_constructor(title, description, rarity_result, text_color, portrait, i
 	new_card.type = type
 	new_card.icon = icon
 	new_card.new = seen
+	new_card.nameCard = selection
+	
+	#print(card_result)
 	#new_card.yell()
 	new_card.update()
 	pass
