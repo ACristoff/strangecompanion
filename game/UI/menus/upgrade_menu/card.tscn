@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://df24oomeoyv3f"]
+[gd_scene load_steps=17 format=3 uid="uid://df24oomeoyv3f"]
 
 [ext_resource type="Texture2D" uid="uid://hgbiyx0cutq8" path="res://Assets/UI_elements/card.png" id="1_cqti1"]
 [ext_resource type="Texture2D" uid="uid://bo6owjw1w2i26" path="res://Assets/Cover_art/Oin1Ud.png" id="2_5yrog"]
@@ -10,6 +10,7 @@
 [ext_resource type="Theme" uid="uid://xk8thxufmqj0" path="res://Assets/themes/label_theme_2.tres" id="3_ufpqe"]
 [ext_resource type="FontFile" uid="uid://dvnxy1qd07i8p" path="res://Assets/Fonts/RuskaDisplay-Regular.otf" id="5_li0a1"]
 [ext_resource type="Texture2D" uid="uid://otql2fl8butl" path="res://Assets/UI_elements/Cards/gem_icon.png" id="9_fxntk"]
+[ext_resource type="PackedScene" uid="uid://3xoxx6ln6nlh" path="res://Assets/Particles/Particle_Effects/shine.tscn" id="10_snfni"]
 
 [sub_resource type="Animation" id="Animation_0kl7q"]
 length = 0.001
@@ -92,6 +93,18 @@ tracks/6/path = NodePath("Control/FrontBG:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Control/FrontBorder/New:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -185,6 +198,32 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Control/FrontBorder/New:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"set_new_visible"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_atew0"]
@@ -304,7 +343,7 @@ mouse_filter = 2
 
 [node name="FrontBG" type="ColorRect" parent="Control"]
 visible = false
-z_index = -2
+z_index = -5
 layout_mode = 0
 offset_left = 14.0
 offset_top = 13.0
@@ -315,6 +354,7 @@ color = Color(0.120678, 0.202466, 0.274862, 1)
 
 [node name="FrontBorder" type="TextureRect" parent="Control"]
 visible = false
+z_index = -2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -415,6 +455,29 @@ offset_bottom = -516.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_fxntk")
+
+[node name="New" type="Label" parent="Control/FrontBorder"]
+visible = false
+self_modulate = Color(1, 0.747833, 0.11, 1)
+z_index = 3
+layout_mode = 0
+offset_left = 296.5
+offset_top = -13.5
+offset_right = 459.5
+offset_bottom = 54.5
+rotation = 0.352386
+pivot_offset = Vector2(81, 34)
+theme = ExtResource("3_ufpqe")
+theme_override_font_sizes/font_size = 75
+text = "New"
+
+[node name="Control" parent="Control/FrontBorder/New" instance=ExtResource("10_snfni")]
+z_index = -1
+layout_mode = 1
+offset_left = 71.0027
+offset_top = 25.0325
+offset_right = 71.0027
+offset_bottom = 25.0325
 
 [node name="BackBG" type="ColorRect" parent="Control"]
 visible = false

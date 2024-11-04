@@ -20,6 +20,10 @@ extends TextureButton
 #----------------------------------
 #ITEMS
 var down
+var squish = true
+var rotat = true
+var new
+var display_new = false
 
 ##REFERENCES
 @onready var title_label = $Control/FrontBorder/Title
@@ -27,6 +31,7 @@ var down
 @onready var border = $Control/FrontBorder
 @onready var portrait_texture = $Control/FrontBorder/Portrait
 @onready var icon_texture = $Control/FrontBorder/Icon_corner
+@onready var new_label = $Control/FrontBorder/New
 
 #determines which card type it is on spawn (i.e. is it an item card?
 # or is it a doll card?
@@ -354,7 +359,39 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if squish == true:
+		squish = false
+		squishy()
+	if rotat == true:
+		rotat = false
+		rotaty()
+	if display_new == true:
+		if new == true:
+			new_label.visible = true
+		else:
+			new_label.visible = false
+	
+func set_new_visible():
+	display_new = true
+
+func squishy():
+	#print("hi")
+	var tween = create_tween()
+	#tween.set_parallel(true)
+	tween.tween_property(new_label, "scale", Vector2(.9, 1), .5)
+	tween.tween_property(new_label, "scale", Vector2(1, .9), .5)
+	tween.set_parallel(false)
+	tween.tween_property(self, "squish", true, 0)
+
+func rotaty():
+	var tween = create_tween()
+	#tween.set_parallel(true)
+	tween.tween_property(new_label, "rotation_degrees", 20.2, .5)
+	tween.tween_property(new_label, "rotation_degrees", 15.2, .5)
+	tween.tween_property(new_label, "rotation_degrees", 20.2, .5)
+	tween.tween_property(new_label, "rotation_degrees", 25.2, .5)
+	tween.set_parallel(false)
+	tween.tween_property(self, "rotat", true, 0)
 
 
 func _on_pressed() -> void:

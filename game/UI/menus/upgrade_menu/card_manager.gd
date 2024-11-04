@@ -16,6 +16,7 @@ var oora_copies = 0
 var bawl_copies = 0
 
 var iteration = 0
+var seen
 var inventory = CompanionManager.joined_companions
 enum CARD_TYPES {GEMS, ITEMS, DOLLS}
 
@@ -418,6 +419,8 @@ func card_information_setter(type, selection, rarity):
 	if type == CARD_TYPES.GEMS:
 		var rarity_result = rarities["RARITIES"][str(rarity)]
 		var card_result = card_data["GEMS"][str(selection)]
+		if !CompanionManager.joined_gems.has(selection):
+			seen = true
 		card_constructor(
 			card_result.title, 
 			card_result.description,
@@ -425,13 +428,16 @@ func card_information_setter(type, selection, rarity):
 			rarity_result.textColor,
 			card_result.portrait,
 			card_result.icon,
-			CARD_TYPES.GEMS
+			CARD_TYPES.GEMS,
+			seen
 		)
 		pass
 	
 	if type == CARD_TYPES.DOLLS:
 		var rarity_result = rarities["RARITIES"][str(rarity)]
 		var card_result = card_data["DOLLS"][str(selection)]
+		if !CompanionManager.joined_companions.has(selection):
+			seen = true
 		card_constructor(
 			card_result.title, 
 			card_result.description[0],
@@ -439,12 +445,15 @@ func card_information_setter(type, selection, rarity):
 			rarity_result.textColor,
 			card_result.portrait,
 			card_result.icon,
-			CARD_TYPES.DOLLS
+			CARD_TYPES.DOLLS,
+			seen
 		)
 		pass
 	if type == CARD_TYPES.ITEMS:
 		var rarity_result = rarities["RARITIES"][str(rarity)]
 		var card_result = card_data["ITEMS"][str(selection)]
+		if !CompanionManager.joined_items.has(selection):
+			seen = true
 		card_constructor(
 			card_result.title, 
 			card_result.description,
@@ -452,10 +461,11 @@ func card_information_setter(type, selection, rarity):
 			rarity_result.textColor,
 			card_result.portrait,
 			card_result.icon,
-			CARD_TYPES.ITEMS
+			CARD_TYPES.ITEMS,
+			seen
 			)
 
-func card_constructor(title, description, rarity_result, text_color, portrait, icon, type):
+func card_constructor(title, description, rarity_result, text_color, portrait, icon, type, seen):
 	var new_card = CARD.instantiate()
 	$HBoxContainer.add_child(new_card)
 	new_card.title = title
@@ -465,6 +475,7 @@ func card_constructor(title, description, rarity_result, text_color, portrait, i
 	new_card.portrait = portrait
 	new_card.type = type
 	new_card.icon = icon
+	new_card.new = seen
 	#new_card.yell()
 	new_card.update()
 	print(new_card.title)

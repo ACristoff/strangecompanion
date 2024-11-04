@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://3xoxx6ln6nlh"]
+
+[ext_resource type="Texture2D" uid="uid://bx4lm0qvn8avc" path="res://Assets/Particles/shine.png" id="1_unjrd"]
+
+[sub_resource type="Curve" id="Curve_ouswf"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.162921, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_eo5j1"]
+offsets = PackedFloat32Array(0.626667, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+y_sort_enabled = true
+amount = 3
+lifetime = 7.06
+speed_scale = 1.5
+explosiveness = 0.45
+local_coords = true
+texture = ExtResource("1_unjrd")
+direction = Vector2(0, 0)
+spread = 0.0
+gravity = Vector2(0, 0)
+angular_velocity_min = -87.29
+angular_velocity_max = 87.26
+scale_amount_min = 0.5
+scale_amount_max = 0.9
+scale_amount_curve = SubResource("Curve_ouswf")
+color = Color(1, 0.880833, 0.45, 1)
+color_ramp = SubResource("Gradient_eo5j1")
