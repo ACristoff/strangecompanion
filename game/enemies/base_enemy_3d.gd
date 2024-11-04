@@ -6,6 +6,13 @@ var health = max_health
 var attack = 10
 var speed = 5
 var target = GameManager.player
+var sprite_texture: CompressedTexture2D
+@onready var sprite_3d = $Sprite3D
+
+
+func _ready():
+	#construct enemy
+	pass
 
 #Take Damage
 	#Update HealthBar

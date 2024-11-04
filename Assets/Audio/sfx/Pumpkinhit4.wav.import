@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cgrmdysjf2p7t"
-path="res://.godot/imported/Pumpkinhit4.wav-e0d6ee68ec781ffcab4568e2669b5437.sample"
+path="res://.godot/imported/Pumpkinhit4.wav-8cd2e18b32e8bf3fe84d829cc0ab09a7.sample"
 
 [deps]
 
-source_file="res://game/enemies/Pumpkinhit4.wav"
-dest_files=["res://.godot/imported/Pumpkinhit4.wav-e0d6ee68ec781ffcab4568e2669b5437.sample"]
+source_file="res://Assets/Audio/sfx/Pumpkinhit4.wav"
+dest_files=["res://.godot/imported/Pumpkinhit4.wav-8cd2e18b32e8bf3fe84d829cc0ab09a7.sample"]
 
 [params]
 
