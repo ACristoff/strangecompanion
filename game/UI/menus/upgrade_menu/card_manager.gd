@@ -111,11 +111,11 @@ var card_data = {
 		"KANON": {
 			"title": "Kanon",
 			"description": [
-				"Sits in a specialized tank, shooting in a cross and X pattern cyclically.",
-				"Projectiles deal 5 more base damage",
-				"Shoots more frequently",
-				"Projectiles deal 5 more base damage",
-				"Shoots out of all 8 cannons consecutively"
+				"Sits  in  a  specialized  tank,  shooting  in  a  cross  and  X  pattern  cyclically.",
+				"Projectiles  deal  5  more  base  damage", 
+				"Shoots  more  frequently",
+				"Projectiles  deal  5  more  base  damage",
+				"Shoots  out  of  all  8  cannons  consecutively"
 				],
 			"portrait": "res://Assets/Debug_Assets/kanon_sketch.png",
 			#"borderColor": Color.from_hsv(0.0/359.0, 0.0/100.0, 61.0/100.0, 255.0/255.0),
@@ -124,11 +124,11 @@ var card_data = {
 		"HACKE": {
 			"title": "Hacke",
 			"description": [
-				"Draws selection squares that can hit groups of enemies.",
-				"Selection areas deals 5 more base damage",
-				"Selection areas get larger",
-				"Selection areas deals 5 more base damage",
-				"Selection areas get larger and activate twice"
+				"Draws  selection  squares  that  can  hit  groups  of  enemies.",
+				"Selection  areas  deals  5  more  base  damage",
+				"Selection  areas  get  larger",
+				"Selection  areas  deals  5  more  base  damage",
+				"Selection  areas  get  larger  and  activate  twice"
 				],
 			"portrait": "res://Assets/Debug_Assets/hacke_sketch.png",
 			#"borderColor": Color.from_hsv(227.0/359.0, 80.0/100.0, 16.0/100.0, 255.0/255.0),
@@ -137,11 +137,11 @@ var card_data = {
 		"DUNE": {
 			"title": "Dune",
 			"description": [
-				"Shoots sandstorms in random directions.",
-				"Projectiles deal 5 more base damage",
-				"Shoots an additional projectile",
-				"Projectiles deal 5 more base damage",
-				"Shoots an additional projectile and sandstorms split of into 3 smaller storms",
+				"Shoots  sandstorms  in  random  directions.",
+				"Projectiles  deal  5  more  base  damage",
+				"Shoots  an  additional  projectile",
+				"Projectiles  deal  5  more  base  damage",
+				"Shoots  an  additional  projectile  and  sandstorms  split  of  into  3  smaller  storms",
 				],
 			"portrait": "res://Assets/Debug_Assets/dune_sketch.png",
 			#"borderColor": Color.from_hsv(40.0/359.0, 100.0/100.0, 60.0/100.0, 255.0/255.0),
@@ -151,10 +151,10 @@ var card_data = {
 			"title": "Riff",
 			"description": [
 				"Her music is electric.",
-				"Projectiles deal 5 more base damage",
-				"lightning can chain onto 5 more enemies",
-				"Lightning stuns enemies for .05 seconds",
-				"Lightning can chain onto 5 more enemies and stuns them for .05 seconds longer",
+				"Projectiles  deal  5  more  base  damage",
+				"lightning  can  chain  onto  5  more  enemies",
+				"Lightning  stuns  enemies  for  .05 seconds",
+				"Lightning  can  chain  onto  5  more  enemies  and  stuns  them  for  .05  seconds  longer",
 				],
 			"portrait": "res://Assets/Debug_Assets/riff_sketch.png",
 			#"borderColor": Color.from_hsv(300.0/359.0, 82.0/100.0, 100.0/100.0, 255.0/255.0),
@@ -163,11 +163,11 @@ var card_data = {
 		"NYAO": {
 			"title": "Nyao",
 			"description": [
-				"Uses a lazer to decimate enemies.",
-				"Lazer deals 5 more base damage",
-				"Shoots more frequently",
-				"Lazer deals 5 more base damage",
-				"Shoots even more frequently" 
+				"Uses  a  lazer  to  decimate  enemies.",
+				"Lazer  deals  5  more  base  damage",
+				"Shoots  more  frequently",
+				"Lazer  deals  5  more  base  damage",
+				"Shoots  even  more  frequently" 
 				],
 			"portrait": "res://Assets/Debug_Assets/nyao_sketch.png",
 			#"borderColor": Color.from_hsv(40.0/359.0, 11.0/100.0, 100.0/100.0, 225.0/225.0),
@@ -176,11 +176,11 @@ var card_data = {
 		"OORA": {
 			"title": "Oora",
 			"description": [
-				"Lazes around most the time keeping you safe in a small circle.",
-				"Area deals 5 more base damage",
-				"Area gets larger",
-				"Area deals 5 more base damage",
-				"Area gets even larger and knocks back enemies slightly",
+				"Lazes  around  most  the  time  keeping  you  safe  in  a  small  circle.",
+				"Area  deals  5  more  base  damage",
+				"Area  gets  larger",
+				"Area  deals  5  more  base  damage",
+				"Area  gets  even  larger  and  knocks  back  enemies  slightly",
 				],
 			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
@@ -216,63 +216,63 @@ var card_data = {
 	"ITEMS": {
 		"SCISSORS": {
 			"title": "Scissors",
-			"description": "Increases Damage by 8%",
+			"description": "Increases  Damage  by  8%",
 			"portrait": "res://Assets/Debug_Assets/scissors_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"SOCKS": {
-			"title": "Silk Socks",
-			"description": "Increases Speed by 8%",
+			"title": "Silk  Socks",
+			"description": "Increases  Speed  by  8%",
 			"portrait": "res://Assets/Debug_Assets/wool_socks_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"PATCH": {
-			"title": "Heart Patch",
-			"description": "Increases Maximum Health by 8%",
+			"title": "Heart  Patch",
+			"description": "Increases  Maximum  Health  by  8%",
 			"portrait": "res://Assets/Debug_Assets/heart_patch_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"NEEDLE": {
-			"title": "Needle & Thread",
-			"description": "Increases Attack Frequency by 8%",
+			"title": "Needle  &  Thread",
+			"description": "Increases  Attack  Frequency  by  8%",
 			"portrait": "res://Assets/Debug_Assets/needleandthread_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"SPOOL": {
-			"title": "Wooden Spool O' Yarn",
-			"description": "Increases Duration of Attack by 8%",
+			"title": "Wooden  Spool  O'  Yarn",
+			"description": "Increases  Duration  of  Attack  by  8%",
 			"portrait": "res://Assets/Debug_Assets/wooden_spool_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"SCARF": {
-			"title": "Extra Scarf",
-			"description": "Increases Defense by 8%",
+			"title": "Extra  Scarf",
+			"description": "Increases  Defense  by  8%",
 			"portrait": "res://Assets/Debug_Assets/extra_scarf_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"GLOVES": {
-			"title": "Magnetic Gloves",
-			"description": "Increases XP Pickup Radius by 8%",
+			"title": "Magnetic  Gloves",
+			"description": "Increases  XP  Pickup  Radius  by  8%",
 			"portrait": "res://Assets/Debug_Assets/magnetic_gloves_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"PIN": {
-			"title": "Golden Pendent",
-			"description": "Increases Gold Gain by 8%",
+			"title": "Golden  Pendent",
+			"description": "Increases  Gold  Gain  by  8%",
 			"portrait": "res://Assets/Debug_Assets/gold_pin_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"EARRINGS": {
-			"title": "Prismatic Earrings",
-			"description": "Increases XP Gain by 8%",
+			"title": "Prismatic  Earrings",
+			"description": "Increases  XP  Gain  by  8%",
 			"portrait": "res://Assets/Debug_Assets/prismatic_earrings_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
