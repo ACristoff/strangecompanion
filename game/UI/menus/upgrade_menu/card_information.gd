@@ -335,6 +335,7 @@ func update():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	await get_tree().create_timer(.6).timeout
 	$AnimationPlayer.play("card_flip")
 	#prints(title, description, type, text_color, border_color, portrait)
 	pass # Replace with function body.

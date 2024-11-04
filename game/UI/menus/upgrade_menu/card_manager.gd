@@ -182,7 +182,7 @@ var card_data = {
 				"Area  deals  5  more  base  damage",
 				"Area  gets  even  larger  and  knocks  back  enemies  slightly",
 				],
-			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
+			"portrait": "res://Assets/Debug_Assets/oora_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
@@ -454,7 +454,7 @@ func _ready() -> void:
 	for i in 3:
 		generate_card()
 		iteration += 1
-		await get_tree().create_timer(.4).timeout
+		await get_tree().create_timer(.3).timeout
 	pass
 	
 
