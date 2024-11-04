@@ -1,13 +1,18 @@
 
 extends Node3D
 
-#@export var player = Node3D
 @onready var mob_spawn_location = $MobSpawnBox/MobSpawnLocation
 @onready var mob_spawn_box = $MobSpawnBox
+##TODO Change this eventually
 var basic_enemy = preload("res://game/enemies/base_enemy_3d.tscn")
 
+@export var wave_data: Array[Wave] = []
 var current_wave = 0
-
+# Time Start
+# Time End
+# Enemy Type(s?)
+# Enemy Count
+# Spawn Delay
 
 func _process(_delta):
 	if GameManager.player != null:
