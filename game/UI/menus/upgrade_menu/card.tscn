@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://df24oomeoyv3f"]
+[gd_scene load_steps=16 format=3 uid="uid://df24oomeoyv3f"]
 
 [ext_resource type="Texture2D" uid="uid://hgbiyx0cutq8" path="res://Assets/UI_elements/card.png" id="1_cqti1"]
 [ext_resource type="Texture2D" uid="uid://bo6owjw1w2i26" path="res://Assets/Cover_art/Oin1Ud.png" id="2_5yrog"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ptnmy46lq8lj" path="res://Assets/Debug_Assets/yellow_gem.png" id="3_qafsu"]
 [ext_resource type="Theme" uid="uid://xk8thxufmqj0" path="res://Assets/themes/label_theme_2.tres" id="3_ufpqe"]
 [ext_resource type="FontFile" uid="uid://dvnxy1qd07i8p" path="res://Assets/Fonts/RuskaDisplay-Regular.otf" id="5_li0a1"]
+[ext_resource type="Texture2D" uid="uid://otql2fl8butl" path="res://Assets/UI_elements/Cards/gem_icon.png" id="9_fxntk"]
 
 [sub_resource type="Animation" id="Animation_0kl7q"]
 length = 0.001
@@ -296,8 +297,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -1300.0
-offset_bottom = -1300.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(194, 307)
@@ -403,6 +402,19 @@ grow_vertical = 2
 texture = ExtResource("3_g7ul0")
 expand_mode = 1
 stretch_mode = 2
+
+[node name="Icon_corner" type="TextureRect" parent="Control/FrontBorder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = 21.0
+offset_right = -282.0
+offset_bottom = -516.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_fxntk")
 
 [node name="BackBG" type="ColorRect" parent="Control"]
 visible = false
