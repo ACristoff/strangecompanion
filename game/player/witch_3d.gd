@@ -69,3 +69,8 @@ func refresh_companions(type):
 	
 func set_reference(position):
 	print(position)
+
+
+func _on_button_pressed() -> void:
+	print("hi")
+	$"../CanvasLayer/TextureProgressBar".value += 15
