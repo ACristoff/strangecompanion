@@ -22,13 +22,13 @@ transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
 
 [node name="Button" type="TextureButton" parent="CanvasLayer"]
 self_modulate = Color(1, 0.882, 0.41, 1)
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_top = 1.953
+anchor_bottom = 1.953
 offset_left = 72.0
-offset_top = 846.0
+offset_top = -183.24
 offset_right = 509.0
-offset_bottom = 1029.0
+offset_bottom = -0.23999
 grow_vertical = 0
 size_flags_horizontal = 0
 size_flags_vertical = 4
@@ -48,4 +48,22 @@ text = "LEVEL UP"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
+offset_left = 90.0
+offset_top = 60.0
+offset_right = 3806.0
+offset_bottom = 182.0
+
 [node name="EnemyManager" parent="." instance=ExtResource("5_s6sjw")]
+
+[connection signal="pressed" from="CanvasLayer/Button" to="Witch3D" method="_on_button_pressed"]

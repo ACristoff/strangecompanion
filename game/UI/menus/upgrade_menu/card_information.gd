@@ -24,8 +24,10 @@ var squish = true
 var rotat = true
 var new
 var display_new = false
+var burn = true
 
 ##REFERENCES
+@onready var burnMat = $Control
 @onready var title_label = $Control/FrontBorder/Title
 @onready var description_label = $Control/FrontBorder/Description
 @onready var border = $Control/FrontBorder
@@ -354,6 +356,7 @@ func button_shrink(state):
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#print(nameCard)
+	CompanionManager.card_clicked.connect(burn_self)
 	self.disabled = true
 	await get_tree().create_timer(.6).timeout
 	$AnimationPlayer.play("card_flip")
@@ -399,10 +402,33 @@ func rotaty():
 
 
 func _on_pressed() -> void:
+	burn = false
 	print(nameCard)
+	CompanionManager.burn_cards()
 	#print("card_pressed")
 	emit_signal("card_selected")
 
+func burn_self():
+	print(burn)
+	self.disabled = true
+	if burn:
+		$Control/FrontBorder/New/Control.visible = false
+		tween_percent()
+	else:
+		$Control/FrontBorder/New.visible = false
+		$AnimationPlayer.play("card_flip (2)")
+	
+	
+func set_percent(percentage: float) -> void:
+	burnMat.material.set_shader_parameter('percentage', percentage)
+
+func tween_percent():
+	var tween = create_tween()
+	tween.tween_method(set_percent, 1.0, 0.0, 0.7)
+
+#func burning():
+	#var tween = create_tween()
+	#tween.tween_property(burnMat, "material.shader_parameter.percentage", 1.0, 0.0)
 
 func _on_button_down() -> void:
 	down = 1

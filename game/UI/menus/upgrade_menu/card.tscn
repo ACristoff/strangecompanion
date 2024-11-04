@@ -1,6 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://df24oomeoyv3f"]
+[gd_scene load_steps=22 format=3 uid="uid://df24oomeoyv3f"]
 
+[ext_resource type="Theme" uid="uid://bkkct5plssgvw" path="res://Assets/themes/button_theme_2.tres" id="1_6gq7h"]
 [ext_resource type="Texture2D" uid="uid://hgbiyx0cutq8" path="res://Assets/UI_elements/card.png" id="1_cqti1"]
+[ext_resource type="Shader" path="res://Assets/Shaders/burn2.gdshader" id="1_e7t13"]
 [ext_resource type="Texture2D" uid="uid://bo6owjw1w2i26" path="res://Assets/Cover_art/Oin1Ud.png" id="2_5yrog"]
 [ext_resource type="Script" path="res://game/UI/menus/upgrade_menu/card_information.gd" id="2_fvr8x"]
 [ext_resource type="Texture2D" uid="uid://p74bsw4pfyrl" path="res://Assets/UI_elements/Cards/purplecard.png" id="3_4pnq5"]
@@ -8,52 +10,21 @@
 [ext_resource type="Texture2D" uid="uid://bw2vluvxy1lwk" path="res://Assets/Debug_Assets/PointerFire.png" id="3_osq01"]
 [ext_resource type="Texture2D" uid="uid://ptnmy46lq8lj" path="res://Assets/Debug_Assets/yellow_gem.png" id="3_qafsu"]
 [ext_resource type="Theme" uid="uid://xk8thxufmqj0" path="res://Assets/themes/label_theme_2.tres" id="3_ufpqe"]
+[ext_resource type="Texture2D" uid="uid://bni35ve0t1irl" path="res://Assets/Shaders/burn_noise.tres" id="3_vkbe5"]
 [ext_resource type="FontFile" uid="uid://dvnxy1qd07i8p" path="res://Assets/Fonts/RuskaDisplay-Regular.otf" id="5_li0a1"]
 [ext_resource type="Texture2D" uid="uid://otql2fl8butl" path="res://Assets/UI_elements/Cards/gem_icon.png" id="9_fxntk"]
 [ext_resource type="PackedScene" uid="uid://3xoxx6ln6nlh" path="res://Assets/Particles/Particle_Effects/shine.tscn" id="10_snfni"]
 
-[sub_resource type="Shader" id="Shader_r6tmt"]
-code = "shader_type canvas_item;
-
-// --- Uniforms --- //
-uniform float percentage: hint_range(0.0, 1.0, 0.01) = 1.0;
-
-uniform sampler2D burn_texture;
-group_uniforms layer_1;
-uniform vec4 layer_1: source_color = vec4(0.2, 0.2, 0.2, 1.0);
-uniform float size_1 = 0.05;
-group_uniforms layer_2;
-uniform vec4 layer_2: source_color = vec4(1.0, 0.0, 0.0, 1.0);
-uniform float size_2 = 0.05;
-group_uniforms layer_3;
-uniform vec4 layer_3: source_color = vec4(1.0, 0.5, 0.0, 1.0);
-uniform float size_3 = 0.05;
-
-// --- Functions --- //
-void fragment() {
-	float noise = texture(burn_texture, UV).r * (1.0 - (size_1 + size_2 + size_3 + 0.01));
-
-	COLOR.a -= step(percentage, noise);
-	COLOR.rgb = mix(COLOR.rgb, layer_3.rgb, step(percentage, noise + size_1 + size_2 + size_3));
-	COLOR.rgb = mix(COLOR.rgb, layer_2.rgb, step(percentage, noise + size_1 + size_2));
-	COLOR.rgb = mix(COLOR.rgb, layer_1.rgb, step(percentage, noise + size_1));
-}
-
-
-
-"
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lm25y"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1pm6c"]
-shader = SubResource("Shader_r6tmt")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_236xe"]
+resource_local_to_scene = true
+shader = ExtResource("1_e7t13")
 shader_parameter/percentage = 1.0
-shader_parameter/burn_texture = SubResource("NoiseTexture2D_lm25y")
-shader_parameter/layer_1 = Color(0.2, 0.2, 0.2, 1)
+shader_parameter/burn_texture = ExtResource("3_vkbe5")
+shader_parameter/layer_1 = Color(0.0796667, 0.01, 0.2, 1)
 shader_parameter/size_1 = 0.05
-shader_parameter/layer_2 = Color(1, 0, 0, 1)
+shader_parameter/layer_2 = Color(0.364, 0, 0.52, 1)
 shader_parameter/size_2 = 0.05
-shader_parameter/layer_3 = Color(1, 0.5, 0, 1)
+shader_parameter/layer_3 = Color(0.78, 0, 0.546, 1)
 shader_parameter/size_3 = 0.05
 
 [sub_resource type="Animation" id="Animation_0kl7q"]
@@ -149,6 +120,30 @@ tracks/7/path = NodePath("Control/FrontBorder/New:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Control:material:shader_parameter/percentage")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Control/FrontBorder/New/Control:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -269,6 +264,18 @@ tracks/8/keys = {
 "method": &"set_new_visible"
 }]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Control/FrontBorder/New/Control:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_atew0"]
 resource_name = "card_flip"
@@ -277,70 +284,22 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control:scale")
+tracks/0/path = NodePath("Control:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 0.233259, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1e-05, 1), Vector2(1, 1)]
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 1300)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Control/Icon:visible")
+tracks/1/path = NodePath("Control/FrontBorder/New:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Control/BackBorder:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Control/BackBG:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Control:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, -1300)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Control/FrontBorder/New:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0.5),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -374,9 +333,50 @@ tracks/1/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_b600n"]
+resource_name = "burn"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:material:shader_parameter/percentage")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/FrontBorder/New/Control:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/FrontBorder/New:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i85im"]
 _data = {
 "RESET": SubResource("Animation_0kl7q"),
+"burn": SubResource("Animation_b600n"),
 "card_flip": SubResource("Animation_dely6"),
 "card_flip (2)": SubResource("Animation_atew0"),
 "invisible": SubResource("Animation_434fx")
@@ -384,7 +384,6 @@ _data = {
 
 [node name="Card" type="TextureButton"]
 self_modulate = Color(1, 1, 1, 0)
-material = SubResource("ShaderMaterial_1pm6c")
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -398,16 +397,18 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("1_6gq7h")
 texture_normal = ExtResource("1_cqti1")
 script = ExtResource("2_fvr8x")
 
 [node name="Control" type="Control" parent="."]
+material = SubResource("ShaderMaterial_236xe")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -1300.0
-offset_bottom = -1300.0
+offset_top = 1299.99
+offset_bottom = 1299.99
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(194, 307)
@@ -416,17 +417,21 @@ mouse_filter = 2
 [node name="FrontBG" type="ColorRect" parent="Control"]
 visible = false
 z_index = -5
-layout_mode = 0
-offset_left = 14.0
-offset_top = 13.0
-offset_right = 377.0
-offset_bottom = 602.0
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(181, 294)
 mouse_filter = 2
 color = Color(0.120678, 0.202466, 0.274862, 1)
 
 [node name="FrontBorder" type="TextureRect" parent="Control"]
 visible = false
 z_index = -2
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -440,6 +445,7 @@ stretch_mode = 2
 
 [node name="Title" type="Label" parent="Control/FrontBorder"]
 self_modulate = Color(1, 0.46, 0.964, 1)
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -459,6 +465,7 @@ autowrap_mode = 2
 
 [node name="Description" type="Label" parent="Control/FrontBorder"]
 self_modulate = Color(0.027451, 0.439216, 0.341176, 1)
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -479,6 +486,7 @@ autowrap_mode = 2
 
 [node name="Portrait" type="TextureRect" parent="Control/FrontBorder"]
 z_index = -1
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -505,6 +513,7 @@ texture = ExtResource("3_osq01")
 [node name="TextureRect" type="TextureRect" parent="Control/FrontBorder"]
 self_modulate = Color(0, 0, 0, 0.466667)
 z_index = -10
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -516,6 +525,7 @@ expand_mode = 1
 stretch_mode = 2
 
 [node name="Icon_corner" type="TextureRect" parent="Control/FrontBorder"]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -532,6 +542,7 @@ texture = ExtResource("9_fxntk")
 visible = false
 self_modulate = Color(1, 0.747833, 0.11, 1)
 z_index = 3
+use_parent_material = true
 layout_mode = 0
 offset_left = 296.5
 offset_top = -13.5
@@ -544,7 +555,9 @@ theme_override_font_sizes/font_size = 75
 text = "New"
 
 [node name="Control" parent="Control/FrontBorder/New" instance=ExtResource("10_snfni")]
+visible = false
 z_index = -1
+use_parent_material = true
 layout_mode = 1
 offset_left = 71.0027
 offset_top = 25.0325
@@ -553,6 +566,7 @@ offset_bottom = 25.0325
 
 [node name="BackBG" type="ColorRect" parent="Control"]
 visible = false
+use_parent_material = true
 layout_mode = 0
 offset_left = 14.0
 offset_top = 13.0
@@ -564,6 +578,7 @@ color = Color(1, 0.92549, 0, 1)
 [node name="BackBorder" type="TextureRect" parent="Control"]
 visible = false
 self_modulate = Color(1, 0.92549, 0, 1)
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -577,6 +592,7 @@ stretch_mode = 2
 
 [node name="Icon" type="TextureRect" parent="Control"]
 visible = false
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

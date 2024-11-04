@@ -40,6 +40,7 @@ var identification = 0
 
 signal construct_new_companion
 signal give_follow_point
+signal card_clicked
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -55,3 +56,5 @@ func refresh_companions_manager():
 	emit_signal("construct_new_companion")
 #func send_follow_point():
 	#emit_signal("give_follow_point")
+func burn_cards():
+	emit_signal("card_clicked")
