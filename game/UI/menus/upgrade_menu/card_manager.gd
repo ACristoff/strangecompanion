@@ -3,22 +3,11 @@ extends Control
 @onready var CARD = preload("res://game/UI/menus/upgrade_menu/card.tscn")
 @export var parent_node = self
 
-var stabbey_copies = 0
-var grove_copies = 0
-var lodey_copies = 0
-var mami_copies = 0
-var kanon_copies = 0
-var hacke_copies = 0
-var dune_copies = 0
-var riff_copies = 0
-var nyao_copies = 0
-var oora_copies = 0
-var bawl_copies = 0
-
 var iteration = 0
 var seen
 var inventory = CompanionManager.joined_companions
 enum CARD_TYPES {GEMS, ITEMS, DOLLS}
+var picked : Array[String] = []
 
 var randomized_cardType_index:int = CARD_TYPES.values()[ randi()%CARD_TYPES.size() ]
 var rarities = {
@@ -284,7 +273,7 @@ var card_data = {
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"PIN": {
-			"title": "Golden  Pendent",
+			"title": "Golden  Pendant",
 			"description": "Increases  Gold  Gain  by  8%",
 			"portrait": "res://Assets/Debug_Assets/gold_pin_sketch.png",
 			"icon": "res://Assets/UI_elements/Cards/item_icon.png"
@@ -381,39 +370,47 @@ func UpgradeDoll(type, rarity):
 	if CompanionManager.joined_companions.size() <= 0:
 		var selection = possibleDolls.pick_random()
 		card_information_setter(type, selection, rarity)
+		picked.append(selection)
 	else:
 		var selection = CompanionManager.joined_companions.pick_random()
 		card_information_setter(type, selection, rarity)
+		picked.append(selection)
 func UpgradeItem(type, rarity):
 	type = CARD_TYPES.ITEMS
 	if CompanionManager.joined_items.size() <= 0:
 		var selection = possibleItems.pick_random()
 		card_information_setter(type, selection, rarity)
+		picked.append(selection)
 	else:
 		var selection = CompanionManager.joined_items.pick_random()
 		card_information_setter(type, selection, rarity)
+		picked.append(selection)
 func NewDoll(type, rarity):
 	type = CARD_TYPES.DOLLS
 	if CompanionManager.joined_companions.size() > 4:
 		var selection = CompanionManager.joined_companions.pick_random()
 		card_information_setter(type, selection, rarity)
+		picked.append(selection)
 	else:
 		var selection = possibleDolls.pick_random()
 		card_information_setter(type, selection, rarity)
-		
+		picked.append(selection)
 func NewItem(type, rarity):
 	type = CARD_TYPES.ITEMS
 	if CompanionManager.joined_items.size() > 4:
 		var selection = CompanionManager.joined_items.pick_random()
 		card_information_setter(type, selection, rarity)
+		picked.append(selection)
 	else:
 		var selection = possibleItems.pick_random()
 		card_information_setter(type, selection, rarity)
+		picked.append(selection)
 	
 func NewGem(type, rarity):
 	type = CARD_TYPES.GEMS
 	var selection = possibleGems.pick_random()
 	card_information_setter(type, selection, rarity)
+	picked.append(selection)
 	
 func card_information_setter(type, selection, rarity):
 	if type == CARD_TYPES.GEMS:
@@ -421,6 +418,8 @@ func card_information_setter(type, selection, rarity):
 		var card_result = card_data["GEMS"][str(selection)]
 		if !CompanionManager.joined_gems.has(selection):
 			seen = true
+		else:
+			seen = false
 		card_constructor(
 			card_result.title, 
 			card_result.description,
@@ -438,6 +437,8 @@ func card_information_setter(type, selection, rarity):
 		var card_result = card_data["DOLLS"][str(selection)]
 		if !CompanionManager.joined_companions.has(selection):
 			seen = true
+		else:
+			seen = false
 		card_constructor(
 			card_result.title, 
 			card_result.description[0],
@@ -454,6 +455,8 @@ func card_information_setter(type, selection, rarity):
 		var card_result = card_data["ITEMS"][str(selection)]
 		if !CompanionManager.joined_items.has(selection):
 			seen = true
+		else:
+			seen = false
 		card_constructor(
 			card_result.title, 
 			card_result.description,
