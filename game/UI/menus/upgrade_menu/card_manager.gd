@@ -5,9 +5,10 @@ extends Control
 
 var iteration = 0
 var seen
-var inventory = CompanionManager.joined_companions
+#var inventory = CompanionManager.joined_companions
 enum CARD_TYPES {GEMS, ITEMS, DOLLS}
-var picked : Array[String] = []
+var temp_stack : Array[String] = []
+var player_stack : Array = []
 
 var randomized_cardType_index:int = CARD_TYPES.values()[ randi()%CARD_TYPES.size() ]
 var rarities = {
@@ -296,6 +297,12 @@ var possibleItems = card_data["ITEMS"].keys()
 var possibleGems = card_data["GEMS"].keys()
 
 
+func card_checker(array: Array, card):
+	if array.has(card):
+		return true
+	else:
+		return false
+
 func generate_card():
 	#var type = CARD_TYPES.GEMS
 	#var card_name
@@ -333,7 +340,6 @@ func generate_card():
 		else:
 			rarity = "RARE"
 			UpgradeDoll(type, rarity)
-				
 	#-------------ITERATION 0------------------
 	elif iteration == 1:
 		var iterationChoice = randi_range(0, 3)
@@ -365,53 +371,68 @@ func generate_card():
 			UpgradeItem(type, rarity)
 		
 	#-------------ITERATION 2------------------
+
 func UpgradeDoll(type, rarity):
 	type = CARD_TYPES.DOLLS
 	if CompanionManager.joined_companions.size() <= 0:
 		var selection = possibleDolls.pick_random()
 		card_information_setter(type, selection, rarity)
-		picked.append(selection)
+		temp_stack.append(selection)
 	else:
 		var selection = CompanionManager.joined_companions.pick_random()
 		card_information_setter(type, selection, rarity)
-		picked.append(selection)
+		temp_stack.append(selection)
+
 func UpgradeItem(type, rarity):
 	type = CARD_TYPES.ITEMS
 	if CompanionManager.joined_items.size() <= 0:
 		var selection = possibleItems.pick_random()
 		card_information_setter(type, selection, rarity)
-		picked.append(selection)
+		temp_stack.append(selection)
 	else:
 		var selection = CompanionManager.joined_items.pick_random()
 		card_information_setter(type, selection, rarity)
-		picked.append(selection)
+		temp_stack.append(selection)
+
 func NewDoll(type, rarity):
 	type = CARD_TYPES.DOLLS
 	if CompanionManager.joined_companions.size() > 4:
 		var selection = CompanionManager.joined_companions.pick_random()
 		card_information_setter(type, selection, rarity)
-		picked.append(selection)
+		temp_stack.append(selection)
 	else:
 		var selection = possibleDolls.pick_random()
 		card_information_setter(type, selection, rarity)
-		picked.append(selection)
+		temp_stack.append(selection)
+
 func NewItem(type, rarity):
 	type = CARD_TYPES.ITEMS
 	if CompanionManager.joined_items.size() > 4:
 		var selection = CompanionManager.joined_items.pick_random()
 		card_information_setter(type, selection, rarity)
-		picked.append(selection)
+		temp_stack.append(selection)
 	else:
 		var selection = possibleItems.pick_random()
+		##Card checker returns true if a non-unique card is detected in the given array
+		if card_checker(temp_stack, selection) == true:
+			#print('ruh roh rerun this until unique')
+			##Recursively calls the generate function if a duplicate was detected
+			NewItem(type, rarity)
+			##Return escapes from the function, preventing the next 2 lines from executing
+			return
 		card_information_setter(type, selection, rarity)
-		picked.append(selection)
-	
+		temp_stack.append(selection)
+
 func NewGem(type, rarity):
 	type = CARD_TYPES.GEMS
 	var selection = possibleGems.pick_random()
 	card_information_setter(type, selection, rarity)
-	picked.append(selection)
-	
+	temp_stack.append(selection)
+
+##TODO
+func card_generator(type, is_upgrade):
+	pass
+
 func card_information_setter(type, selection, rarity):
 	if type == CARD_TYPES.GEMS:
 		var rarity_result = rarities["RARITIES"][str(rarity)]
@@ -431,7 +452,7 @@ func card_information_setter(type, selection, rarity):
 			seen
 		)
 		pass
-	
+		
 	if type == CARD_TYPES.DOLLS:
 		var rarity_result = rarities["RARITIES"][str(rarity)]
 		var card_result = card_data["DOLLS"][str(selection)]
@@ -481,7 +502,6 @@ func card_constructor(title, description, rarity_result, text_color, portrait, i
 	new_card.new = seen
 	#new_card.yell()
 	new_card.update()
-	print(new_card.title)
 	pass
 
 
