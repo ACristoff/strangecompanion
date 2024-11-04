@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://do0dq4dmfh4qs"]
+
+[ext_resource type="Texture2D" uid="uid://cua2db1ykadrg" path="res://Assets/Debug_Assets/watermelon.png" id="1_waqsb"]
+[ext_resource type="Script" path="res://game/enemies/exp_orb.gd" id="1_xdv7w"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_m6dj1"]
+
+[node name="ExpOrb" type="Node3D"]
+script = ExtResource("1_xdv7w")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("SphereShape3D_m6dj1")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+pixel_size = 0.0005
+billboard = 1
+texture = ExtResource("1_waqsb")

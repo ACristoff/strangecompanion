@@ -25,6 +25,7 @@ enum CELL_STATES {ACTIVE, INACTIVE, NULL}
 func _ready() -> void:
 	print("init load")
 	load_cells_at(Vector2(0,0))
+	GameManager.world = self
 	pass # Replace with function body.
 
 func unload_cells_from(origin):
