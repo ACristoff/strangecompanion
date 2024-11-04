@@ -212,63 +212,63 @@ var card_data = {
 		"SCISSORS": {
 			"title": "Scissors",
 			"description": "Increases Damage by 8%",
-			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
+			"portrait": "res://Assets/Debug_Assets/scissors_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"SOCKS": {
 			"title": "Silk Socks",
 			"description": "Increases Speed by 8%",
-			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
+			"portrait": "res://Assets/Debug_Assets/wool_socks_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"PATCH": {
 			"title": "Heart Patch",
 			"description": "Increases Maximum Health by 8%",
-			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
+			"portrait": "res://Assets/Debug_Assets/heart_patch_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"NEEDLE": {
 			"title": "Needle & Thread",
 			"description": "Increases Attack Frequency by 8%",
-			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
+			"portrait": "res://Assets/Debug_Assets/needleandthread_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"SPOOL": {
 			"title": "Wooden Spool O' Yarn",
 			"description": "Increases Duration of Attack by 8%",
-			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
+			"portrait": "res://Assets/Debug_Assets/wooden_spool_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
-		"LAYERS": {
-			"title": "More Layers",
+		"SCARF": {
+			"title": "Extra Scarf",
 			"description": "Increases Defense by 8%",
-			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
+			"portrait": "res://Assets/Debug_Assets/extra_scarf_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"GLOVES": {
 			"title": "Magnetic Gloves",
 			"description": "Increases XP Pickup Radius by 8%",
-			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
+			"portrait": "res://Assets/Debug_Assets/magnetic_gloves_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"PIN": {
 			"title": "Golden Pendent",
 			"description": "Increases Gold Gain by 8%",
-			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
+			"portrait": "res://Assets/Debug_Assets/gold_pin_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"EARRINGS": {
 			"title": "Prismatic Earrings",
 			"description": "Increases XP Gain by 8%",
-			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
+			"portrait": "res://Assets/Debug_Assets/prismatic_earrings_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
