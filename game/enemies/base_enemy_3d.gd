@@ -15,7 +15,7 @@ func take_damage(damage):
 
 #Do Damage
 func do_damage():
-	
+	prints("deal damage!", attack)
 	pass
 
 #Die

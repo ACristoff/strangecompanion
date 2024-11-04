@@ -6,4 +6,4 @@ class_name Wave
 #potentially do this as an array
 @export var enemy:Resource
 @export var enemy_count: int
-@export var spawn_delay:int
+@export var spawn_delay:float
