@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dy1u50vxhv615" path="res://game/player/witch3d.tscn" id="2_ofe75"]
 [ext_resource type="Texture2D" uid="uid://cgnaqukmdb8yo" path="res://Assets/UI_elements/UI_button.png" id="4_xh3uf"]
 [ext_resource type="Theme" uid="uid://xk8thxufmqj0" path="res://Assets/themes/label_theme_2.tres" id="5_caf0d"]
-[ext_resource type="PackedScene" path="res://game/world/enemy_manager.tscn" id="5_s6sjw"]
+[ext_resource type="PackedScene" uid="uid://b3dru07aqd4ft" path="res://game/world/enemy_manager.tscn" id="5_s6sjw"]
 
 [node name="TerrainGenerator" type="Node3D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_nlybv")

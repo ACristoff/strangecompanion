@@ -23,18 +23,23 @@ var randomized_cardType_index:int = CARD_TYPES.values()[ randi()%CARD_TYPES.size
 var rarities = {
 	"RARITIES":{
 		"COMMON": {
+			"textColor": Color("c2c2c2"),
 			"border": "res://Assets/UI_elements/Cards/graycard.png"
 		},
 		"UNCOMMON": {
+			"textColor": Color("a6de0d"),
 			"border": "res://Assets/UI_elements/Cards/greencard.png"
 		},
 		"RARE": {
+			"textColor": Color("2bceff"),
 			"border": "res://Assets/UI_elements/Cards/bluecard.png"
 		},
 		"EXOTIC": {
+			"textColor": Color("ff75f6"),
 			"border": "res://Assets/UI_elements/Cards/purplecard.png"
 		},
 		"LEGENDARY": {
+			"textColor": Color("ffa313"),
 			"border": "res://Assets/UI_elements/Cards/yellowcard.png"
 		},
 	}
@@ -42,66 +47,66 @@ var rarities = {
 var card_data = {
 	"GEMS": {
 		"RED": {
-			"title": "Red Style Gem",
-			"description": "You see memories of destruction and despair",
+			"title": "Red  Style  Gem",
+			"description": "You  see  memories  of  destruction  and  despair",
 			"portrait": "res://Assets/Debug_Assets/red_gem.png",
 			#"borderColor": Color.from_hsv(7.0/359.0, 96.0/100.0, 80.0/100.0, 255.0/255.0),
-			"textColor": Color.from_hsv(35.0/359.0, 23.0/100.0, 100.0/100.0, 255.0/255.0)
+			#"textColor": Color("ffa313")
 		},
 		"BLUE": {
-			"title": "Blue Style Gem",
-			"description": "You see memories of an endless storm",
+			"title": "Blue  Style  Gem",
+			"description": "You  see  memories  of  an  endless  storm",
 			"portrait": "res://Assets/Debug_Assets/blue_gem.png",
 			#"borderColor": Color.from_hsv(199.0/359.0, 90.0/100.0, 100.0/100.0, 255.0/255.0),
-			"textColor": Color.from_hsv(187.0/359.0, 29.0/100.0, 95.0/100.0, 255.0/225.0)
+			#"textColor": Color("ffa313")
 		},
 		"YELLOW": {
-			"title": "Yellow Style Gem",
-			"description": "You see memories of a raging swarm",
+			"title": "Yellow  Style  Gem",
+			"description": "You  see  memories  of  a  raging  swarm",
 			"portrait": "res://Assets/Debug_Assets/yellow_gem.png",
 			#"borderColor": Color.from_hsv(35.0/359.0, 94.0/100.0, 100.0/100.0, 255.0/255.0),
-			"textColor": Color.from_hsv(40.0/359.0, 22.0/100.0, 100.0/100.0, 255.0/255.0)
+			#"textColor": Color("ffa313")
 		}
 	},
 	"DOLLS": {
 		"LODEY": {
 			"title": "Lodey",
 			"description": [
-				"Uses long-range simple projectiles shot away from the player.",
-				"Projectiles deal 5 more base damage",
-				"Shoots more frequently",
-				"Projectiles deal 5 more base damage",
-				"Shoots an additional projectile",
+				"Uses  long-range  simple  projectiles  shot  away  from  the  player.",
+				"Projectiles  deal  5  more  base  damage",
+				"Shoots  more  frequently",
+				"Projectiles  deal  5  more  base  damage",
+				"Shoots  an  additional  projectile",
 				],
 			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
-			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
+			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"STABBEY": {
 			"title": "Stabbey",
 			"description": [
-				"Weilds a blade and spins around.",
-				"Blade deals 5 more base damage",
-				"Gains an extra blade",
-				"Blade deals 5 more base damage",
-				"Gains an extra blade, and swings faster",
+				"Weilds  a  blade  and  spins  around.",
+				"Blade  deals  5  more  base  damage",
+				"Gains  an  extra  blade",
+				"Blade  deals  5  more  base  damage",
+				"Gains  an  extra  blade  and  swings  faster",
 				],
 			"portrait": "res://Assets/Debug_Assets/stabbey_sketch.png",
 			#"borderColor": Color.from_hsv(64.0/359.0, 53.0/100.0, 100.0/100.0, 255.0/255.0),
-			"textColor": Color.from_hsv(57.0/359.0, 25.0/100.0, 83.0/100.0, 225.0/225.0)
+			#"textColor": Color.from_hsv(57.0/359.0, 25.0/100.0, 83.0/100.0, 225.0/225.0)
 		},
 		"MAMI": {
 			"title": "Mami",
 			"description": [
-				"Cooks in waves called meals, throwing her food up into the air.",
-				"Projectiles deal 5 more base damage",
-				"Cooks more food per meal",
-				"Projectiles deal 5 more base damage",
-				"Food bounces once on the floor"
+				"Cooks  in  waves  called  meals,  throwing  her  food  up  into  the  air.",
+				"Projectiles  deal  5  more  base  damage",
+				"Cooks  more  food  per  meal",
+				"Projectiles  deal  5  more  base  damage",
+				"Food  bounces  once  on  the  floor"
 				],
 			"portrait": "res://Assets/Debug_Assets/mami_sketch.png",
 			#"borderColor": Color.from_hsv(43.0/359, 39.0/100.0, 100.0/100.0, 255.0/255.0),
-			"textColor": Color.from_hsv(181.0/359, 22.0/100.0, 95.0/100.0, 255.0/255.0)
+			#"textColor": Color.from_hsv(181.0/359, 22.0/100.0, 95.0/100.0, 255.0/255.0)
 		},
 		"KANON": {
 			"title": "Kanon",
@@ -114,7 +119,7 @@ var card_data = {
 				],
 			"portrait": "res://Assets/Debug_Assets/kanon_sketch.png",
 			#"borderColor": Color.from_hsv(0.0/359.0, 0.0/100.0, 61.0/100.0, 255.0/255.0),
-			"textColor": Color.from_hsv(19.0/359.0, 63.0/100.0, 80.0/100.0, 255.0/255.0)
+			#"textColor": Color.from_hsv(19.0/359.0, 63.0/100.0, 80.0/100.0, 255.0/255.0)
 		},
 		"HACKE": {
 			"title": "Hacke",
@@ -127,7 +132,7 @@ var card_data = {
 				],
 			"portrait": "res://Assets/Debug_Assets/hacke_sketch.png",
 			#"borderColor": Color.from_hsv(227.0/359.0, 80.0/100.0, 16.0/100.0, 255.0/255.0),
-			"textColor": Color.from_hsv(70.0/359.0, 74.0/100.0, 100.0/100.0, 255.0/255.0)
+			#"textColor": Color.from_hsv(70.0/359.0, 74.0/100.0, 100.0/100.0, 255.0/255.0)
 		},
 		"DUNE": {
 			"title": "Dune",
@@ -140,7 +145,7 @@ var card_data = {
 				],
 			"portrait": "res://Assets/Debug_Assets/dune_sketch.png",
 			#"borderColor": Color.from_hsv(40.0/359.0, 100.0/100.0, 60.0/100.0, 255.0/255.0),
-			"textColor": Color.from_hsv(216.0/359.0, 46.0/100.0, 87.0/100.0, 255.0/255.0)
+			#"textColor": Color.from_hsv(216.0/359.0, 46.0/100.0, 87.0/100.0, 255.0/255.0)
 		},
 		"RIFF": {
 			"title": "Riff",
@@ -153,7 +158,7 @@ var card_data = {
 				],
 			"portrait": "res://Assets/Debug_Assets/riff_sketch.png",
 			#"borderColor": Color.from_hsv(300.0/359.0, 82.0/100.0, 100.0/100.0, 255.0/255.0),
-			"textColor": Color.from_hsv(187.0/359.0, 29.0/100.0, 95.0/100.0, 255.0/255.0)
+			#"textColor": Color.from_hsv(187.0/359.0, 29.0/100.0, 95.0/100.0, 255.0/255.0)
 		},
 		"NYAO": {
 			"title": "Nyao",
@@ -166,7 +171,7 @@ var card_data = {
 				],
 			"portrait": "res://Assets/Debug_Assets/nyao_sketch.png",
 			#"borderColor": Color.from_hsv(40.0/359.0, 11.0/100.0, 100.0/100.0, 225.0/225.0),
-			"textColor": Color.from_hsv(4.0/359.0, 98.0/100.0, 98.0/100.0, 225.0/225.0)
+			#"textColor": Color.from_hsv(4.0/359.0, 98.0/100.0, 98.0/100.0, 225.0/225.0)
 		},
 		"OORA": {
 			"title": "Oora",
@@ -179,7 +184,7 @@ var card_data = {
 				],
 			"portrait": "res://Assets/Debug_Assets/PointerFire.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
-			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
+			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		#"BAWL": {
 			#"title": "Bawl",
@@ -214,63 +219,63 @@ var card_data = {
 			"description": "Increases Damage by 8%",
 			"portrait": "res://Assets/Debug_Assets/scissors_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
-			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
+			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"SOCKS": {
 			"title": "Silk Socks",
 			"description": "Increases Speed by 8%",
 			"portrait": "res://Assets/Debug_Assets/wool_socks_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
-			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
+			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"PATCH": {
 			"title": "Heart Patch",
 			"description": "Increases Maximum Health by 8%",
 			"portrait": "res://Assets/Debug_Assets/heart_patch_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
-			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
+			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"NEEDLE": {
 			"title": "Needle & Thread",
 			"description": "Increases Attack Frequency by 8%",
 			"portrait": "res://Assets/Debug_Assets/needleandthread_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
-			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
+			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"SPOOL": {
 			"title": "Wooden Spool O' Yarn",
 			"description": "Increases Duration of Attack by 8%",
 			"portrait": "res://Assets/Debug_Assets/wooden_spool_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
-			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
+			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"SCARF": {
 			"title": "Extra Scarf",
 			"description": "Increases Defense by 8%",
 			"portrait": "res://Assets/Debug_Assets/extra_scarf_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
-			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
+			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"GLOVES": {
 			"title": "Magnetic Gloves",
 			"description": "Increases XP Pickup Radius by 8%",
 			"portrait": "res://Assets/Debug_Assets/magnetic_gloves_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
-			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
+			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"PIN": {
 			"title": "Golden Pendent",
 			"description": "Increases Gold Gain by 8%",
 			"portrait": "res://Assets/Debug_Assets/gold_pin_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
-			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
+			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 		"EARRINGS": {
 			"title": "Prismatic Earrings",
 			"description": "Increases XP Gain by 8%",
 			"portrait": "res://Assets/Debug_Assets/prismatic_earrings_sketch.png",
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
-			"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
+			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
 	},
 }
@@ -396,7 +401,7 @@ func card_information_setter(type, selection, rarity):
 			card_result.title, 
 			card_result.description,
 			rarity_result.border,
-			card_result.textColor,
+			rarity_result.textColor,
 			card_result.portrait,
 			CARD_TYPES.GEMS
 		)
@@ -409,7 +414,7 @@ func card_information_setter(type, selection, rarity):
 			card_result.title, 
 			card_result.description[0],
 			rarity_result.border,
-			card_result.textColor,
+			rarity_result.textColor,
 			card_result.portrait,
 			CARD_TYPES.GEMS
 		)
@@ -421,7 +426,7 @@ func card_information_setter(type, selection, rarity):
 			card_result.title, 
 			card_result.description,
 			rarity_result.border,
-			card_result.textColor,
+			rarity_result.textColor,
 			card_result.portrait,
 			CARD_TYPES.ITEMS
 			)
