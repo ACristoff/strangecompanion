@@ -19,7 +19,7 @@ extends TextureButton
 #@onready var yellow = preload("res://Assets/Debug_Assets/yellow_gem.png")
 #----------------------------------
 #ITEMS
-
+var down
 
 ##REFERENCES
 @onready var title_label = $Control/FrontBorder/Title
@@ -332,9 +332,17 @@ func update():
 	#},
 #}
 	
+func button_shrink(state):
+	var tween = create_tween()
+	#tween.set_trans(Tween.TRANS_ELASTIC)
+	if down == 1:
+		tween.tween_property(self, "scale", Vector2(.95, .95), .05)
+	else:
+		tween.tween_property(self, "scale", Vector2(1, 1), .05)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	self.disabled = true
 	await get_tree().create_timer(.6).timeout
 	$AnimationPlayer.play("card_flip")
 	#prints(title, description, type, text_color, border_color, portrait)
@@ -347,4 +355,22 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
+	print("card_pressed")
 	emit_signal("card_selected")
+
+
+func _on_button_down() -> void:
+	down = 1
+	self.pivot_offset = self.size/2
+	button_shrink(down)
+
+
+func _on_button_up() -> void:
+	down = 0
+	self.pivot_offset = self.size/2
+	button_shrink(down)
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == ("card_flip"):
+		self.disabled = false
