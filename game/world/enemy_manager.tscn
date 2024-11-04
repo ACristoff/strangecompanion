@@ -1,6 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3dru07aqd4ft"]
+[gd_scene load_steps=6 format=3 uid="uid://b3dru07aqd4ft"]
 
 [ext_resource type="Script" path="res://game/world/enemy_manager.gd" id="1_40i41"]
+[ext_resource type="Script" path="res://game/utils/wave.gd" id="2_d71tl"]
+[ext_resource type="PackedScene" uid="uid://tstackn4edf0" path="res://game/enemies/base_enemy_3d.tscn" id="3_hgj8j"]
+
+[sub_resource type="Resource" id="Resource_pmb5k"]
+script = ExtResource("2_d71tl")
+time_start = 0
+time_end = 60
+enemy = ExtResource("3_hgj8j")
+enemy_count = 30
+spawn_delay = 2
 
 [sub_resource type="Curve3D" id="Curve3D_twumu"]
 _data = {
@@ -11,6 +21,7 @@ point_count = 5
 
 [node name="EnemyManager" type="Node3D"]
 script = ExtResource("1_40i41")
+wave_data = Array[ExtResource("2_d71tl")]([SubResource("Resource_pmb5k")])
 
 [node name="MobSpawnBox" type="Path3D" parent="."]
 curve = SubResource("Curve3D_twumu")
@@ -21,4 +32,9 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 
 [node name="MobTimer" type="Timer" parent="."]
 autostart = true
 
+[node name="WaveTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
+[connection signal="timeout" from="WaveTimer" to="." method="_on_wave_timer_timeout"]

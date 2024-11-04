@@ -1,11 +1,6 @@
 extends Resource
 
 class_name Wave
-# Time Start
-# Time End
-# Enemy Type(s?)
-# Enemy Count
-# Spawn Delay
 @export var time_start:int
 @export var time_end:int
 #potentially do this as an array
