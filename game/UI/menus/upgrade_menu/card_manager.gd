@@ -50,6 +50,7 @@ var card_data = {
 			"title": "Red  Style  Gem",
 			"description": "You  see  memories  of  destruction  and  despair",
 			"portrait": "res://Assets/Debug_Assets/red_gem.png",
+			"icon": "res://Assets/UI_elements/Cards/gem_icon.png"
 			#"borderColor": Color.from_hsv(7.0/359.0, 96.0/100.0, 80.0/100.0, 255.0/255.0),
 			#"textColor": Color("ffa313")
 		},
@@ -57,6 +58,7 @@ var card_data = {
 			"title": "Blue  Style  Gem",
 			"description": "You  see  memories  of  an  endless  storm",
 			"portrait": "res://Assets/Debug_Assets/blue_gem.png",
+			"icon": "res://Assets/UI_elements/Cards/gem_icon.png"
 			#"borderColor": Color.from_hsv(199.0/359.0, 90.0/100.0, 100.0/100.0, 255.0/255.0),
 			#"textColor": Color("ffa313")
 		},
@@ -64,6 +66,7 @@ var card_data = {
 			"title": "Yellow  Style  Gem",
 			"description": "You  see  memories  of  a  raging  swarm",
 			"portrait": "res://Assets/Debug_Assets/yellow_gem.png",
+			"icon": "res://Assets/UI_elements/Cards/gem_icon.png"
 			#"borderColor": Color.from_hsv(35.0/359.0, 94.0/100.0, 100.0/100.0, 255.0/255.0),
 			#"textColor": Color("ffa313")
 		}
@@ -79,6 +82,7 @@ var card_data = {
 				"Shoots  an  additional  projectile",
 				],
 			"portrait": "res://Assets/Player/lodey.png",
+			"icon": "res://Assets/UI_elements/Cards/doll_icon.png"
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
@@ -92,6 +96,7 @@ var card_data = {
 				"Gains  an  extra  blade  and  swings  faster",
 				],
 			"portrait": "res://Assets/Debug_Assets/stabbey_sketch.png",
+			"icon": "res://Assets/UI_elements/Cards/doll_icon.png"
 			#"borderColor": Color.from_hsv(64.0/359.0, 53.0/100.0, 100.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(57.0/359.0, 25.0/100.0, 83.0/100.0, 225.0/225.0)
 		},
@@ -105,6 +110,7 @@ var card_data = {
 				"Food  bounces  once  on  the  floor"
 				],
 			"portrait": "res://Assets/Debug_Assets/mami_sketch.png",
+			"icon": "res://Assets/UI_elements/Cards/doll_icon.png"
 			#"borderColor": Color.from_hsv(43.0/359, 39.0/100.0, 100.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(181.0/359, 22.0/100.0, 95.0/100.0, 255.0/255.0)
 		},
@@ -118,6 +124,7 @@ var card_data = {
 				"Shoots  out  of  all  8  cannons  consecutively"
 				],
 			"portrait": "res://Assets/Debug_Assets/kanon_sketch.png",
+			"icon": "res://Assets/UI_elements/Cards/doll_icon.png"
 			#"borderColor": Color.from_hsv(0.0/359.0, 0.0/100.0, 61.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(19.0/359.0, 63.0/100.0, 80.0/100.0, 255.0/255.0)
 		},
@@ -131,6 +138,7 @@ var card_data = {
 				"Selection  areas  get  larger  and  activate  twice"
 				],
 			"portrait": "res://Assets/Debug_Assets/hacke_sketch.png",
+			"icon": "res://Assets/UI_elements/Cards/doll_icon.png"
 			#"borderColor": Color.from_hsv(227.0/359.0, 80.0/100.0, 16.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(70.0/359.0, 74.0/100.0, 100.0/100.0, 255.0/255.0)
 		},
@@ -144,6 +152,7 @@ var card_data = {
 				"Shoots  an  additional  projectile  and  sandstorms  split  of  into  3  smaller  storms",
 				],
 			"portrait": "res://Assets/Debug_Assets/dune_sketch.png",
+			"icon": "res://Assets/UI_elements/Cards/doll_icon.png"
 			#"borderColor": Color.from_hsv(40.0/359.0, 100.0/100.0, 60.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(216.0/359.0, 46.0/100.0, 87.0/100.0, 255.0/255.0)
 		},
@@ -157,6 +166,7 @@ var card_data = {
 				"Lightning  can  chain  onto  5  more  enemies  and  stuns  them  for  .05  seconds  longer",
 				],
 			"portrait": "res://Assets/Debug_Assets/riff_sketch.png",
+			"icon": "res://Assets/UI_elements/Cards/doll_icon.png"
 			#"borderColor": Color.from_hsv(300.0/359.0, 82.0/100.0, 100.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(187.0/359.0, 29.0/100.0, 95.0/100.0, 255.0/255.0)
 		},
@@ -170,6 +180,7 @@ var card_data = {
 				"Shoots  even  more  frequently" 
 				],
 			"portrait": "res://Assets/Debug_Assets/nyao_sketch.png",
+			"icon": "res://Assets/UI_elements/Cards/doll_icon.png"
 			#"borderColor": Color.from_hsv(40.0/359.0, 11.0/100.0, 100.0/100.0, 225.0/225.0),
 			#"textColor": Color.from_hsv(4.0/359.0, 98.0/100.0, 98.0/100.0, 225.0/225.0)
 		},
@@ -183,6 +194,7 @@ var card_data = {
 				"Area  gets  even  larger  and  knocks  back  enemies  slightly",
 				],
 			"portrait": "res://Assets/Debug_Assets/oora_sketch.png",
+			"icon": "res://Assets/UI_elements/Cards/doll_icon.png"
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
@@ -218,6 +230,7 @@ var card_data = {
 			"title": "Scissors",
 			"description": "Increases  Damage  by  8%",
 			"portrait": "res://Assets/Debug_Assets/scissors_sketch.png",
+			"icon": "res://Assets/UI_elements/Cards/item_icon.png"
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
@@ -225,6 +238,7 @@ var card_data = {
 			"title": "Silk  Socks",
 			"description": "Increases  Speed  by  8%",
 			"portrait": "res://Assets/Debug_Assets/wool_socks_sketch.png",
+			"icon": "res://Assets/UI_elements/Cards/item_icon.png"
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
@@ -232,6 +246,7 @@ var card_data = {
 			"title": "Heart  Patch",
 			"description": "Increases  Maximum  Health  by  8%",
 			"portrait": "res://Assets/Debug_Assets/heart_patch_sketch.png",
+			"icon": "res://Assets/UI_elements/Cards/item_icon.png"
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
@@ -239,6 +254,7 @@ var card_data = {
 			"title": "Needle  &  Thread",
 			"description": "Increases  Attack  Frequency  by  8%",
 			"portrait": "res://Assets/Debug_Assets/needleandthread_sketch.png",
+			"icon": "res://Assets/UI_elements/Cards/item_icon.png"
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
@@ -246,6 +262,7 @@ var card_data = {
 			"title": "Wooden  Spool  O'  Yarn",
 			"description": "Increases  Duration  of  Attack  by  8%",
 			"portrait": "res://Assets/Debug_Assets/wooden_spool_sketch.png",
+			"icon": "res://Assets/UI_elements/Cards/item_icon.png"
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
@@ -253,6 +270,7 @@ var card_data = {
 			"title": "Extra  Scarf",
 			"description": "Increases  Defense  by  8%",
 			"portrait": "res://Assets/Debug_Assets/extra_scarf_sketch.png",
+			"icon": "res://Assets/UI_elements/Cards/item_icon.png"
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
@@ -260,6 +278,7 @@ var card_data = {
 			"title": "Magnetic  Gloves",
 			"description": "Increases  XP  Pickup  Radius  by  8%",
 			"portrait": "res://Assets/Debug_Assets/magnetic_gloves_sketch.png",
+			"icon": "res://Assets/UI_elements/Cards/item_icon.png"
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
@@ -267,6 +286,7 @@ var card_data = {
 			"title": "Golden  Pendent",
 			"description": "Increases  Gold  Gain  by  8%",
 			"portrait": "res://Assets/Debug_Assets/gold_pin_sketch.png",
+			"icon": "res://Assets/UI_elements/Cards/item_icon.png"
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
@@ -274,6 +294,7 @@ var card_data = {
 			"title": "Prismatic  Earrings",
 			"description": "Increases  XP  Gain  by  8%",
 			"portrait": "res://Assets/Debug_Assets/prismatic_earrings_sketch.png",
+			"icon": "res://Assets/UI_elements/Cards/item_icon.png"
 			#"borderColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0),
 			#"textColor": Color.from_hsv(00.0/359.0, 00.0/100.0, 00.0/100.0, 255.0/255.0)
 		},
@@ -403,6 +424,7 @@ func card_information_setter(type, selection, rarity):
 			rarity_result.border,
 			rarity_result.textColor,
 			card_result.portrait,
+			card_result.icon,
 			CARD_TYPES.GEMS
 		)
 		pass
@@ -416,7 +438,8 @@ func card_information_setter(type, selection, rarity):
 			rarity_result.border,
 			rarity_result.textColor,
 			card_result.portrait,
-			CARD_TYPES.GEMS
+			card_result.icon,
+			CARD_TYPES.DOLLS
 		)
 		pass
 	if type == CARD_TYPES.ITEMS:
@@ -428,10 +451,11 @@ func card_information_setter(type, selection, rarity):
 			rarity_result.border,
 			rarity_result.textColor,
 			card_result.portrait,
+			card_result.icon,
 			CARD_TYPES.ITEMS
 			)
 
-func card_constructor(title, description, rarity_result, text_color, portrait, type):
+func card_constructor(title, description, rarity_result, text_color, portrait, icon, type):
 	var new_card = CARD.instantiate()
 	$HBoxContainer.add_child(new_card)
 	new_card.title = title
@@ -440,6 +464,7 @@ func card_constructor(title, description, rarity_result, text_color, portrait, t
 	new_card.text_color = text_color
 	new_card.portrait = portrait
 	new_card.type = type
+	new_card.icon = icon
 	#new_card.yell()
 	new_card.update()
 	print(new_card.title)

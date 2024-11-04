@@ -26,6 +26,7 @@ var down
 @onready var description_label = $Control/FrontBorder/Description
 @onready var border = $Control/FrontBorder
 @onready var portrait_texture = $Control/FrontBorder/Portrait
+@onready var icon_texture = $Control/FrontBorder/Icon_corner
 
 #determines which card type it is on spawn (i.e. is it an item card?
 # or is it a doll card?
@@ -102,6 +103,7 @@ signal card_selected#(type, name, copy)
 @export var text_color: Color
 #@export var border_color: Color
 @export var portrait = ''
+@export var icon = ''
 
 #func yell():
 	#print('test')
@@ -116,6 +118,7 @@ func update():
 	#border.self_modulate = border_color
 	title_label.self_modulate = text_color
 	description_label.self_modulate = text_color
+	icon_texture.texture = load(icon)
 	pass
 
 #var card_types =  {
