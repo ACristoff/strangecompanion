@@ -23,7 +23,7 @@ enum CELL_STATES {ACTIVE, INACTIVE, NULL}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print("init load")
+	#print("init load")
 	load_cells_at(Vector2(0,0))
 	GameManager.world = self
 	pass # Replace with function body.

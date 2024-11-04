@@ -1,9 +1,9 @@
 class_name BaseEnemy
 extends RigidBody3D
 
-var max_health = 100
+var max_health:float = 100
 var health = max_health
-var attack = 10
+var attack:float = 10
 var speed = 5
 var target = GameManager.player
 var sprite_texture: CompressedTexture2D
