@@ -376,10 +376,16 @@ func UpgradeDoll(type, rarity):
 	type = CARD_TYPES.DOLLS
 	if CompanionManager.joined_companions.size() <= 0:
 		var selection = possibleDolls.pick_random()
+		if card_checker(temp_stack, selection) == true:
+			UpgradeDoll(type, rarity)
+			return
 		card_information_setter(type, selection, rarity)
 		temp_stack.append(selection)
 	else:
 		var selection = CompanionManager.joined_companions.pick_random()
+		if card_checker(temp_stack, selection) == true:
+			UpgradeDoll(type, rarity)
+			return
 		card_information_setter(type, selection, rarity)
 		temp_stack.append(selection)
 
@@ -387,10 +393,16 @@ func UpgradeItem(type, rarity):
 	type = CARD_TYPES.ITEMS
 	if CompanionManager.joined_items.size() <= 0:
 		var selection = possibleItems.pick_random()
+		if card_checker(temp_stack, selection) == true:
+			UpgradeItem(type, rarity)
+			return
 		card_information_setter(type, selection, rarity)
 		temp_stack.append(selection)
 	else:
 		var selection = CompanionManager.joined_items.pick_random()
+		if card_checker(temp_stack, selection) == true:
+			UpgradeItem(type, rarity)
+			return
 		card_information_setter(type, selection, rarity)
 		temp_stack.append(selection)
 
@@ -398,10 +410,16 @@ func NewDoll(type, rarity):
 	type = CARD_TYPES.DOLLS
 	if CompanionManager.joined_companions.size() > 4:
 		var selection = CompanionManager.joined_companions.pick_random()
+		if card_checker(temp_stack, selection) == true:
+			NewDoll(type, rarity)
+			return
 		card_information_setter(type, selection, rarity)
 		temp_stack.append(selection)
 	else:
 		var selection = possibleDolls.pick_random()
+		if card_checker(temp_stack, selection) == true:
+			NewDoll(type, rarity)
+			return
 		card_information_setter(type, selection, rarity)
 		temp_stack.append(selection)
 
@@ -409,8 +427,12 @@ func NewItem(type, rarity):
 	type = CARD_TYPES.ITEMS
 	if CompanionManager.joined_items.size() > 4:
 		var selection = CompanionManager.joined_items.pick_random()
+		if card_checker(temp_stack, selection) == true:
+			NewItem(type, rarity)
+			return
 		card_information_setter(type, selection, rarity)
 		temp_stack.append(selection)
+		
 	else:
 		var selection = possibleItems.pick_random()
 		##Card checker returns true if a non-unique card is detected in the given array

@@ -9,10 +9,12 @@ var companion_visuals = preload("res://game/player/com_visuals.tscn")
 @export var parent_node = self
 var debug_mode := true
 var buffer = 0
+var doll
 
 func _ready() -> void:
+	#var CompanionManager.companion_types["STABBEY"]
 	GameManager.player = self
-	receive_companion_create_request("banana")
+	receive_companion_create_request("STABBEY")
 	CompanionManager.give_follow_point.connect(set_reference)
 
 func _physics_process(_delta):
@@ -36,21 +38,7 @@ func _physics_process(_delta):
 	move_and_slide()
 
 
-func _on_button_pressed() -> void:
-	receive_companion_create_request("banana")
 
-
-func _on_button_2_pressed() -> void:
-	receive_companion_create_request("pineapple")
-
-
-func _on_button_3_pressed() -> void:
-	receive_companion_create_request("strawberry")
-
-
-func _on_button_4_pressed() -> void:
-	receive_companion_create_request("watermelon")
-	
 func receive_companion_create_request(type):
 	## MAKES IT EASIER TO CREATE COMPANIONS
 	#CompanionManager.give_follow_point.emit("CHANGE THIS YAHOO")

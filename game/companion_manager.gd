@@ -1,22 +1,34 @@
 extends Node
 
-var bana = preload("res://Assets/Debug_Assets/stabbey_sketch.png")
-var stawbewwy = preload("res://Assets/Debug_Assets/mami_sketch.png")
-var pinable = preload("res://Assets/Debug_Assets/kanon_sketch.png")
-var melahn = preload("res://Assets/Debug_Assets/hacke_sketch.png")
+
 
 var companion_types =  {
-	"banana": {
-		"sprite":bana,
+	"LODEY": {
+		"sprite":"res://Assets/Player/lodey.png",
 	},
-	"strawberry": {
-		"sprite":stawbewwy,
+	"STABBEY": {
+		"sprite": load("res://Assets/Debug_Assets/stabbey_sketch.png"),
 	},
-	"pineapple": {
-		"sprite":pinable,
+	"MAMI": {
+		"sprite":"res://Assets/Debug_Assets/mami_sketch.png",
 	},
-	"watermelon": {
-		"sprite":melahn,
+	"KANON": {
+		"sprite":"res://Assets/Debug_Assets/kanon_sketch.png",
+	},
+	"HACKE":{
+		"sprite":"res://Assets/Debug_Assets/hacke_sketch.png",
+	},
+	"DUNE": {
+		"sprite":"res://Assets/Debug_Assets/dune_sketch.png",
+	},
+	"RIFF":{
+		"sprite":"res://Assets/Debug_Assets/riff_sketch.png",
+	},
+	"OORA":{
+		"sprite":"res://Assets/Debug_Assets/oora_sketch.png",
+	},
+	"NYAO": {
+		"sprite":"res://Assets/Debug_Assets/nyao_sketch.png",
 	},
 }
 

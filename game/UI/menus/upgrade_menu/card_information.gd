@@ -395,6 +395,7 @@ func rotaty():
 
 
 func _on_pressed() -> void:
+	
 	print("card_pressed")
 	emit_signal("card_selected")
 
