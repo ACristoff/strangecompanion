@@ -497,6 +497,7 @@ offset_right = -49.5
 offset_bottom = -248.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("3_qafsu")
 expand_mode = 5
 stretch_mode = 5
@@ -520,6 +521,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("3_g7ul0")
 expand_mode = 1
 stretch_mode = 2
@@ -536,6 +538,7 @@ offset_right = -282.0
 offset_bottom = -516.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("9_fxntk")
 
 [node name="New" type="Label" parent="Control/FrontBorder"]
@@ -563,6 +566,7 @@ offset_left = 71.0027
 offset_top = 25.0325
 offset_right = 71.0027
 offset_bottom = 25.0325
+mouse_filter = 2
 
 [node name="BackBG" type="ColorRect" parent="Control"]
 visible = false

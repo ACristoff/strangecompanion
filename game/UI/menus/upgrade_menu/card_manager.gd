@@ -571,6 +571,7 @@ func card_constructor(title, description, rarity_result, text_color, portrait, i
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	temp_stack.clear()
 	#print(randomized_cardType_index)
 	#card_constructor('test', 'test', CARD_TYPES.GEM)
 	iteration = 0

@@ -73,4 +73,4 @@ func set_reference(position):
 
 func _on_button_pressed() -> void:
 	print("hi")
-	$"../CanvasLayer/TextureProgressBar".value += 15
+	$"../CanvasLayer/TextureProgressBar".value += 10

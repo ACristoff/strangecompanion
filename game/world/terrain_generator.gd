@@ -3,6 +3,7 @@ extends Node3D
 @export var player = Node3D
 
 @onready var chunk = preload("res://game/world/chunk.tscn")
+@onready var level_up = preload("res://game/UI/menus/upgrade_menu/card_manager.tscn")
 @onready var terrain = Vector2(20, 20)
 
 var player_position = Vector2()
@@ -113,3 +114,10 @@ func _process(_delta: float) -> void:
 		unload_cells_from(new_cell)
 		#generate_new_cell(player_cell_position)
 		pass
+
+
+func _on_texture_progress_bar_value_changed(value: float) -> void:
+	if value >= 100:
+		var levelUp = level_up.instantiate()
+		$CanvasLayer/Control.add_child(levelUp)
+		$CanvasLayer/TextureProgressBar.value = 0
