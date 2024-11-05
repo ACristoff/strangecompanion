@@ -32,6 +32,7 @@ var companion_types =  {
 	},
 }
 
+##TODO This will need to be refactored
 var joined_companions : Array[String] = ["STABBEY"]
 var joined_items : Array[String] = []
 var joined_gems : Array[String] = []
