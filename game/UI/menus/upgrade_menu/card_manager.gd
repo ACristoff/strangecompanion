@@ -571,6 +571,7 @@ func card_constructor(title, description, rarity_result, text_color, portrait, i
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	CompanionManager.queueManager.connect(destroy_self)
 	temp_stack.clear()
 	#print(randomized_cardType_index)
 	#card_constructor('test', 'test', CARD_TYPES.GEM)
@@ -581,7 +582,9 @@ func _ready() -> void:
 		await get_tree().create_timer(.3).timeout
 	pass
 	
-
+func destroy_self():
+	print("death")
+	queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

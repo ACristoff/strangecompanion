@@ -4,31 +4,31 @@ extends Node
 
 var companion_types =  {
 	"LODEY": {
-		"sprite":"res://Assets/Player/lodey.png",
+		"sprite": load("res://Assets/Player/lodey.png"),
 	},
 	"STABBEY": {
 		"sprite": load("res://Assets/Debug_Assets/stabbey_sketch.png"),
 	},
 	"MAMI": {
-		"sprite":"res://Assets/Debug_Assets/mami_sketch.png",
+		"sprite": load("res://Assets/Debug_Assets/mami_sketch.png"),
 	},
 	"KANON": {
-		"sprite":"res://Assets/Debug_Assets/kanon_sketch.png",
+		"sprite": load("res://Assets/Debug_Assets/kanon_sketch.png"),
 	},
 	"HACKE":{
-		"sprite":"res://Assets/Debug_Assets/hacke_sketch.png",
+		"sprite": load("res://Assets/Debug_Assets/hacke_sketch.png"),
 	},
 	"DUNE": {
-		"sprite":"res://Assets/Debug_Assets/dune_sketch.png",
+		"sprite": load("res://Assets/Debug_Assets/dune_sketch.png"),
 	},
 	"RIFF":{
-		"sprite":"res://Assets/Debug_Assets/riff_sketch.png",
+		"sprite": load("res://Assets/Debug_Assets/riff_sketch.png"),
 	},
 	"OORA":{
-		"sprite":"res://Assets/Debug_Assets/oora_sketch.png",
+		"sprite": load("res://Assets/Debug_Assets/oora_sketch.png"),
 	},
 	"NYAO": {
-		"sprite":"res://Assets/Debug_Assets/nyao_sketch.png",
+		"sprite": load("res://Assets/Debug_Assets/nyao_sketch.png"),
 	},
 }
 
@@ -41,7 +41,10 @@ var identification = 0
 signal construct_new_companion
 signal give_follow_point
 signal card_clicked
-
+signal createDoll
+signal createItem
+signal createGem
+signal queueManager
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -51,6 +54,12 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	#print(number_of_companions)
 	pass
+
+func create_doll_request(nameCard):
+	if companion_types.has(nameCard):
+		emit_signal("createDoll", nameCard)
+	else:
+		pass
 
 func refresh_companions_manager():
 	emit_signal("construct_new_companion")

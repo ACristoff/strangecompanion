@@ -403,8 +403,10 @@ func rotaty():
 
 func _on_pressed() -> void:
 	burn = false
+	new = false
 	print(nameCard)
 	CompanionManager.burn_cards()
+	CompanionManager.create_doll_request(nameCard)
 	#print("card_pressed")
 	emit_signal("card_selected")
 
@@ -445,3 +447,5 @@ func _on_button_up() -> void:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == ("card_flip"):
 		self.disabled = false
+	if anim_name == ("card_flip (2)"):
+		CompanionManager.emit_signal("queueManager")
