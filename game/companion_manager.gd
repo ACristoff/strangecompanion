@@ -32,7 +32,7 @@ var companion_types =  {
 	},
 }
 
-var joined_companions : Array[String] = []
+var joined_companions : Array[String] = ["STABBEY"]
 var joined_items : Array[String] = []
 var joined_gems : Array[String] = []
 var number_of_companions = 0
